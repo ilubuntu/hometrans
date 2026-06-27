@@ -1,0 +1,250 @@
+{
+  "page_id": "page_0009_MainActivity",
+  "label": "点击'🍅'后",
+  "timestamp": "2026-06-25T21:46:14.671706",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{247926047 u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity t72}",
+    "current_focus": "mCurrentFocus=Window{e6b4fcf u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity}"
+  },
+  "clickable_count": 15,
+  "clickable_elements": [
+    {
+      "class": "android.view.View",
+      "text": "Add missing to pantry",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[108,1995][1236,2157]",
+      "center": [
+        672,
+        2076
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[42,177][186,321]",
+      "center": [
+        114,
+        249
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1158,177][1302,321]",
+      "center": [
+        1230,
+        249
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Add missing to pantry",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[108,969][1236,1131]",
+      "center": [
+        672,
+        1050
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "1",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2281][1284,2465]",
+      "center": [
+        672,
+        2373
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "2",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2465][1284,2597]",
+      "center": [
+        672,
+        2531
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "3",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2597][1284,2735]",
+      "center": [
+        672,
+        2666
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "4",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2735][1284,2919]",
+      "center": [
+        672,
+        2827
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2919][1284,2992]",
+      "center": [
+        672,
+        2955
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Add missing to pantry",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[108,604][1236,766]",
+      "center": [
+        672,
+        685
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "1",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1916][1284,2100]",
+      "center": [
+        672,
+        2008
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "2",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2100][1284,2232]",
+      "center": [
+        672,
+        2166
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "3",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2232][1284,2370]",
+      "center": [
+        672,
+        2301
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "4",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2370][1284,2554]",
+      "center": [
+        672,
+        2462
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "5",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2554][1284,2698]",
+      "center": [
+        672,
+        2626
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    }
+  ],
+  "scroll_container_bounds": [
+    0,
+    0,
+    1344,
+    2920
+  ],
+  "screenshot": "page_0009_MainActivity/screenshot.png",
+  "view_xml": "page_0009_MainActivity/view.xml",
+  "screenshots": [
+    "page_0009_MainActivity/screenshot.png",
+    "page_0009_MainActivity/screenshot_scroll_1.png",
+    "page_0009_MainActivity/screenshot_scroll_2.png"
+  ],
+  "view_xmls": [
+    "page_0009_MainActivity/view.xml",
+    "page_0009_MainActivity/view_scroll_1.xml",
+    "page_0009_MainActivity/view_scroll_2.xml"
+  ],
+  "came_from": "根页面",
+  "trigger_element": "🍅",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "🍅",
+      "center": [
+        672,
+        2250
+      ],
+      "resource-id": "",
+      "text": "🍅",
+      "content-desc": "",
+      "long-clickable": false,
+      "scroll_info": {
+        "scroll_index": 1,
+        "container_bounds": [
+          0,
+          159,
+          1344,
+          2668
+        ]
+      }
+    }
+  ]
+}

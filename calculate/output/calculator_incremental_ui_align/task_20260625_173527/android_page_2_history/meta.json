@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-06-25T17:36:09.054266",
+  "device": "adb",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{70785166 u0 ir.erfansn.siliconecalculator/.SiliconeCalculatorActivity t45}",
+    "current_focus": "mCurrentFocus=Window{e985b20 u0 ir.erfansn.siliconecalculator/ir.erfansn.siliconecalculator.SiliconeCalculatorActivity}"
+  },
+  "clickable_count": 5,
+  "clickable_elements": [
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,187][336,408]",
+      "center": [
+        198,
+        297
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[366,187][642,408]",
+      "center": [
+        504,
+        297
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "1 + 1",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[0,1921][1344,2141]",
+      "center": [
+        672,
+        2031
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "10 + 9",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[0,2141][1344,2361]",
+      "center": [
+        672,
+        2251
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "4 - 5",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[0,2556][1344,2776]",
+      "center": [
+        672,
+        2666
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "page_id": "page_0004_MainActivity",
+  "label": "点击'unknown'后",
+  "timestamp": "2026-06-25T21:43:06.488514",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{122600610 u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity t60}",
+    "current_focus": "mCurrentFocus=Window{14b85f8 u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity}"
+  },
+  "clickable_count": 5,
+  "clickable_elements": [
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[42,177][186,321]",
+      "center": [
+        114,
+        249
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Match system",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[108,589][468,750]",
+      "center": [
+        288,
+        669
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Light",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[492,571][852,715]",
+      "center": [
+        672,
+        643
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Dark",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[876,571][1236,715]",
+      "center": [
+        1056,
+        643
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Clear pantry",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[108,980][1236,1124]",
+      "center": [
+        672,
+        1052
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ],
+  "scroll_container_bounds": null,
+  "screenshot": "page_0004_MainActivity/screenshot.png",
+  "view_xml": "page_0004_MainActivity/view.xml",
+  "screenshots": [
+    "page_0004_MainActivity/screenshot.png"
+  ],
+  "view_xmls": [
+    "page_0004_MainActivity/view.xml"
+  ],
+  "came_from": "根页面",
+  "trigger_element": "unknown",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "unknown",
+      "center": [
+        1218,
+        263
+      ],
+      "resource-id": "",
+      "text": "",
+      "content-desc": "",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

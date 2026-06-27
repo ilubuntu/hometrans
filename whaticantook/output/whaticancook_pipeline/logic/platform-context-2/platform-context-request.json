@@ -1,0 +1,9 @@
+{
+  "stage": "planner",
+  "focus_point": "Offline key-value persistence that survives app restart, and how to share reactive state across multiple pages in ArkTS HarmonyOS",
+  "task_excerpt": "Persist pantry items (array of {name,category,addedAt}), favorite recipe ids (ordered array of strings), theme mode string, and onboarding-complete boolean. Data must survive restart and be shared reactively across pages (Discover, Pantry, Search, Saved, Detail). Each page currently constructs its own @Observed ViewModel.",
+  "project_evidence": "Current code uses AppStorage.setOrCreate for themeMode (not persisted across restart) and PersistentStorage.persistProp for onboardingComplete boolean in Index.ets. SettingsViewModel.clearPantry writes AppStorage key 'pantryItems'=[] but no other page reads it. Each page does @State viewModel = new ViewModel(); Android uses Hilt @Singleton repositories + Kotlin StateFlow shared across ViewModels.",
+  "platform_surfaces": ["@kit.ArkData dataPreferences (getPreferences, put, flush, get)", "PersistentStorage.persistProp", "AppStorage.setOrCreate/get", "@StorageLink/@StorageProp", "AppStorage type support for arrays and objects"],
+  "extra_constraints": ["Offline only. Pantry items are objects (cannot use a bare primitive). Favorites need savedAt-descending order. Need a way for a write in one page (e.g. add ingredient on Pantry page) to refresh recipe match counts on Discover/Search/Saved pages. Identify the canonical mechanism: Preferences for persistence + AppStorage for live sharing, and whether PersistentStorage can store arrays of strings vs objects."],
+  "api_level": 22
+}

@@ -1,0 +1,1163 @@
+{
+  "page_id": "page_0010_MainActivity",
+  "label": "点击'unknown'后",
+  "timestamp": "2026-06-25T21:47:04.722795",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{119161102 u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity t73}",
+    "current_focus": "mCurrentFocus=Window{11a38fb u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity}"
+  },
+  "clickable_count": 84,
+  "clickable_elements": [
+    {
+      "class": "android.view.View",
+      "text": "🍚",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,245][570,775]",
+      "center": [
+        315,
+        510
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "All",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[56,945][200,1089]",
+      "center": [
+        128,
+        1017
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍳",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[225,945][581,1089]",
+      "center": [
+        403,
+        1017
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥗",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[611,945][892,1089]",
+      "center": [
+        751,
+        1017
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍝",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[922,945][1212,1089]",
+      "center": [
+        1067,
+        1017
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1242,945][1344,1089]",
+      "center": [
+        1293,
+        1017
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍚",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1131][1284,1949]",
+      "center": [
+        672,
+        1540
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1149][1266,1293]",
+      "center": [
+        1194,
+        1221
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍅",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2009][1284,2740]",
+      "center": [
+        672,
+        2374
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2027][1266,2171]",
+      "center": [
+        1194,
+        2099
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Discover",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[84,2722][452,2866]",
+      "center": [
+        268,
+        2794
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[559,2722][721,2866]",
+      "center": [
+        640,
+        2794
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[829,2722][991,2866]",
+      "center": [
+        910,
+        2794
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1098,2722][1260,2866]",
+      "center": [
+        1179,
+        2794
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Wok-style fried rice with juicy chicken and crisp veg.",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,311]",
+      "center": [
+        672,
+        199
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍅",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,371][1284,1189]",
+      "center": [
+        672,
+        780
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,389][1266,533]",
+      "center": [
+        1194,
+        461
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥗",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1249][1284,2067]",
+      "center": [
+        672,
+        1658
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1267][1266,1411]",
+      "center": [
+        1194,
+        1339
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "🌮",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2127][1284,2740]",
+      "center": [
+        672,
+        2433
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2145][1266,2289]",
+      "center": [
+        1194,
+        2217
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Silky tomato-cream sauce clinging to every strand.",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,296]",
+      "center": [
+        672,
+        191
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥗",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,356][1284,1174]",
+      "center": [
+        672,
+        765
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,374][1266,518]",
+      "center": [
+        1194,
+        446
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "🌮",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1234][1284,2052]",
+      "center": [
+        672,
+        1643
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1252][1266,1396]",
+      "center": [
+        1194,
+        1324
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥑",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2112][1284,2740]",
+      "center": [
+        672,
+        2426
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2130][1266,2274]",
+      "center": [
+        1194,
+        2202
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Crunchy cucumber, tomato and feta with oregano.",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,321]",
+      "center": [
+        672,
+        204
+      ],
+      "long-clickable": false,
+      "scroll_index": 3
+    },
+    {
+      "class": "android.view.View",
+      "text": "🌮",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,381][1284,1199]",
+      "center": [
+        672,
+        790
+      ],
+      "long-clickable": false,
+      "scroll_index": 3
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,399][1266,543]",
+      "center": [
+        1194,
+        471
+      ],
+      "long-clickable": false,
+      "scroll_index": 3
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥑",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1259][1284,2140]",
+      "center": [
+        672,
+        1699
+      ],
+      "long-clickable": false,
+      "scroll_index": 3
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1277][1266,1421]",
+      "center": [
+        1194,
+        1349
+      ],
+      "long-clickable": false,
+      "scroll_index": 3
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍛",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2200][1284,2740]",
+      "center": [
+        672,
+        2470
+      ],
+      "long-clickable": false,
+      "scroll_index": 3
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2218][1266,2362]",
+      "center": [
+        1194,
+        2290
+      ],
+      "long-clickable": false,
+      "scroll_index": 3
+    },
+    {
+      "class": "android.view.View",
+      "text": "25 min",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,236]",
+      "center": [
+        672,
+        161
+      ],
+      "long-clickable": false,
+      "scroll_index": 4
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥑",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,296][1284,1177]",
+      "center": [
+        672,
+        736
+      ],
+      "long-clickable": false,
+      "scroll_index": 4
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,314][1266,458]",
+      "center": [
+        1194,
+        386
+      ],
+      "long-clickable": false,
+      "scroll_index": 4
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍛",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1237][1284,2055]",
+      "center": [
+        672,
+        1646
+      ],
+      "long-clickable": false,
+      "scroll_index": 4
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1255][1266,1399]",
+      "center": [
+        1194,
+        1327
+      ],
+      "long-clickable": false,
+      "scroll_index": 4
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥞",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2115][1284,2740]",
+      "center": [
+        672,
+        2427
+      ],
+      "long-clickable": false,
+      "scroll_index": 4
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2133][1266,2277]",
+      "center": [
+        1194,
+        2205
+      ],
+      "long-clickable": false,
+      "scroll_index": 4
+    },
+    {
+      "class": "android.view.View",
+      "text": "Crunchy toast piled with lemony smashed avocado and chili.",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,361]",
+      "center": [
+        672,
+        224
+      ],
+      "long-clickable": false,
+      "scroll_index": 5
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍛",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,421][1284,1239]",
+      "center": [
+        672,
+        830
+      ],
+      "long-clickable": false,
+      "scroll_index": 5
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,439][1266,583]",
+      "center": [
+        1194,
+        511
+      ],
+      "long-clickable": false,
+      "scroll_index": 5
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥞",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1299][1284,2180]",
+      "center": [
+        672,
+        1739
+      ],
+      "long-clickable": false,
+      "scroll_index": 5
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1317][1266,1461]",
+      "center": [
+        1194,
+        1389
+      ],
+      "long-clickable": false,
+      "scroll_index": 5
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍳",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2240][1284,2740]",
+      "center": [
+        672,
+        2490
+      ],
+      "long-clickable": false,
+      "scroll_index": 5
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2258][1266,2402]",
+      "center": [
+        1194,
+        2330
+      ],
+      "long-clickable": false,
+      "scroll_index": 5
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍝  Dinner",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,536]",
+      "center": [
+        672,
+        311
+      ],
+      "long-clickable": false,
+      "scroll_index": 6
+    },
+    {
+      "class": "android.view.View",
+      "text": "🥞",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,596][1284,1477]",
+      "center": [
+        672,
+        1036
+      ],
+      "long-clickable": false,
+      "scroll_index": 6
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,614][1266,758]",
+      "center": [
+        1194,
+        686
+      ],
+      "long-clickable": false,
+      "scroll_index": 6
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍳",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1537][1284,2355]",
+      "center": [
+        672,
+        1946
+      ],
+      "long-clickable": false,
+      "scroll_index": 6
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1555][1266,1699]",
+      "center": [
+        1194,
+        1627
+      ],
+      "long-clickable": false,
+      "scroll_index": 6
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍤",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2415][1284,2740]",
+      "center": [
+        672,
+        2577
+      ],
+      "long-clickable": false,
+      "scroll_index": 6
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2433][1266,2577]",
+      "center": [
+        1194,
+        2505
+      ],
+      "long-clickable": false,
+      "scroll_index": 6
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍳  Breakfast",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,507]",
+      "center": [
+        672,
+        297
+      ],
+      "long-clickable": false,
+      "scroll_index": 7
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍳",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,567][1284,1385]",
+      "center": [
+        672,
+        976
+      ],
+      "long-clickable": false,
+      "scroll_index": 7
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,585][1266,729]",
+      "center": [
+        1194,
+        657
+      ],
+      "long-clickable": false,
+      "scroll_index": 7
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍤",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1445][1284,2263]",
+      "center": [
+        672,
+        1854
+      ],
+      "long-clickable": false,
+      "scroll_index": 7
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1463][1266,1607]",
+      "center": [
+        1194,
+        1535
+      ],
+      "long-clickable": false,
+      "scroll_index": 7
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍝",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2323][1284,2740]",
+      "center": [
+        672,
+        2531
+      ],
+      "long-clickable": false,
+      "scroll_index": 7
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2341][1266,2485]",
+      "center": [
+        1194,
+        2413
+      ],
+      "long-clickable": false,
+      "scroll_index": 7
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍳  Breakfast",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,539]",
+      "center": [
+        672,
+        313
+      ],
+      "long-clickable": false,
+      "scroll_index": 8
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍤",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,599][1284,1417]",
+      "center": [
+        672,
+        1008
+      ],
+      "long-clickable": false,
+      "scroll_index": 8
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,617][1266,761]",
+      "center": [
+        1194,
+        689
+      ],
+      "long-clickable": false,
+      "scroll_index": 8
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍝",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1477][1284,2295]",
+      "center": [
+        672,
+        1886
+      ],
+      "long-clickable": false,
+      "scroll_index": 8
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1495][1266,1639]",
+      "center": [
+        1194,
+        1567
+      ],
+      "long-clickable": false,
+      "scroll_index": 8
+    },
+    {
+      "class": "android.view.View",
+      "text": "🧈",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2355][1284,2740]",
+      "center": [
+        672,
+        2547
+      ],
+      "long-clickable": false,
+      "scroll_index": 8
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2373][1266,2517]",
+      "center": [
+        1194,
+        2445
+      ],
+      "long-clickable": false,
+      "scroll_index": 8
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍤",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,652]",
+      "center": [
+        672,
+        369
+      ],
+      "long-clickable": false,
+      "scroll_index": 9
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍝",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,712][1284,1530]",
+      "center": [
+        672,
+        1121
+      ],
+      "long-clickable": false,
+      "scroll_index": 9
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,730][1266,874]",
+      "center": [
+        1194,
+        802
+      ],
+      "long-clickable": false,
+      "scroll_index": 9
+    },
+    {
+      "class": "android.view.View",
+      "text": "🧈",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1590][1284,2471]",
+      "center": [
+        672,
+        2030
+      ],
+      "long-clickable": false,
+      "scroll_index": 9
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1608][1266,1752]",
+      "center": [
+        1194,
+        1680
+      ],
+      "long-clickable": false,
+      "scroll_index": 9
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍫",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2531][1284,2740]",
+      "center": [
+        672,
+        2635
+      ],
+      "long-clickable": false,
+      "scroll_index": 9
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2549][1266,2693]",
+      "center": [
+        1194,
+        2621
+      ],
+      "long-clickable": false,
+      "scroll_index": 9
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍝  Dinner",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,87][1284,586]",
+      "center": [
+        672,
+        336
+      ],
+      "long-clickable": false,
+      "scroll_index": 10
+    },
+    {
+      "class": "android.view.View",
+      "text": "🧈",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,646][1284,1527]",
+      "center": [
+        672,
+        1086
+      ],
+      "long-clickable": false,
+      "scroll_index": 10
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,664][1266,808]",
+      "center": [
+        1194,
+        736
+      ],
+      "long-clickable": false,
+      "scroll_index": 10
+    },
+    {
+      "class": "android.view.View",
+      "text": "🍫",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1587][1284,2405]",
+      "center": [
+        672,
+        1996
+      ],
+      "long-clickable": false,
+      "scroll_index": 10
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,1605][1266,1749]",
+      "center": [
+        1194,
+        1677
+      ],
+      "long-clickable": false,
+      "scroll_index": 10
+    },
+    {
+      "class": "android.view.View",
+      "text": "🫓",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2465][1284,2740]",
+      "center": [
+        672,
+        2602
+      ],
+      "long-clickable": false,
+      "scroll_index": 10
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1122,2483][1266,2627]",
+      "center": [
+        1194,
+        2555
+      ],
+      "long-clickable": false,
+      "scroll_index": 10
+    }
+  ],
+  "scroll_container_bounds": [
+    0,
+    159,
+    1344,
+    2668
+  ],
+  "screenshot": "page_0010_MainActivity/screenshot.png",
+  "view_xml": "page_0010_MainActivity/view.xml",
+  "screenshots": [
+    "page_0010_MainActivity/screenshot.png",
+    "page_0010_MainActivity/screenshot_scroll_1.png",
+    "page_0010_MainActivity/screenshot_scroll_2.png",
+    "page_0010_MainActivity/screenshot_scroll_3.png",
+    "page_0010_MainActivity/screenshot_scroll_4.png",
+    "page_0010_MainActivity/screenshot_scroll_5.png",
+    "page_0010_MainActivity/screenshot_scroll_6.png",
+    "page_0010_MainActivity/screenshot_scroll_7.png",
+    "page_0010_MainActivity/screenshot_scroll_8.png",
+    "page_0010_MainActivity/screenshot_scroll_9.png",
+    "page_0010_MainActivity/screenshot_scroll_10.png"
+  ],
+  "view_xmls": [
+    "page_0010_MainActivity/view.xml",
+    "page_0010_MainActivity/view_scroll_1.xml",
+    "page_0010_MainActivity/view_scroll_2.xml",
+    "page_0010_MainActivity/view_scroll_3.xml",
+    "page_0010_MainActivity/view_scroll_4.xml",
+    "page_0010_MainActivity/view_scroll_5.xml",
+    "page_0010_MainActivity/view_scroll_6.xml",
+    "page_0010_MainActivity/view_scroll_7.xml",
+    "page_0010_MainActivity/view_scroll_8.xml",
+    "page_0010_MainActivity/view_scroll_9.xml",
+    "page_0010_MainActivity/view_scroll_10.xml"
+  ],
+  "came_from": "根页面",
+  "trigger_element": "unknown",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "unknown",
+      "center": [
+        1293,
+        1017
+      ],
+      "resource-id": "",
+      "text": "",
+      "content-desc": "",
+      "long-clickable": false,
+      "scroll_info": {
+        "scroll_index": 1,
+        "container_bounds": [
+          0,
+          159,
+          1344,
+          2668
+        ]
+      }
+    }
+  ]
+}

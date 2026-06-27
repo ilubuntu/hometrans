@@ -1,0 +1,1737 @@
+{
+  "page_id": "page_0007_MainActivity",
+  "label": "点击'unknown'后",
+  "timestamp": "2026-06-25T21:45:28.006860",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{254808236 u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity t69}",
+    "current_focus": "mCurrentFocus=Window{25929e9 u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity}"
+  },
+  "clickable_count": 130,
+  "clickable_elements": [
+    {
+      "class": "android.widget.EditText",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[114,391][1116,535]",
+      "center": [
+        615,
+        463
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.EditText",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[114,391][1116,535]",
+      "center": [
+        615,
+        463
+      ],
+      "long-clickable": true,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1131,391][1275,535]",
+      "center": [
+        1203,
+        463
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Clear all",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1121,555][1284,699]",
+      "center": [
+        1202,
+        627
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Soy Sauce",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,678][407,785]",
+      "center": [
+        233,
+        731
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Chicken",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[431,678][734,822]",
+      "center": [
+        582,
+        750
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Egg",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[758,678][973,822]",
+      "center": [
+        865,
+        750
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Rice",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[997,678][1219,822]",
+      "center": [
+        1108,
+        750
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cucumber",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,785][412,929]",
+      "center": [
+        236,
+        857
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Avocado",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[436,785][752,929]",
+      "center": [
+        594,
+        857
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Carrot",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[776,785][1041,929]",
+      "center": [
+        908,
+        857
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Garlic",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,892][313,1036]",
+      "center": [
+        186,
+        964
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Onion",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[337,892][596,1036]",
+      "center": [
+        466,
+        964
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Tomato",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1277][353,1384]",
+      "center": [
+        206,
+        1330
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Potato",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[377,1277][655,1421]",
+      "center": [
+        516,
+        1349
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Bell pepper",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[679,1277][1055,1421]",
+      "center": [
+        867,
+        1349
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Spinach",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1384][365,1528]",
+      "center": [
+        212,
+        1456
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Mushroom",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[389,1384][748,1528]",
+      "center": [
+        568,
+        1456
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Lemon",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[772,1384][1053,1528]",
+      "center": [
+        912,
+        1456
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Lime",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1491][298,1598]",
+      "center": [
+        179,
+        1544
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Broccoli",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[322,1491][632,1635]",
+      "center": [
+        477,
+        1563
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Ginger",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[656,1491][935,1635]",
+      "center": [
+        795,
+        1563
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Green onion",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1598][450,1742]",
+      "center": [
+        255,
+        1670
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Zucchini",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[474,1598][785,1742]",
+      "center": [
+        629,
+        1670
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Beef",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1831][298,1938]",
+      "center": [
+        179,
+        1884
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Pork",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[322,1831][555,1975]",
+      "center": [
+        438,
+        1903
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Bacon",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[579,1831][850,1975]",
+      "center": [
+        714,
+        1903
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Shrimp",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[874,1831][1159,1975]",
+      "center": [
+        1016,
+        1903
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Salmon",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1938][353,2082]",
+      "center": [
+        206,
+        2010
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Tuna",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[377,1938][612,2082]",
+      "center": [
+        494,
+        2010
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Milk",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2171][281,2278]",
+      "center": [
+        170,
+        2224
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Butter",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[305,2171][575,2315]",
+      "center": [
+        440,
+        2243
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cheese",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[599,2171][898,2315]",
+      "center": [
+        748,
+        2243
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Yogurt",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[922,2171][1198,2315]",
+      "center": [
+        1060,
+        2243
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cream",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2278][337,2422]",
+      "center": [
+        198,
+        2350
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Parmesan",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[361,2278][703,2422]",
+      "center": [
+        532,
+        2350
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Mozzarella",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[727,2278][1082,2422]",
+      "center": [
+        904,
+        2350
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Pasta",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2511][313,2618]",
+      "center": [
+        186,
+        2564
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Bread",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[337,2511][599,2655]",
+      "center": [
+        468,
+        2583
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Flour",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[623,2511][866,2618]",
+      "center": [
+        744,
+        2564
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Noodle",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[890,2511][1180,2655]",
+      "center": [
+        1035,
+        2583
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Tortilla",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2618][334,2740]",
+      "center": [
+        197,
+        2679
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Oats",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[358,2618][598,2740]",
+      "center": [
+        478,
+        2679
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Quinoa",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[622,2618][911,2740]",
+      "center": [
+        766,
+        2679
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[84,2722][246,2866]",
+      "center": [
+        165,
+        2794
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[369,2722][531,2866]",
+      "center": [
+        450,
+        2794
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Pantry",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[655,2722][975,2866]",
+      "center": [
+        815,
+        2794
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[1098,2722][1260,2866]",
+      "center": [
+        1179,
+        2794
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Tomato",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,645][353,752]",
+      "center": [
+        206,
+        698
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Potato",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[377,645][655,789]",
+      "center": [
+        516,
+        717
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Bell pepper",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[679,645][1055,789]",
+      "center": [
+        867,
+        717
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Spinach",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,752][365,896]",
+      "center": [
+        212,
+        824
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Mushroom",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[389,752][748,896]",
+      "center": [
+        568,
+        824
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Lemon",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[772,752][1053,896]",
+      "center": [
+        912,
+        824
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Lime",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,859][298,966]",
+      "center": [
+        179,
+        912
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Broccoli",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[322,859][632,1003]",
+      "center": [
+        477,
+        931
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Ginger",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[656,859][935,1003]",
+      "center": [
+        795,
+        931
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Green onion",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,966][450,1110]",
+      "center": [
+        255,
+        1038
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Zucchini",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[474,966][785,1110]",
+      "center": [
+        629,
+        1038
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Beef",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1199][298,1306]",
+      "center": [
+        179,
+        1252
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Pork",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[322,1199][555,1343]",
+      "center": [
+        438,
+        1271
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Bacon",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[579,1199][850,1343]",
+      "center": [
+        714,
+        1271
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Shrimp",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[874,1199][1159,1343]",
+      "center": [
+        1016,
+        1271
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Salmon",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1306][353,1450]",
+      "center": [
+        206,
+        1378
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Tuna",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[377,1306][612,1450]",
+      "center": [
+        494,
+        1378
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Milk",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1539][281,1646]",
+      "center": [
+        170,
+        1592
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Butter",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[305,1539][575,1683]",
+      "center": [
+        440,
+        1611
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cheese",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[599,1539][898,1683]",
+      "center": [
+        748,
+        1611
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Yogurt",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[922,1539][1198,1683]",
+      "center": [
+        1060,
+        1611
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cream",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1646][337,1790]",
+      "center": [
+        198,
+        1718
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Parmesan",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[361,1646][703,1790]",
+      "center": [
+        532,
+        1718
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Mozzarella",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[727,1646][1082,1790]",
+      "center": [
+        904,
+        1718
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Pasta",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1879][313,1986]",
+      "center": [
+        186,
+        1932
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Bread",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[337,1879][599,2023]",
+      "center": [
+        468,
+        1951
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Flour",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[623,1879][866,1986]",
+      "center": [
+        744,
+        1932
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Noodle",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[890,1879][1180,2023]",
+      "center": [
+        1035,
+        1951
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Tortilla",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1986][334,2130]",
+      "center": [
+        197,
+        2058
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Oats",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[358,1986][598,2130]",
+      "center": [
+        478,
+        2058
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Quinoa",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[622,1986][911,2130]",
+      "center": [
+        766,
+        2058
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Sugar",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2219][320,2326]",
+      "center": [
+        190,
+        2272
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Canned tomatoes",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[344,2219][853,2363]",
+      "center": [
+        598,
+        2291
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Black beans",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[877,2219][1263,2363]",
+      "center": [
+        1070,
+        2291
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Chickpeas",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2326][419,2433]",
+      "center": [
+        239,
+        2379
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Honey",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[443,2326][717,2470]",
+      "center": [
+        580,
+        2398
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Stock",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[741,2326][1001,2470]",
+      "center": [
+        871,
+        2398
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "Coconut milk",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2433][471,2577]",
+      "center": [
+        265,
+        2505
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2666][278,2740]",
+      "center": [
+        169,
+        2703
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[302,2666][592,2740]",
+      "center": [
+        447,
+        2703
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[616,2666][889,2740]",
+      "center": [
+        752,
+        2703
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[913,2666][1205,2740]",
+      "center": [
+        1059,
+        2703
+      ],
+      "long-clickable": false,
+      "scroll_index": 1
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,520][298,545]",
+      "center": [
+        179,
+        532
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[322,520][555,582]",
+      "center": [
+        438,
+        551
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[579,520][850,582]",
+      "center": [
+        714,
+        551
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[874,520][1159,582]",
+      "center": [
+        1016,
+        551
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Salmon",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,545][353,689]",
+      "center": [
+        206,
+        617
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Tuna",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[377,545][612,689]",
+      "center": [
+        494,
+        617
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Milk",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,778][281,885]",
+      "center": [
+        170,
+        831
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Butter",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[305,778][575,922]",
+      "center": [
+        440,
+        850
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cheese",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[599,778][898,922]",
+      "center": [
+        748,
+        850
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Yogurt",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[922,778][1198,922]",
+      "center": [
+        1060,
+        850
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cream",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,885][337,1029]",
+      "center": [
+        198,
+        957
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Parmesan",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[361,885][703,1029]",
+      "center": [
+        532,
+        957
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Mozzarella",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[727,885][1082,1029]",
+      "center": [
+        904,
+        957
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Pasta",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1118][313,1225]",
+      "center": [
+        186,
+        1171
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Bread",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[337,1118][599,1262]",
+      "center": [
+        468,
+        1190
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Flour",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[623,1118][866,1225]",
+      "center": [
+        744,
+        1171
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Noodle",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[890,1118][1180,1262]",
+      "center": [
+        1035,
+        1190
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Tortilla",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1225][334,1369]",
+      "center": [
+        197,
+        1297
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Oats",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[358,1225][598,1369]",
+      "center": [
+        478,
+        1297
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Quinoa",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[622,1225][911,1369]",
+      "center": [
+        766,
+        1297
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Sugar",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1458][320,1565]",
+      "center": [
+        190,
+        1511
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Canned tomatoes",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[344,1458][853,1602]",
+      "center": [
+        598,
+        1530
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Black beans",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[877,1458][1263,1602]",
+      "center": [
+        1070,
+        1530
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Chickpeas",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1565][419,1672]",
+      "center": [
+        239,
+        1618
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Honey",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[443,1565][717,1709]",
+      "center": [
+        580,
+        1637
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Stock",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[741,1565][1001,1709]",
+      "center": [
+        871,
+        1637
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Coconut milk",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1672][471,1816]",
+      "center": [
+        265,
+        1744
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Salt",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,1905][278,2012]",
+      "center": [
+        169,
+        1958
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Pepper",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[302,1905][592,2049]",
+      "center": [
+        447,
+        1977
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cumin",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[616,1905][889,2049]",
+      "center": [
+        752,
+        1977
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Paprika",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[913,1905][1205,2049]",
+      "center": [
+        1059,
+        1977
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Oregano",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2012][383,2119]",
+      "center": [
+        221,
+        2065
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Basil",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[407,2012][643,2156]",
+      "center": [
+        525,
+        2084
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Chili",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[667,2012][896,2156]",
+      "center": [
+        781,
+        2084
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Cinnamon",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[920,2012][1270,2156]",
+      "center": [
+        1095,
+        2084
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Curry powder",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2119][481,2263]",
+      "center": [
+        270,
+        2191
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Olive oil",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2352][361,2459]",
+      "center": [
+        210,
+        2405
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Vinegar",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[385,2352][683,2496]",
+      "center": [
+        534,
+        2424
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Mayonnaise",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[707,2352][1093,2496]",
+      "center": [
+        900,
+        2424
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    },
+    {
+      "class": "android.view.View",
+      "text": "Mustard",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[60,2459][369,2603]",
+      "center": [
+        214,
+        2531
+      ],
+      "long-clickable": false,
+      "scroll_index": 2
+    }
+  ],
+  "scroll_container_bounds": [
+    60,
+    592,
+    1284,
+    2668
+  ],
+  "screenshot": "page_0007_MainActivity/screenshot.png",
+  "view_xml": "page_0007_MainActivity/view.xml",
+  "screenshots": [
+    "page_0007_MainActivity/screenshot.png",
+    "page_0007_MainActivity/screenshot_scroll_1.png",
+    "page_0007_MainActivity/screenshot_scroll_2.png"
+  ],
+  "view_xmls": [
+    "page_0007_MainActivity/view.xml",
+    "page_0007_MainActivity/view_scroll_1.xml",
+    "page_0007_MainActivity/view_scroll_2.xml"
+  ],
+  "came_from": "根页面",
+  "trigger_element": "unknown",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "unknown",
+      "center": [
+        910,
+        2794
+      ],
+      "resource-id": "",
+      "text": "",
+      "content-desc": "",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

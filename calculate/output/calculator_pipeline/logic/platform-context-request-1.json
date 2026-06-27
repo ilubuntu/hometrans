@@ -1,0 +1,18 @@
+{
+  "stage": "coder",
+  "focus_point": "Reading the effective color mode at page appear in ArkTS when EntryAbility sets COLOR_MODE_NOT_SET (follow system): does UIAbilityContext.config.colorMode return the resolved DARK/LIGHT or the raw NOT_SET(-1) at aboutToAppear, and is getUIContext().getHostContext() a valid UIAbilityContext to read it from?",
+  "task_excerpt": "Initial isDarkMode must reflect the effective system/app color mode at aboutToAppear (deep-color scenario 1). System-follow is set via EntryAbility onCreate setColorMode(COLOR_MODE_NOT_SET). Decision: set isDarkMode = (ctx.config.colorMode === COLOR_MODE_DARK) where ctx = getUIContext().getHostContext() as common.UIAbilityContext.",
+  "project_evidence": "Index.ets defines COLOR_MODE_DARK=0, COLOR_MODE_LIGHT=1; toggleTheme already does const context = this.getUIContext().getHostContext() as common.UIAbilityContext; context.getApplicationContext().setColorMode(isDarkMode?COLOR_MODE_DARK:COLOR_MODE_LIGHT). EntryAbility.onCreate calls getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET). UI binds via $r() with base/ and dark/ element/color.json palettes.",
+  "platform_surfaces": [
+    "@kit.AbilityKit UIAbilityContext.config (Configuration.colorMode)",
+    "ConfigurationConstant.ColorMode (NOT_SET=-1, DARK=0, LIGHT=1)",
+    "ApplicationContext.setColorMode",
+    "getUIContext().getHostContext() return type"
+  ],
+  "extra_constraints": [
+    "Confirm the exact member path config.colorMode and its enum values at runtime when the app follows the system (NOT_SET was set at onCreate).",
+    "Confirm getUIContext().getHostContext() returns a UIAbilityContext whose .config.colorMode is readable at aboutToAppear (before any user toggle).",
+    "Flag any case where colorMode stays NOT_SET(-1) after setColorMode(NOT_SET) so the equality check isDarkMode = (===DARK) would yield false on a dark system.",
+    "Do not redesign; only confirm the exact read path and return/error/null/default semantics."
+  ]
+}

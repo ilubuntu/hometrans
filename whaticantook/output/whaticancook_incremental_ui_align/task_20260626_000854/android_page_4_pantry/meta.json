@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-06-26T00:10:46.707460",
+  "device": "adb",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{262942775 u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity t184}",
+    "current_focus": "mCurrentFocus=Window{180c8d0 u0 com.whaticancook.app.debug/com.whaticancook.app.MainActivity}"
+  },
+  "clickable_count": 5,
+  "clickable_elements": [
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[42,177][186,321]",
+      "center": [
+        114,
+        249
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Match system",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[108,589][468,750]",
+      "center": [
+        288,
+        669
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Light",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[492,571][852,715]",
+      "center": [
+        672,
+        643
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Dark",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[876,571][1236,715]",
+      "center": [
+        1056,
+        643
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.view.View",
+      "text": "Clear pantry",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[108,980][1236,1124]",
+      "center": [
+        672,
+        1052
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "stage": "planner",
+  "focus_point": "How to read a bundled JSON file from rawfile (e.g. rawfile/recipes.json) in ArkTS HarmonyOS and parse it into objects",
+  "task_excerpt": "Load 18 recipes from rawfile/recipes.json at first launch, parse to domain Recipe objects. Need the exact API, whether it requires a Context/resourceManager, whether it is async (Promise), and how to decode bytes to string (TextDecoder). Must work fully offline.",
+  "project_evidence": "rawfile/recipes.json exists with 18 recipe objects {id,title,category,description,emoji,gradientIndex,timeMinutes,servings,difficulty,calories,ingredients[],steps[],tags[]}. EntryAbility is a UIAbility. ViewModels are plain @Observed classes without a context. Need to load recipes on first launch with a loading state and error/retry.",
+  "platform_surfaces": ["rawfile resource access", "resourceManager.getRawFileContent", "TextDecoder / util", "ArkTS JSON.parse", "UIAbility context vs component context"],
+  "extra_constraints": ["Offline only. The recipe loader may be initialized from EntryAbility (has context) or from a page. Verify whether getRawFileContent is callable from non-UI code given a context, and whether reading is async."],
+  "api_level": 22
+}

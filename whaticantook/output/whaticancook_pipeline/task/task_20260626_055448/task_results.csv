@@ -1,0 +1,97 @@
+exec_index,uuid,spec,case_name,category,test_steps,report_dir,start_time,end_time,duration_seconds,status,return_code,reason
+1,278b048d,,首次启动展示引导页,WhatCanICookHarmony,"动作：打开应用。
+预期结果：展示 Onboarding 首屏，包含 Skip、Next、页码指示器、标题 Cook with what you have，以及说明 Tell com.example.whaticancookharmony the ingredients in your kitchen and skip the extra grocery run。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/278b048d_首次启动展示引导页,2026-06-26 05:54:59,2026-06-26 05:55:41,41.63,FAIL,0,HTML报告显示失败
+2,127ce5f6,,引导页 Next 切换到下一页,WhatCanICookHarmony,"动作：点击 Next。
+预期结果：页码指示器切换到第二页，页面标题变为 Instant recipe matches。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/127ce5f6_引导页 Next 切换到下一页,2026-06-26 05:55:41,2026-06-26 05:57:02,81.01,PASS,0,HTML报告显示通过
+3,b9411aa4,,跳过引导进入首页,WhatCanICookHarmony,"动作：点击 Skip。
+预期结果：进入 Discover 首页，显示 What can I cook?、搜索入口、Your pantry、Browse recipes 和底部导航。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/b9411aa4_跳过引导进入首页,2026-06-26 05:57:02,2026-06-26 05:59:12,129.85,FAIL,0,HTML报告显示失败
+4,6177cb06,,引导完成后重启不再出现,WhatCanICookHarmony,"动作：关闭并重新打开应用。
+预期结果：直接进入 Discover 首页，不再展示 Onboarding。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/6177cb06_引导完成后重启不再出现,2026-06-26 05:59:12,2026-06-26 06:02:12,179.74,PASS,0,HTML报告显示通过
+5,89ae99d9,,首页离线展示菜谱数据,WhatCanICookHarmony,"动作：打开 Discover 首页。
+预期结果：菜谱列表正常显示，至少能看到 5-Minute Mug Cake、Banana Oat Pancakes 或 Chicken Fried Rice 中的一个。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/89ae99d9_首页离线展示菜谱数据,2026-06-26 06:02:12,2026-06-26 06:07:15,303.46,FAIL,0,HTML报告显示失败
+6,eb3baf55,,空 pantry 首页提示,WhatCanICookHarmony,"动作：进入 Discover 首页。
+预期结果：Your pantry 显示 Add what you have at home；页面显示 Tell us what's in your kitchen 提示；不显示 Ready to cook 区域。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/eb3baf55_空 pantry 首页提示,2026-06-26 06:07:15,2026-06-26 06:12:18,302.53,FAIL,0,HTML报告显示失败
+7,6c00d122,,首页进入 Pantry,WhatCanICookHarmony,"动作：点击 Your pantry 卡片。
+预期结果：进入 My pantry 页面，底部导航 Pantry 高亮。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/6c00d122_首页进入 Pantry,2026-06-26 06:12:18,2026-06-26 06:14:31,132.91,FAIL,0,HTML报告显示失败
+8,33d0acca,,首页进入 Search,WhatCanICookHarmony,"动作：点击搜索框 Search recipes, ingredients...
+预期结果：进入 Search 页面，显示搜索输入框、分类筛选、Cookable、Best match、Quickest、Fewest missing。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/33d0acca_首页进入 Search,2026-06-26 06:14:31,2026-06-26 06:18:46,255.0,FAIL,0,HTML报告显示失败
+9,808a2abe,,首页进入 Settings,WhatCanICookHarmony,"动作：点击右上角设置按钮。
+预期结果：进入 Settings 页面，显示 Appearance、Data、About；底部导航不显示。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/808a2abe_首页进入 Settings,2026-06-26 06:18:46,2026-06-26 06:20:17,91.18,FAIL,0,HTML报告显示失败
+10,e0ac5323,,首页分类筛选 Dinner,WhatCanICookHarmony,"动作：点击 Browse recipes 中的 Dinner 分类。
+预期结果：菜谱列表展示晚餐类菜谱，可看到 Chicken Fried Rice；非 Dinner 菜谱不应出现在当前筛选结果中。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/e0ac5323_首页分类筛选 Dinner,2026-06-26 06:20:17,2026-06-26 06:29:04,527.33,FAIL,0,HTML报告显示失败
+11,e4db538e,,首页菜谱卡片进入详情,WhatCanICookHarmony,"动作：点击 Chicken Fried Rice 菜谱卡片。
+预期结果：进入 Chicken Fried Rice 详情页，展示 Dinner、标题、简介、标签、25 min、3 Serves、Medium、480 Kcal。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/e4db538e_首页菜谱卡片进入详情,2026-06-26 06:29:04,2026-06-26 06:32:21,197.25,FAIL,0,HTML报告显示失败
+12,44a24c24,,Pantry 快速添加 5 个食材,WhatCanICookHarmony,"动作：依次点击 Cucumber、Avocado、Carrot、Garlic、Onion。
+预期结果：页面显示 5 ingredients on hand；In your kitchen 区域显示 Cucumber、Avocado、Carrot、Garlic、Onion。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/44a24c24_Pantry 快速添加 5 个食材,2026-06-26 06:32:21,2026-06-26 06:42:21,600.02,FAIL,-1,执行超时（超过600秒）
+13,7a9699af,,Pantry 已添加食材从 Quick add 移除,WhatCanICookHarmony,"动作：查看 Quick add 的 Produce 分类。
+预期结果：Garlic 不再出现在 Quick add 建议中，显示在 In your kitchen 区域。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/7a9699af_Pantry 已添加食材从 Quick add 移除,2026-06-26 06:42:21,2026-06-26 06:46:38,256.13,FAIL,0,HTML报告显示失败
+14,b18c28b2,,Pantry 手动添加自定义食材,WhatCanICookHarmony,"动作：在输入框输入 chicken breast，点击加号。
+预期结果：In your kitchen 中出现 Chicken breast 或归一化后的 Chicken；食材数量增加。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/b18c28b2_Pantry 手动添加自定义食材,2026-06-26 06:46:38,2026-06-26 06:50:08,210.9,FAIL,0,HTML报告显示失败
+15,31c50434,,Pantry 空输入不添加,WhatCanICookHarmony,"动作：输入框保持为空，点击加号。
+预期结果：食材数量不变，In your kitchen 未新增空白食材。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/31c50434_Pantry 空输入不添加,2026-06-26 06:50:08,2026-06-26 07:00:08,600.01,FAIL,-1,执行超时（超过600秒）
+16,d2967179,,Pantry 删除单个食材,WhatCanICookHarmony,"动作：点击 Garlic chip 上的关闭按钮。
+预期结果：Garlic 从 In your kitchen 移除，食材数量减少，并可在 Quick add 中重新添加。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/d2967179_Pantry 删除单个食材,2026-06-26 07:00:08,2026-06-26 07:10:08,600.02,FAIL,-1,执行超时（超过600秒）
+17,7f29f3a0,,Pantry Clear all 清空,WhatCanICookHarmony,"动作：点击 Clear all。
+预期结果：In your kitchen 区域消失或为空；页面显示 Add ingredients/Quick add；食材数量恢复为空。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/7f29f3a0_Pantry Clear all 清空,2026-06-26 07:10:08,2026-06-26 07:12:51,162.21,FAIL,0,HTML报告显示失败
+18,2f74ad4d,,首页 pantry 数量同步,WhatCanICookHarmony,"动作：切换到底部 Discover。
+预期结果：Your pantry 卡片显示 5 ingredients ready。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/2f74ad4d_首页 pantry 数量同步,2026-06-26 07:12:51,2026-06-26 07:14:46,115.46,FAIL,0,HTML报告显示失败
+19,f02b8170,,Chicken Fried Rice 缺 4 个食材,WhatCanICookHarmony,"动作：打开 Chicken Fried Rice 详情页。
+预期结果：详情页显示 3/7；提示 You're missing 4 ingredients；缺少 Rice、Chicken、Egg、Soy sauce；Carrot、Green onion、Garlic 显示勾选。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/f02b8170_Chicken Fried Rice 缺 4 个食材,2026-06-26 07:14:46,2026-06-26 07:24:46,600.02,FAIL,-1,执行超时（超过600秒）
+20,0d8119fa,,详情页一键补齐缺少食材,WhatCanICookHarmony,"动作：点击 Add missing to pantry。
+预期结果：详情页立即更新为 You're all set! You have everything to make this；必需食材全部显示勾选。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/0d8119fa_详情页一键补齐缺少食材,2026-06-26 07:24:46,2026-06-26 07:34:46,599.99,FAIL,-1,执行超时（超过600秒）
+21,96b7a538,,可选食材不影响可做状态,WhatCanICookHarmony,"动作：查看 Chicken Fried Rice 详情页 Ingredients 区域。
+预期结果：页面显示 You're all set；Olive oil 行显示 Optional，不显示 Missing。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/96b7a538_可选食材不影响可做状态,2026-06-26 07:34:46,2026-06-26 07:44:46,600.02,FAIL,-1,执行超时（超过600秒）
+22,615dbd86,,详情页步骤进度递增,WhatCanICookHarmony,"动作：点击第 1 个步骤。
+预期结果：步骤进度从 0/5 变为 1/5，第 1 个步骤显示完成状态。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/615dbd86_详情页步骤进度递增,2026-06-26 07:44:46,2026-06-26 07:47:09,143.26,FAIL,0,HTML报告显示失败
+23,7d0b1382,,详情页步骤进度可取消,WhatCanICookHarmony,"动作：再次点击第 1 个步骤。
+预期结果：步骤恢复未完成，进度变为 0/5。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/7d0b1382_详情页步骤进度可取消,2026-06-26 07:47:09,2026-06-26 07:57:09,600.04,FAIL,-1,执行超时（超过600秒）
+24,e88e827c,,详情页返回上一页,WhatCanICookHarmony,"动作：点击左上角返回按钮。
+预期结果：返回 Discover 首页，底部导航重新显示且 Discover 高亮。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/e88e827c_详情页返回上一页,2026-06-26 07:57:09,2026-06-26 08:01:50,280.84,FAIL,0,HTML报告显示失败
+25,0263facb,,Search 默认状态,WhatCanICookHarmony,"动作：观察页面。
+预期结果：标题为 Search；All、Best match 默认选中；显示搜索框、Cookable、Quickest、Fewest missing 和菜谱列表。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/0263facb_Search 默认状态,2026-06-26 08:01:50,2026-06-26 08:02:08,17.72,FAIL,0,HTML报告显示失败
+26,6cf69a48,,Search 搜索 rice,WhatCanICookHarmony,"动作：在搜索框输入 rice。
+预期结果：结果列表包含 Chicken Fried Rice。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/6cf69a48_Search 搜索 rice,2026-06-26 08:02:08,2026-06-26 08:03:57,109.23,FAIL,0,HTML报告显示失败
+27,6d49eef3,,Search 搜索 yogurt,WhatCanICookHarmony,"动作：在搜索框输入 yogurt。
+预期结果：结果列表包含 Honey Yogurt Parfait 或 Mango Lassi。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/6d49eef3_Search 搜索 yogurt,2026-06-26 08:03:57,2026-06-26 08:06:24,147.02,FAIL,0,HTML报告显示失败
+28,4eefcf61,,Search 分类筛选 Breakfast,WhatCanICookHarmony,"动作：点击 Breakfast 分类。
+预期结果：结果列表显示早餐菜谱，如 Banana Oat Pancakes；不显示 Chicken Fried Rice。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/4eefcf61_Search 分类筛选 Breakfast,2026-06-26 08:06:24,2026-06-26 08:09:27,183.04,FAIL,0,HTML报告显示失败
+29,8471f9a7,,Search Cookable 空 pantry 无结果,WhatCanICookHarmony,"动作：点击 Cookable。
+预期结果：结果为空，显示 No recipes found 和 Try a different ingredient or clear your filters。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/8471f9a7_Search Cookable 空 pantry 无结果,2026-06-26 08:09:27,2026-06-26 08:19:27,600.01,FAIL,-1,执行超时（超过600秒）
+30,3beb0af4,,Search Cookable 显示可做菜谱,WhatCanICookHarmony,"动作：进入 Search 页面，点击 Cookable。
+预期结果：结果列表包含 Chicken Fried Rice，并显示匹配已满足。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/3beb0af4_Search Cookable 显示可做菜谱,2026-06-26 08:19:27,2026-06-26 08:22:38,190.65,FAIL,0,HTML报告显示失败
+31,7bd8e78c,,Search Quickest 排序,WhatCanICookHarmony,"动作：点击 Quickest。
+预期结果：5 分钟菜谱靠前展示，如 5-Minute Mug Cake、Honey Yogurt Parfait 或 Mango Lassi。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/7bd8e78c_Search Quickest 排序,2026-06-26 08:22:38,2026-06-26 08:32:38,600.02,FAIL,-1,执行超时（超过600秒）
+32,3fcc54ac,,Search Fewest missing 排序,WhatCanICookHarmony,"动作：进入 Search 页面，点击 Fewest missing。
+预期结果：缺少食材更少的菜谱排在更前，匹配计数随 pantry 状态展示。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/3fcc54ac_Search Fewest missing 排序,2026-06-26 08:32:38,2026-06-26 08:40:17,459.19,FAIL,0,HTML报告显示失败
+33,4f5ef500,,Search 无匹配搜索词,WhatCanICookHarmony,"动作：输入 zzznotfood。
+预期结果：显示 No recipes found，不展示旧结果，不崩溃。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/4f5ef500_Search 无匹配搜索词,2026-06-26 08:40:17,2026-06-26 08:44:42,264.36,FAIL,0,HTML报告显示失败
+34,523971b6,,首页收藏菜谱,WhatCanICookHarmony,"动作：点击 5-Minute Mug Cake 卡片上的心形按钮，然后切换到 Saved。
+预期结果：Saved 页显示 5-Minute Mug Cake，标题下显示 1 recipe in your cookbook。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/523971b6_首页收藏菜谱,2026-06-26 08:44:42,2026-06-26 08:50:12,329.97,FAIL,0,HTML报告显示失败
+35,e2c22aa1,,详情页收藏同步,WhatCanICookHarmony,"动作：点击右上角心形按钮收藏，返回首页或 Search 查看同一菜谱。
+预期结果：同一菜谱卡片显示已收藏状态。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/e2c22aa1_详情页收藏同步,2026-06-26 08:50:12,2026-06-26 09:00:12,600.02,FAIL,-1,执行超时（超过600秒）
+36,7ea6b0f4,,Saved 空态跳转浏览,WhatCanICookHarmony,"动作：点击 Browse recipes。
+预期结果：返回 Discover 首页，底部导航 Discover 高亮。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/7ea6b0f4_Saved 空态跳转浏览,2026-06-26 09:00:12,2026-06-26 09:05:05,293.02,PASS,0,HTML报告显示通过
+37,9ba73da5,,Saved 点击菜谱进入详情,WhatCanICookHarmony,"动作：点击 Chicken Fried Rice 卡片。
+预期结果：进入 Chicken Fried Rice 详情页。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/9ba73da5_Saved 点击菜谱进入详情,2026-06-26 09:05:05,2026-06-26 09:15:05,600.07,FAIL,-1,执行超时（超过600秒）
+38,03e9f742,,Saved 取消唯一收藏,WhatCanICookHarmony,"动作：点击该菜谱卡片上的心形按钮取消收藏。
+预期结果：该菜谱从列表移除，页面恢复 No saved recipes yet 空态。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/03e9f742_Saved 取消唯一收藏,2026-06-26 09:15:05,2026-06-26 09:25:01,596.3,FAIL,0,HTML报告显示失败
+39,2803d44a,,Saved 收藏倒序,WhatCanICookHarmony,"动作：先收藏 5-Minute Mug Cake，再收藏 Chicken Fried Rice，进入 Saved。
+预期结果：Chicken Fried Rice 排在 5-Minute Mug Cake 前面。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/2803d44a_Saved 收藏倒序,2026-06-26 09:25:01,2026-06-26 09:26:39,97.61,FAIL,0,HTML报告显示失败
+40,1a206190,,Settings 展示 About 信息,WhatCanICookHarmony,"动作：滚动查看 About 区域。
+预期结果：显示 App com.example.whaticancookharmony、Version 1.0.0、Built with Jetpack Compose，以及离线数据说明。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/1a206190_Settings 展示 About 信息,2026-06-26 09:26:39,2026-06-26 09:29:40,181.67,PASS,0,HTML报告显示通过
+41,d6945de4,,Settings 切换 Dark 主题,WhatCanICookHarmony,"动作：在 Theme 中点击 Dark。
+预期结果：应用切换为深色主题，Dark chip 选中。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/d6945de4_Settings 切换 Dark 主题,2026-06-26 09:29:40,2026-06-26 09:33:24,223.63,FAIL,0,HTML报告显示失败
+42,046f77e7,,Settings 切换 Light 主题,WhatCanICookHarmony,"动作：点击 Light。
+预期结果：应用切换为浅色主题，Light chip 选中。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/046f77e7_Settings 切换 Light 主题,2026-06-26 09:33:24,2026-06-26 09:35:33,128.81,PASS,0,HTML报告显示通过
+43,e70daf84,,Settings 主题重启保持,WhatCanICookHarmony,"动作：关闭并重新打开应用，再进入 Settings。
+预期结果：应用仍为深色主题，Dark 仍处于选中状态。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/e70daf84_Settings 主题重启保持,2026-06-26 09:35:33,2026-06-26 09:45:33,600.06,FAIL,-1,执行超时（超过600秒）
+44,357b307f,,Settings Clear pantry 同步影响详情,WhatCanICookHarmony,"动作：进入 Settings，点击 Clear pantry，再打开 Chicken Fried Rice 详情页。
+预期结果：Chicken Fried Rice 不再显示 You're all set，恢复为缺少必需食材状态。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/357b307f_Settings Clear pantry 同步影响详情,2026-06-26 09:45:33,2026-06-26 09:55:33,600.03,FAIL,-1,执行超时（超过600秒）
+45,8e6ca22d,,底部导航四个主入口,WhatCanICookHarmony,"动作：依次点击 Discover、Search、Pantry、Saved。
+预期结果：每个页面都能打开，对应导航项高亮，页面标题分别为 What can I cook?、Search、My pantry、Saved 或收藏空态。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/8e6ca22d_底部导航四个主入口,2026-06-26 09:55:33,2026-06-26 09:57:34,121.48,FAIL,0,HTML报告显示失败
+46,f2ebdc1a,,二级页隐藏底部导航,WhatCanICookHarmony,"动作：进入 Settings，再返回；进入某个 Recipe Detail。
+预期结果：Settings 和 Recipe Detail 页面均不显示底部导航；返回主 Tab 后底部导航恢复。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/f2ebdc1a_二级页隐藏底部导航,2026-06-26 09:57:34,2026-06-26 10:07:01,567.14,FAIL,0,HTML报告显示失败
+47,ab1c9a04,,首页加载状态不长期停留,WhatCanICookHarmony,"动作：等待首页数据初始化。
+预期结果：短暂加载后展示菜谱列表，不应长期停留在骨架屏。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/ab1c9a04_首页加载状态不长期停留,2026-06-26 10:07:01,2026-06-26 10:09:43,161.37,PASS,0,HTML报告显示通过
+48,26d85973,,应用离线主流程,WhatCanICookHarmony,"动作：添加 pantry 食材，打开 Chicken Fried Rice 详情，点击 Add missing to pantry，收藏该菜谱，进入 Saved。
+预期结果：全部操作可离线完成；Saved 中能看到收藏的 Chicken Fried Rice。",/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448/26d85973_应用离线主流程,2026-06-26 10:09:43,2026-06-26 10:10:31,47.96,UNKNOWN,0,无法确定执行状态

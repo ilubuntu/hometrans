@@ -1,0 +1,14 @@
+{
+    "total_cases": 48,
+    "pass_count": 6,
+    "fail_count": 41,
+    "unknown_count": 1,
+    "pass_rate": "12.50%",
+    "avg_duration": 319.4,
+    "max_duration": 600.07,
+    "min_duration": 17.72,
+    "category": "WhatCanICookHarmony",
+    "start_time": "2026-06-26 05:54:59",
+    "end_time": "2026-06-26 10:10:31",
+    "task_dir": "/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/task/task_20260626_055448"
+}

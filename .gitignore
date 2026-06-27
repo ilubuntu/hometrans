@@ -1,0 +1,42 @@
+/dilish/
+/HomeTrans/
+/nowinandroid/
+/calculate/SiliconeCalculator/
+/calculate/input/calculatorHarmony/
+/whaticantook/whaticancook/
+/empty_hos_project/
+/whaticantook/input/whaticancookHarmony/
+
+# macOS / IDE
+.DS_Store
+.idea/
+*.iml
+
+# Android / Gradle
+.gradle/
+build/
+*/build/
+**/build/
+local.properties
+
+# HarmonyOS / DevEco / hvigor / ohpm
+.hvigor/
+**/.hvigor/
+.preview/
+**/.preview/
+.test/
+**/.test/
+oh_modules/
+**/oh_modules/
+oh-package-lock.json5
+**/oh-package-lock.json5
+
+# Logs / temp
+*.log
+*.tmp
+*.temp
+
+# Large local media
+*.webm
+*.hap
+*.apk
