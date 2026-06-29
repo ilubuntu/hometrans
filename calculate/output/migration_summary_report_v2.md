@@ -87,7 +87,7 @@
 
 ---
 
-### Stage 4: 转换管线（hmos-convert-pipeline）
+### Stage 4: 转换流水线（hmos-convert-pipeline）
 
 #### Stage 4a: 逻辑编码（logic-coder）
 
