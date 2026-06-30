@@ -34,7 +34,7 @@ struct AddPodcastPage {
   }
 
   private navigateBack(): void {
-    if (router.getLength() > 1) {
+    if (Number(router.getLength()) > 1) {
       router.back();
     } else {
       console.info('TODO: No back stack, replace to SubscriptionsPage');
@@ -159,7 +159,7 @@ struct AddPodcastPage {
         Text($r('app.string.discover_more'))
           .fontSize(14)
           .fontColor($r('app.color.accent_light'))
-          .minHeight(48)
+          .constraintSize({ minHeight: 48 })
           .textAlign(TextAlign.Center)
           .padding({ left: 8, right: 4, top: 12, bottom: 12 })
           .onClick(() => {
