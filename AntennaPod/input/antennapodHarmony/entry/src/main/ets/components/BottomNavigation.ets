@@ -19,6 +19,8 @@ export struct BottomNavigation {
       Text(label)
         .fontSize(this.currentTab === index ? '14fp' : '11fp')
         .margin({ top: 4 })
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
         .fontColor(this.currentTab === index ? $r('app.color.accent_light') : $r('app.color.grey600'))
     }
     .layoutWeight(1)

@@ -2,6 +2,7 @@ import { HomeViewModel } from '../viewmodel/HomeViewModel';
 import { FeedItem } from '../model/EpisodeModel';
 import { BottomNavigation } from '../components/BottomNavigation';
 import { EpisodeListItem } from '../components/EpisodeListItem';
+import router from '@ohos.router';
 
 @Entry
 @Component
@@ -30,6 +31,8 @@ struct Index {
       return $r('app.string.inbox_label');
     } else if (this.currentTab === 3) {
       return $r('app.string.subscriptions_label');
+    } else if (this.currentTab === 4) {
+      return $r('app.string.overflow_more');
     }
     return $r('app.string.home_label');
   }
@@ -97,6 +100,12 @@ struct Index {
         .margin({ right: 8 })
         .accessibilityText($r('app.string.overflow_more'))
         .bindMenu([
+          {
+            value: $r('app.string.add_feed_label'),
+            action: () => {
+              router.pushUrl({ url: 'pages/AddPodcastPage' });
+            }
+          },
           {
             value: $r('app.string.refresh_label'),
             action: () => {
@@ -172,7 +181,7 @@ struct Index {
       .margin({ bottom: 16, right: 16 })
       .accessibilityText($r('app.string.add_feed_label'))
       .onClick(() => {
-        console.info('TODO: Navigate to AddPodcastPage');
+        router.pushUrl({ url: 'pages/AddPodcastPage' });
       })
     }
     .width('100%')
