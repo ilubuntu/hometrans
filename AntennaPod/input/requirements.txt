@@ -1,0 +1,200 @@
+REQ-001 首次启动与空库首页
+AntennaPod 首次启动后应进入主界面。空库状态下页面需要清楚展示应用名称、主导航入口、添加播客入口，以及当前没有订阅/没有内容的空状态提示。
+来源: README.md, app/src/main/AndroidManifest.xml, HomeFragment.java, main.xml
+验收重点: 应用可正常启动；空库不崩溃；用户能看到添加播客或导入订阅的入口。
+
+REQ-002 主导航结构
+应用应保留 AntennaPod 的主要导航结构，包括 Home、Queue、Episodes、Subscriptions、Downloads、Playback History、Favorites、Settings 等入口。底部导航或侧边导航的选中状态应和当前页面一致。
+来源: NavDrawerFragment.java, BottomNavigation.java, NavigationNames.java, nav_list.xml, main.xml
+验收重点: 主要入口可达；切换页面后标题和高亮状态正确。
+
+REQ-003 添加播客入口
+用户可以从首页或导航进入 Add podcast 页面。页面应提供搜索播客、输入 RSS feed URL、导入 OPML 等入口。
+来源: AddFeedFragment.java, addfeed.xml, OnlineFeedViewActivity.java
+验收重点: Add podcast 页面布局完整；搜索框、RSS 输入和 OPML 导入入口可见。
+
+REQ-004 通过稳定 RSS feed 订阅播客
+用户输入稳定 podcast RSS feed URL 后，应用应解析 feed 信息，展示播客名称、封面、描述和单集列表，并允许确认订阅。
+来源: FeedDiscoverer.java, OnlineFeedViewActivity.java, parser/feed, storage/database
+验收重点: 能从 URL 解析播客；确认订阅后进入该播客详情或订阅列表。
+
+REQ-005 订阅列表
+Subscriptions 页面应展示已订阅播客列表。每个播客项展示标题、封面、新单集/未播放计数等基础信息，并支持点击进入播客详情。
+来源: SubscriptionFragment.java, SubscriptionsRecyclerAdapter.java, subscription_list_item.xml
+验收重点: 已订阅播客出现在列表；点击后进入对应播客页。
+
+REQ-006 播客详情页
+播客详情页应展示播客标题、封面、描述、订阅状态、设置入口、筛选/排序入口和单集列表。
+来源: FeedItemlistFragment.java, FeedInfoFragment.java, feed_item_list_fragment.xml, feeditemlist_header.xml
+验收重点: 详情信息完整；单集列表可滚动；返回后仍在订阅列表。
+
+REQ-007 单集列表项
+单集列表项应展示标题、发布日期/时长、播放状态、下载状态、是否在队列、更多操作等信息。
+来源: feeditemlist_item.xml, EpisodeItemListAdapter, ui/episodes
+验收重点: 列表项信息清晰；更多菜单可打开。
+
+REQ-008 单集详情页
+点击单集后进入详情页，展示单集标题、播客名称、发布时间、描述、播放按钮、下载按钮、加入队列、收藏、分享等操作。
+来源: ItemFragment.java, ItemPagerFragment.java, feeditem_fragment.xml
+验收重点: 详情页可打开；主要操作按钮存在；返回后回到原列表。
+
+REQ-009 播放单集
+用户点击单集播放后，应用应启动音频播放，显示迷你播放器或播放页，展示标题、播放/暂停、进度、快进、后退等控件。
+来源: AudioPlayerFragment.java, ExternalPlayerFragment.java, audio_controls.xml, playback/service
+验收重点: 播放控件状态可切换；当前播放标题正确。
+
+REQ-010 播放页详情
+播放页应支持查看封面、当前单集标题、播客标题、进度条、播放速度、睡眠定时器、章节/描述等信息。
+来源: audioplayer_fragment.xml, cover_fragment.xml, ItemDescriptionFragment.java, VariableSpeedDialog.java, SleepTimerDialog.java
+验收重点: 从迷你播放器可进入完整播放页；主要控件可见。
+
+REQ-011 播放暂停状态
+播放按钮应在播放和暂停之间切换，UI 状态与实际播放状态一致。暂停后再次点击可以继续播放。
+来源: PlayButton.java, AudioPlayerFragment.java, PlaybackPreferences
+验收重点: 按钮图标/状态变化正确；页面不崩溃。
+
+REQ-012 快进与后退
+播放页应支持按用户设置的秒数快进和后退，点击后播放进度发生变化。
+来源: AudioPlayerFragment.java, UserPreferences.getRewindSecs, UserPreferences.getFastForwardSecs
+验收重点: 点击后进度条或时间文本发生合理变化。
+
+REQ-013 播放速度
+用户可以打开播放速度弹窗并选择不同速度。选择后应保存并影响当前播放。
+来源: VariableSpeedDialog.java, PlaybackSpeedDialogActivity.java, speed_select_dialog.xml
+验收重点: 速度弹窗可打开；选择值后显示更新。
+
+REQ-014 睡眠定时器
+播放页应提供睡眠定时器入口，用户可选择倒计时或按单集结束停止播放。
+来源: SleepTimerDialog.java, time_dialog.xml
+验收重点: 弹窗可打开；选择后显示已设置状态。
+
+REQ-015 加入播放队列
+用户可从单集列表或详情页将单集加入 Queue。加入后队列页显示该单集。
+来源: QueueFragment.java, QueueRecyclerAdapter.java, DBWriter queue methods
+验收重点: 单集加入队列后可在 Queue 页面看到。
+
+REQ-016 队列页面
+Queue 页面应展示待播放单集列表、剩余数量/时长、排序、清空、锁定队列等操作。
+来源: QueueFragment.java, queue_fragment.xml, queue.xml
+验收重点: 队列数据正确；空队列显示空态。
+
+REQ-017 队列排序与移动
+用户可以通过菜单或拖拽调整队列顺序，也可以将单集移到顶部或底部。
+来源: QueueRecyclerAdapter.java, QueueFragment.java, queue_context.xml
+验收重点: 操作后列表顺序变化并保持。
+
+REQ-018 清空队列
+用户可以清空 Queue。清空后队列页显示空态，原单集列表的队列标记同步移除。
+来源: QueueFragment.java, DBWriter.clearQueue
+验收重点: 清空后 Queue 为空；相关状态同步。
+
+REQ-019 Episodes 总列表
+Episodes 页面应聚合全部订阅中的单集，支持分页加载、排序、筛选和批量操作。
+来源: AllEpisodesFragment.java, EpisodesListFragment, episodes.xml
+验收重点: 已订阅播客的单集出现在 Episodes；筛选/排序入口可见。
+
+REQ-020 Inbox 新单集
+Inbox 页面应展示新单集，并支持将单集从 Inbox 移除或一键清空新单集状态。
+来源: InboxFragment.java, FeedItemFilter.NEW
+验收重点: 新单集可见；移除后不再显示在 Inbox。
+
+REQ-021 Favorites 收藏
+用户可以收藏单集。收藏后单集出现在 Favorites 页面；取消收藏后从 Favorites 移除。
+来源: FavoritesFragment.java, feeditem_options.xml, EpisodeItemListAdapter
+验收重点: 收藏状态在列表、详情、Favorites 页面同步。
+
+REQ-022 Playback History 播放历史
+播放过的单集应出现在 Playback History 页面，并可清空历史记录。
+来源: PlaybackHistoryFragment.java, PlaybackHistoryEvent
+验收重点: 播放后历史出现记录；清空后为空。
+
+REQ-023 Completed Downloads 已下载页面
+下载完成的单集应出现在 Completed Downloads 页面，并展示下载状态和本地播放入口。
+来源: CompletedDownloadsFragment.java, net/download, downloads_completed.xml
+验收重点: 下载完成后可在 Downloads/Completed 中看到。
+
+REQ-024 Download Log 下载日志
+Download Log 页面应展示下载成功或失败记录，失败记录可查看详情。
+来源: DownloadLogFragment.java, DownloadLogDetailsDialog.java, download_log_fragment.xml
+验收重点: 下载失败或成功后日志有对应记录；详情弹窗可打开。
+
+REQ-025 下载单集
+用户可从单集列表或详情页下载单集。下载过程中显示进度，下载完成后状态变为已下载。
+来源: net/download/service, DownloadStatus.java, DownloadResult.java
+验收重点: 下载按钮状态变化；下载完成后可离线播放。
+
+REQ-026 删除下载
+已下载单集应支持删除本地媒体文件。删除后单集恢复为未下载状态，不应删除订阅或单集元数据。
+来源: CompletedDownloadsFragment.java, EpisodeItemListAdapter, DBWriter
+验收重点: 删除后 Downloaded 列表移除该单集，单集仍存在。
+
+REQ-027 搜索页面
+应用内 Search 应支持按标题、播客名、描述搜索单集。搜索结果应可点击进入详情。
+来源: SearchFragment.java, search_fragment.xml, search.xml
+验收重点: 输入关键词后结果刷新；点击结果进入单集详情。
+
+REQ-028 订阅内搜索
+在某个播客详情页中可以搜索该播客的单集，搜索范围限制在当前播客内。
+来源: FeedItemlistFragment.java, SearchFragment.newInstance(feedId, feedTitle)
+验收重点: 结果只来自当前播客。
+
+REQ-029 播客设置
+每个订阅播客应有独立设置页，支持新单集处理方式、自动下载、播放速度、标签、认证、源地址等设置。
+来源: FeedSettingsFragment.java, FeedSettingsPreferenceFragment.java, feed_settings.xml
+验收重点: 设置页可打开；修改后保存并返回播客详情。
+
+REQ-030 标签与分组
+订阅播客可设置标签，订阅列表支持按标签过滤或展示分组。
+来源: TagSettingsDialog.java, SubscriptionTagAdapter.java, SubscriptionsFilterDialog.java
+验收重点: 设置标签后在订阅列表中可看到或筛选。
+
+REQ-031 OPML 导入
+用户可通过 Import/Export 设置或 Add podcast 页面导入 OPML 文件，批量添加订阅。
+来源: OpmlImportActivity, ImportExportPreferencesFragment.java, opml_selection.xml
+验收重点: 导入后多个播客进入订阅列表。
+
+REQ-032 OPML 导出
+用户可在设置中导出订阅为 OPML 文件。
+来源: ImportExportPreferencesFragment.java, storage/importexport
+验收重点: 导出操作可触发文件选择/保存流程。
+
+REQ-033 主题与外观设置
+设置中应提供主题、界面、导航等外观配置。修改后应用界面应立即或重启后生效。
+来源: MainPreferencesFragment.java, UserInterfacePreferencesFragment.java, UserPreferences
+验收重点: 切换主题/导航配置后 UI 状态正确。
+
+REQ-034 播放设置
+设置中应提供快进/后退秒数、自动播放、耳机按键、播放完成行为等播放相关配置。
+来源: PlaybackPreferencesFragment.java, UserPreferences
+验收重点: 修改设置后播放页行为或显示跟随变化。
+
+REQ-035 下载设置
+设置中应提供自动下载、移动网络下载、缓存、自动删除等下载相关配置。
+来源: DownloadsPreferencesFragment.java, AutomaticDeletionPreferencesFragment.java
+验收重点: 设置项可打开并保存。
+
+REQ-036 同步设置
+应用支持可选同步服务配置，如 gpodder.net 或其他同步服务。未登录时应显示配置入口，不影响本地使用。
+来源: net/sync, MainPreferencesFragment.java
+验收重点: 未配置同步时本地订阅、播放、下载仍可使用。
+
+REQ-037 统计页面
+Statistics 页面应展示收听统计、播放时间、订阅/单集统计等信息。
+来源: ui/statistics, StatisticsItem, RatingDialogManager
+验收重点: 页面可打开；有播放记录后统计变化。
+
+REQ-038 分享
+用户可分享播客或单集链接。分享入口应打开系统分享面板或等效弹窗。
+来源: share_episode_dialog.xml, ItemFragment.java, FeedInfoFragment.java
+验收重点: 分享操作可触发；不破坏当前页面状态。
+
+REQ-039 错误状态与重试
+网络失败、RSS 解析失败或下载失败时，应用应展示错误信息和重试/返回入口，不应崩溃。
+来源: DownloadError.java, FeedDiscoverer.java, DownloadLogFragment.java
+验收重点: 输入无效 URL 时显示错误；下载失败进入日志。
+
+REQ-040 数据持久化
+订阅、队列、收藏、播放历史、下载状态和用户设置应持久化。重启应用后状态保持。
+来源: storage/database, storage/preferences
+验收重点: 重启后订阅、队列、收藏和设置仍存在。
+

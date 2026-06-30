@@ -1,0 +1,450 @@
+{
+  "plural": [
+    {
+      "name": "total_size_downloaded_podcasts",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Total size of %d episode on the device"
+        },
+        {
+          "quantity": "other",
+          "value": "Total size of %d episodes on the device"
+        }
+      ]
+    },
+    {
+      "name": "episode_cleanup_hours_after_listening",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d hour after finishing"
+        },
+        {
+          "quantity": "other",
+          "value": "%d hours after finishing"
+        }
+      ]
+    },
+    {
+      "name": "episode_cleanup_days_after_listening",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d day after finishing"
+        },
+        {
+          "quantity": "other",
+          "value": "%d days after finishing"
+        }
+      ]
+    },
+    {
+      "name": "num_selected_label",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%1$d/%2$d selected"
+        },
+        {
+          "quantity": "other",
+          "value": "%1$d/%2$d selected"
+        }
+      ]
+    },
+    {
+      "name": "num_episodes",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode"
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes"
+        }
+      ]
+    },
+    {
+      "name": "num_subscriptions",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d subscription"
+        },
+        {
+          "quantity": "other",
+          "value": "%d subscriptions"
+        }
+      ]
+    },
+    {
+      "name": "new_episode_notification_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%2$s has a new episode"
+        },
+        {
+          "quantity": "other",
+          "value": "%2$s has %1$d new episodes"
+        }
+      ]
+    },
+    {
+      "name": "new_episode_notification_title",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "New episode"
+        },
+        {
+          "quantity": "other",
+          "value": "New episodes"
+        }
+      ]
+    },
+    {
+      "name": "updated_feeds_batch_label",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d subscription updated."
+        },
+        {
+          "quantity": "other",
+          "value": "%d subscriptions updated."
+        }
+      ]
+    },
+    {
+      "name": "downloading_episodes_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Downloading %d episode."
+        },
+        {
+          "quantity": "other",
+          "value": "Downloading %d episodes."
+        }
+      ]
+    },
+    {
+      "name": "deleted_episode_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d downloaded episode deleted."
+        },
+        {
+          "quantity": "other",
+          "value": "%d downloaded episodes deleted."
+        }
+      ]
+    },
+    {
+      "name": "marked_as_played_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode marked as played."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes marked as played."
+        }
+      ]
+    },
+    {
+      "name": "marked_as_unplayed_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode marked as unplayed."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes marked as unplayed."
+        }
+      ]
+    },
+    {
+      "name": "added_to_queue_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode added to queue."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes added to queue."
+        }
+      ]
+    },
+    {
+      "name": "removed_from_queue_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode removed from queue."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes removed from queue."
+        }
+      ]
+    },
+    {
+      "name": "removed_from_inbox_batch_label",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode removed from inbox."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes removed from inbox."
+        }
+      ]
+    },
+    {
+      "name": "added_to_favorites_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode added to favorites."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes added to favorites."
+        }
+      ]
+    },
+    {
+      "name": "removed_from_favorites_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode removed from favorites."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes removed from favorites."
+        }
+      ]
+    },
+    {
+      "name": "reset_position_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode position reset."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episode positions reset."
+        }
+      ]
+    },
+    {
+      "name": "downloads_left",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d download left"
+        },
+        {
+          "quantity": "other",
+          "value": "%d downloads left"
+        }
+      ]
+    },
+    {
+      "name": "mobile_download_notice",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Downloading over mobile data connection for the next %d minute"
+        },
+        {
+          "quantity": "other",
+          "value": "Downloading over mobile data connection for the next %d minutes"
+        }
+      ]
+    },
+    {
+      "name": "move_to_top_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode moved to top."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes moved to top."
+        }
+      ]
+    },
+    {
+      "name": "move_to_bottom_message",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d episode moved to bottom."
+        },
+        {
+          "quantity": "other",
+          "value": "%d episodes moved to bottom."
+        }
+      ]
+    },
+    {
+      "name": "timer_exceeds_remaining_time_while_continuous_playback_disabled",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Continuous playback is disabled and the current episode has only %1$d minute left"
+        },
+        {
+          "quantity": "other",
+          "value": "Continuous playback is disabled and the current episode has only %1$d minutes left"
+        }
+      ]
+    },
+    {
+      "name": "episodes_sleep_timer_exceeds_queue",
+      "value": [
+        {
+          "quantity": "zero",
+          "value": "There are %1$d episodes left in your queue"
+        },
+        {
+          "quantity": "one",
+          "value": "There is only %1$d episode left in your queue"
+        },
+        {
+          "quantity": "other",
+          "value": "There are only %1$d episodes left in your queue"
+        }
+      ]
+    },
+    {
+      "name": "time_seconds_quantified",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d second"
+        },
+        {
+          "quantity": "other",
+          "value": "%d seconds"
+        }
+      ]
+    },
+    {
+      "name": "time_minutes_quantified",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d minute"
+        },
+        {
+          "quantity": "other",
+          "value": "%d minutes"
+        }
+      ]
+    },
+    {
+      "name": "time_hours_quantified",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d hour"
+        },
+        {
+          "quantity": "other",
+          "value": "%d hours"
+        }
+      ]
+    },
+    {
+      "name": "time_days_quantified",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d day"
+        },
+        {
+          "quantity": "other",
+          "value": "%d days"
+        }
+      ]
+    },
+    {
+      "name": "statistics_episodes_started",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "started"
+        },
+        {
+          "quantity": "other",
+          "value": "started"
+        }
+      ]
+    },
+    {
+      "name": "statistics_episodes_total",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "total"
+        },
+        {
+          "quantity": "other",
+          "value": "total"
+        }
+      ]
+    },
+    {
+      "name": "statistics_episodes_downloaded",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "downloaded"
+        },
+        {
+          "quantity": "other",
+          "value": "downloaded"
+        }
+      ]
+    },
+    {
+      "name": "echo_hours_podcasts",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "hours of episodes\\nfrom %1$d podcast"
+        },
+        {
+          "quantity": "other",
+          "value": "hours of episodes\\nfrom %1$d different podcasts"
+        }
+      ]
+    },
+    {
+      "name": "echo_queue_hours_waiting",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "hours waiting in your queue\\nfrom %1$d episode"
+        },
+        {
+          "quantity": "other",
+          "value": "hours waiting in your queue\\nfrom %1$d episodes"
+        }
+      ]
+    }
+  ]
+}

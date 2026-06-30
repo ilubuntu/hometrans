@@ -2,7 +2,7 @@ import { relationalStore } from '@kit.ArkData';
 import { PodcastDatabase } from '../db/PodcastDatabase';
 import { EventBus, EventType, EventPayload } from '../event/EventBus';
 import { RowMappers } from './RowMappers';
-import { FeedItem } from '../../model/EpisodeModel';
+import { FeedItem, SortOrder } from '../../model/EpisodeModel';
 
 // Owns the is_favorite flag on FeedItem. Favorites are a derived view, not a
 // separate table. Writes publish EPISODE_UPDATED.
@@ -25,13 +25,34 @@ export class FavoritesRepository {
 
   async getFavorites(sort: number): Promise<FeedItem[]> {
     const store = await this.getStore();
-    const sql = 'SELECT fi.*, f.title AS feed_title FROM FeedItem fi ' +
-      'LEFT JOIN Feed f ON f.id = fi.feed_id WHERE fi.is_favorite = 1 ' +
-      'ORDER BY fi.pub_date_ms DESC';
+    const orderBy = this.buildOrderBy(sort);
+    const sql = 'SELECT fi.*, f.title AS feed_title, ' +
+      'EXISTS (SELECT 1 FROM Queue q WHERE q.feeditem_id = fi.id) AS in_queue ' +
+      'FROM FeedItem fi LEFT JOIN Feed f ON f.id = fi.feed_id WHERE fi.is_favorite = 1' +
+      orderBy;
     const rs = await store.querySql(sql);
     const items = RowMappers.collectFeedItems(rs);
     rs.close();
     return items;
+  }
+
+  private buildOrderBy(sort: number): string {
+    if (sort === SortOrder.DATE_OLD_NEW) {
+      return ' ORDER BY fi.pub_date_ms ASC';
+    }
+    if (sort === SortOrder.DURATION_SHORT_LONG) {
+      return ' ORDER BY fi.media_duration ASC';
+    }
+    if (sort === SortOrder.DURATION_LONG_SHORT) {
+      return ' ORDER BY fi.media_duration DESC';
+    }
+    if (sort === SortOrder.TITLE_A_Z) {
+      return ' ORDER BY fi.title COLLATE NOCASE ASC';
+    }
+    if (sort === SortOrder.TITLE_Z_A) {
+      return ' ORDER BY fi.title COLLATE NOCASE DESC';
+    }
+    return ' ORDER BY fi.pub_date_ms DESC'; // DATE_NEW_OLD (default)
   }
 
   async add(itemId: number): Promise<void> {

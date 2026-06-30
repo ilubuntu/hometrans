@@ -23,6 +23,12 @@ export class PrefKey {
   static readonly FEED_COUNTER: string = 'prefFeedCounterSetting';
   static readonly NUM_COLUMNS: string = 'prefNumColumns';
   static readonly SHOW_SUBSCRIPTION_TITLE: string = 'prefShowSubscriptionTitle';
+  static readonly SHOW_REMAINING_TIME: string = 'prefShowRemainingTime';
+  static readonly DEFAULT_EPISODE_SORT: string = 'prefDefaultEpisodeSort';
+  static readonly PREFER_STREAMING: string = 'prefPreferStreaming';
+  static readonly NOTIFICATION_BUTTONS: string = 'prefNotificationButtons';
+  static readonly SWIPE_LEFT_ACTION: string = 'prefSwipeLeftAction';
+  static readonly SWIPE_RIGHT_ACTION: string = 'prefSwipeRightAction';
   // Playback (REQ-035)
   static readonly FAST_FORWARD_SECS: string = 'prefFastForwardSecs';
   static readonly REWIND_SECS: string = 'prefRewindSecs';
@@ -32,6 +38,8 @@ export class PrefKey {
   static readonly QUEUE_LOCKED: string = 'prefQueueLocked';
   static readonly KEEP_QUEUE_SORTED: string = 'prefKeepQueueSorted';
   static readonly QUEUE_SORT_ORDER: string = 'prefQueueSortOrder';
+  static readonly RESUME_AFTER_HEADSET_CONNECT: string = 'prefResumeAfterHeadsetConnect';
+  static readonly RESUME_AFTER_BLUETOOTH_CONNECT: string = 'prefResumeAfterBluetoothConnect';
   // Episodes / inbox (REQ-034)
   static readonly INBOX_SORT_ORDER: string = 'prefInboxSortedOrder';
   static readonly EPISODES_PER_PAGE: string = 'prefEpisodesPerPage';
@@ -42,6 +50,10 @@ export class PrefKey {
   static readonly DOWNLOAD_MEDIA_ON_WIFI_ONLY: string = 'prefDownloadMediaOnWifiOnly';
   static readonly DOWNLOAD_SEQUENCE: string = 'prefDownloadSequentially';
   static readonly AUTOMATIC_DELETE: string = 'prefAutomaticDelete';
+  static readonly UPDATE_INTERVAL: string = 'prefUpdateIntervalHours';
+  static readonly PROXY_HOST: string = 'prefProxyHost';
+  static readonly PROXY_PORT: string = 'prefProxyPort';
+  static readonly STORAGE_DIR: string = 'prefStorageDir';
   // Sync (REQ-036)
   static readonly SYNC_ENABLED: string = 'prefGpodderSyncEnabled';
   static readonly SYNC_USERNAME: string = 'prefGpodderUsername';

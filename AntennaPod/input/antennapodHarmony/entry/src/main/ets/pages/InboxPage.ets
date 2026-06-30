@@ -28,7 +28,7 @@ struct InboxPage {
     this.viewModel.onAppear();
   }
 
-  aboutToAboutToDisappear() {
+  aboutToDisappear() {
     this.viewModel.onDisappear();
   }
 

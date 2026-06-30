@@ -1,0 +1,16 @@
+{
+  "integer": [
+    {
+      "name": "subscriptions_default_num_of_columns",
+      "value": 3
+    },
+    {
+      "name": "nav_drawer_screen_size_percent",
+      "value": 80
+    },
+    {
+      "name": "swipe_refresh_distance",
+      "value": 300
+    }
+  ]
+}

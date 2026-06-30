@@ -75,7 +75,23 @@ export enum DownloadErrorType {
   ERROR_AUTHENTICATION = 'error_authentication',
   ERROR_MALFORMED_URL = 'error_malformed_url',
   ERROR_IO = 'error_io',
+  ERROR_CERTIFICATE = 'error_certificate',
+  ERROR_BLOCKED = 'error_blocked',
   NO_CONNECTION = 'no_connection'
+}
+
+// REQ-039 场景 39.2: classifies errors that should not be retried (fail-fast).
+// Mirrors AntennaPod EpisodeDownloadWorker unrecoverable set.
+export function isUnrecoverableError(errorType: string): boolean {
+  return errorType === DownloadErrorType.ERROR_FORBIDDEN
+    || errorType === DownloadErrorType.ERROR_NOT_FOUND
+    || errorType === DownloadErrorType.ERROR_AUTHENTICATION
+    || errorType === DownloadErrorType.ERROR_BLOCKED
+    || errorType === DownloadErrorType.ERROR_NOT_SUPPORTED
+    || errorType === DownloadErrorType.ERROR_FILE_NOT_FOUND
+    || errorType === DownloadErrorType.ERROR_DEVICE_NOT_FOUND
+    || errorType === DownloadErrorType.ERROR_NOT_ENOUGH_SPACE
+    || errorType === DownloadErrorType.ERROR_MALFORMED_URL;
 }
 
 // ---------------------------------------------------------------------------

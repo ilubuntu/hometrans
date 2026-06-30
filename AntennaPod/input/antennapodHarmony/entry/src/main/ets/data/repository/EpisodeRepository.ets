@@ -48,6 +48,9 @@ export class EpisodeRepository {
     if (filter.inHistory) {
       clauses.push('in_history = 1');
     }
+    if (filter.inQueue) {
+      clauses.push('fi.id IN (SELECT feeditem_id FROM Queue)');
+    }
     if (filter.feedId > 0) {
       clauses.push('feed_id = ' + filter.feedId.toString());
     }
@@ -102,8 +105,9 @@ export class EpisodeRepository {
   async getEpisodes(filter: EpisodeFilter, sort: number, page: number): Promise<FeedItem[]> {
     const store = await this.getStore();
     const offset = Math.max(0, (page - 1) * EPISODES_PER_PAGE);
-    const sql = 'SELECT fi.*, f.title AS feed_title FROM FeedItem fi ' +
-      'LEFT JOIN Feed f ON f.id = fi.feed_id' +
+    const sql = 'SELECT fi.*, f.title AS feed_title, ' +
+      'EXISTS (SELECT 1 FROM Queue q WHERE q.feeditem_id = fi.id) AS in_queue ' +
+      'FROM FeedItem fi LEFT JOIN Feed f ON f.id = fi.feed_id' +
       this.buildWhere(filter) +
       this.buildOrderBy(sort) +
       ' LIMIT ' + EPISODES_PER_PAGE.toString() + ' OFFSET ' + offset.toString();
@@ -116,7 +120,7 @@ export class EpisodeRepository {
   // Total episode count for a filter (pagination "hasMore" + counters).
   async getTotalCount(filter: EpisodeFilter): Promise<number> {
     const store = await this.getStore();
-    const sql = 'SELECT COUNT(*) AS c FROM FeedItem' + this.buildWhere(filter);
+    const sql = 'SELECT COUNT(*) AS c FROM FeedItem fi' + this.buildWhere(filter);
     const rs = await store.querySql(sql);
     let count = 0;
     if (rs.goToFirstRow()) {
@@ -131,8 +135,9 @@ export class EpisodeRepository {
     const store = await this.getStore();
     const filter = new EpisodeFilter();
     filter.unplayed = true;
-    const sql = 'SELECT fi.*, f.title AS feed_title FROM FeedItem fi ' +
-      'LEFT JOIN Feed f ON f.id = fi.feed_id' +
+    const sql = 'SELECT fi.*, f.title AS feed_title, ' +
+      'EXISTS (SELECT 1 FROM Queue q WHERE q.feeditem_id = fi.id) AS in_queue ' +
+      'FROM FeedItem fi LEFT JOIN Feed f ON f.id = fi.feed_id' +
       this.buildWhere(filter) +
       this.buildOrderBy(SortOrder.DATE_NEW_OLD) +
       ' LIMIT ' + limit.toString();
@@ -145,8 +150,9 @@ export class EpisodeRepository {
   async getEpisode(id: number): Promise<FeedItem | null> {
     const store = await this.getStore();
     const rs = await store.querySql(
-      'SELECT fi.*, f.title AS feed_title FROM FeedItem fi ' +
-      'LEFT JOIN Feed f ON f.id = fi.feed_id WHERE fi.id = ' + id.toString());
+      'SELECT fi.*, f.title AS feed_title, ' +
+      'EXISTS (SELECT 1 FROM Queue q WHERE q.feeditem_id = fi.id) AS in_queue ' +
+      'FROM FeedItem fi LEFT JOIN Feed f ON f.id = fi.feed_id WHERE fi.id = ' + id.toString());
     let item: FeedItem | null = null;
     if (rs.goToFirstRow()) {
       item = RowMappers.toFeedItem(rs);
@@ -157,7 +163,8 @@ export class EpisodeRepository {
 
   // Search via SQL LIKE, multi-word AND-combined, newest first, capped.
   // FTS5 is an optimization only; LIKE is the correctness path (decision contract).
-  async search(query: string, max: number): Promise<FeedItem[]> {
+  // When feedId > 0, results are scoped to that single feed (REQ-028 场景 2.4).
+  async search(query: string, max: number, feedId?: number): Promise<FeedItem[]> {
     const trimmed = query.trim();
     if (trimmed.length === 0) {
       return [];
@@ -176,8 +183,15 @@ export class EpisodeRepository {
       bindArgs.push(token);
       bindArgs.push(token);
     }
-    const sql = 'SELECT fi.*, f.title AS feed_title FROM FeedItem fi ' +
-      'LEFT JOIN Feed f ON f.id = fi.feed_id WHERE ' + clauses.join(' AND ') +
+    let scopeClause = '';
+    if (feedId !== undefined && feedId > 0) {
+      scopeClause = ' AND fi.feed_id = ?';
+      bindArgs.push(feedId);
+    }
+    const sql = 'SELECT fi.*, f.title AS feed_title, ' +
+      'EXISTS (SELECT 1 FROM Queue q WHERE q.feeditem_id = fi.id) AS in_queue ' +
+      'FROM FeedItem fi LEFT JOIN Feed f ON f.id = fi.feed_id WHERE ' + clauses.join(' AND ') +
+      scopeClause +
       ' ORDER BY pub_date_ms DESC LIMIT ' + limit.toString();
     const rs = await store.querySql(sql, bindArgs);
     const items = RowMappers.collectFeedItems(rs);

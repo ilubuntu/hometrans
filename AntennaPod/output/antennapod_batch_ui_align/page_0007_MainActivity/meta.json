@@ -1,0 +1,142 @@
+{
+  "page_id": "page_0007_MainActivity",
+  "label": "点击'More'后",
+  "timestamp": "2026-06-30T11:33:19.876651",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{188087474 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity t232}",
+    "current_focus": "mCurrentFocus=Window{3658f99 u0 PopupWindow:9a92801}"
+  },
+  "clickable_count": 8,
+  "clickable_elements": [
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Episodes",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[594,1555][1344,1699]",
+      "center": [
+        969,
+        1627
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Downloads",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[594,1699][1344,1843]",
+      "center": [
+        969,
+        1771
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Playback history",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[594,1843][1344,1987]",
+      "center": [
+        969,
+        1915
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Favorites",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[594,1987][1344,2131]",
+      "center": [
+        969,
+        2059
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Statistics",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[594,2131][1344,2275]",
+      "center": [
+        969,
+        2203
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Add podcast",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[594,2275][1344,2419]",
+      "center": [
+        969,
+        2347
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Customize navigation",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[594,2419][1344,2563]",
+      "center": [
+        969,
+        2491
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Settings",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[594,2563][1344,2707]",
+      "center": [
+        969,
+        2635
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ],
+  "scroll_container_bounds": null,
+  "screenshot": "page_0007_MainActivity/screenshot.png",
+  "view_xml": "page_0007_MainActivity/view.xml",
+  "screenshots": [
+    "page_0007_MainActivity/screenshot.png"
+  ],
+  "view_xmls": [
+    "page_0007_MainActivity/view.xml"
+  ],
+  "came_from": "根页面",
+  "trigger_element": "More",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "More",
+      "center": [
+        1210,
+        2824
+      ],
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_more",
+      "text": "More",
+      "content-desc": "More",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "page_id": "page_0016_MainActivity",
+  "label": "点击'Add podcast'后",
+  "timestamp": "2026-06-30T11:41:19.659378",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{238358629 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity t262}",
+    "current_focus": "mCurrentFocus=Window{c559f05 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity}"
+  },
+  "clickable_count": 28,
+  "clickable_elements": [
+    {
+      "class": "android.widget.ImageButton",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "Back",
+      "bounds": "[0,171][168,339]",
+      "center": [
+        84,
+        255
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.ImageView",
+      "text": "",
+      "resource-id": "de.danoeh.antennapod.debug:id/searchButton",
+      "content-desc": "Search podcast…",
+      "bounds": "[72,387][216,531]",
+      "center": [
+        144,
+        459
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.EditText",
+      "text": "Search podcast…",
+      "resource-id": "de.danoeh.antennapod.debug:id/combinedFeedSearchEditText",
+      "content-desc": "",
+      "bounds": "[240,375][1272,544]",
+      "center": [
+        756,
+        459
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.EditText",
+      "text": "Search podcast…",
+      "resource-id": "de.danoeh.antennapod.debug:id/combinedFeedSearchEditText",
+      "content-desc": "",
+      "bounds": "[240,375][1272,544]",
+      "center": [
+        756,
+        459
+      ],
+      "long-clickable": true,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[48,628][360,940]",
+      "center": [
+        204,
+        784
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[360,628][672,940]",
+      "center": [
+        516,
+        784
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[672,628][984,940]",
+      "center": [
+        828,
+        784
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[984,628][1296,940]",
+      "center": [
+        1140,
+        784
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[48,940][360,1252]",
+      "center": [
+        204,
+        1096
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[360,940][672,1252]",
+      "center": [
+        516,
+        1096
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[672,940][984,1252]",
+      "center": [
+        828,
+        1096
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[984,940][1296,1252]",
+      "center": [
+        1140,
+        1096
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[48,1252][360,1564]",
+      "center": [
+        204,
+        1408
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[360,1252][672,1564]",
+      "center": [
+        516,
+        1408
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[672,1252][984,1564]",
+      "center": [
+        828,
+        1408
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[984,1252][1296,1564]",
+      "center": [
+        1140,
+        1408
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.Button",
+      "text": "Show suggestions",
+      "resource-id": "de.danoeh.antennapod.debug:id/errorRetryButton",
+      "content-desc": "",
+      "bounds": "[425,1100][919,1244]",
+      "center": [
+        672,
+        1172
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.Button",
+      "text": "Discover more »",
+      "resource-id": "de.danoeh.antennapod.debug:id/discover_more",
+      "content-desc": "",
+      "bounds": "[892,1576][1296,1720]",
+      "center": [
+        1094,
+        1648
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Add podcast by RSS address",
+      "resource-id": "de.danoeh.antennapod.debug:id/addViaUrlButton",
+      "content-desc": "",
+      "bounds": "[0,1768][1344,1912]",
+      "center": [
+        672,
+        1840
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Add local folder",
+      "resource-id": "de.danoeh.antennapod.debug:id/addLocalFolderButton",
+      "content-desc": "",
+      "bounds": "[0,1912][1344,2056]",
+      "center": [
+        672,
+        1984
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Search Apple Podcasts",
+      "resource-id": "de.danoeh.antennapod.debug:id/searchItunesButton",
+      "content-desc": "",
+      "bounds": "[0,2056][1344,2200]",
+      "center": [
+        672,
+        2128
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Search fyyd",
+      "resource-id": "de.danoeh.antennapod.debug:id/searchFyydButton",
+      "content-desc": "",
+      "bounds": "[0,2200][1344,2344]",
+      "center": [
+        672,
+        2272
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Search Podcast Index",
+      "resource-id": "de.danoeh.antennapod.debug:id/searchPodcastIndexButton",
+      "content-desc": "",
+      "bounds": "[0,2344][1344,2488]",
+      "center": [
+        672,
+        2416
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Import podcast list (OPML)",
+      "resource-id": "de.danoeh.antennapod.debug:id/opmlImportButton",
+      "content-desc": "",
+      "bounds": "[0,2488][1344,2632]",
+      "center": [
+        672,
+        2560
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Home",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_home",
+      "content-desc": "Home",
+      "bounds": "[0,2728][269,2920]",
+      "center": [
+        134,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Queue",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_queue",
+      "content-desc": "Queue",
+      "bounds": "[269,2728][538,2920]",
+      "center": [
+        403,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Inbox",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_inbox",
+      "content-desc": "Inbox",
+      "bounds": "[538,2728][807,2920]",
+      "center": [
+        672,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "More",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_more",
+      "content-desc": "More",
+      "bounds": "[1076,2728][1344,2920]",
+      "center": [
+        1210,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ],
+  "scroll_container_bounds": null,
+  "screenshot": "page_0016_MainActivity/screenshot.png",
+  "view_xml": "page_0016_MainActivity/view.xml",
+  "screenshots": [
+    "page_0016_MainActivity/screenshot.png"
+  ],
+  "view_xmls": [
+    "page_0016_MainActivity/view.xml"
+  ],
+  "came_from": "Subscriptions",
+  "trigger_element": "Add podcast",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "Subscriptions",
+      "center": [
+        941,
+        2824
+      ],
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_subscriptions",
+      "text": "Subscriptions",
+      "content-desc": "Subscriptions",
+      "long-clickable": false,
+      "scroll_info": null
+    },
+    {
+      "from": "Subscriptions",
+      "element": "Add podcast",
+      "center": [
+        1212,
+        2596
+      ],
+      "resource-id": "de.danoeh.antennapod.debug:id/subscriptions_add",
+      "text": "",
+      "content-desc": "Add podcast",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

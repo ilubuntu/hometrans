@@ -51,7 +51,12 @@ export class DownloadRepository {
         dr.sourceType = rs.getString(rs.getColumnIndex('source_type'));
         dr.feeditemId = rs.getLong(rs.getColumnIndex('feeditem_id'));
         dr.ok = dr.reason === 0;
-        dr.errorType = dr.ok ? DownloadErrorType.NONE : DownloadErrorType.ERROR_UNKNOWN;
+        const errorTypeIdx = rs.getColumnIndex('error_type');
+        if (errorTypeIdx >= 0) {
+          dr.errorType = rs.getString(errorTypeIdx);
+        } else {
+          dr.errorType = dr.ok ? DownloadErrorType.NONE : DownloadErrorType.ERROR_UNKNOWN;
+        }
         results.push(dr);
       } while (rs.goToNextRow());
     }
@@ -66,6 +71,7 @@ export class DownloadRepository {
       completed_date_ms: result.completedDateMs,
       title: result.title,
       reason: result.reason,
+      error_type: result.errorType,
       source_type: result.sourceType,
       feeditem_id: result.feeditemId
     } as relationalStore.ValuesBucket;

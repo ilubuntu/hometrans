@@ -21,7 +21,7 @@ struct SubscriptionsPage {
     this.viewModel.onAppear();
   }
 
-  aboutToAboutToDisappear() {
+  aboutToDisappear() {
     this.viewModel.onDisappear();
   }
 

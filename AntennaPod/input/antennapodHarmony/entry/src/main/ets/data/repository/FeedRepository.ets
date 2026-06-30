@@ -155,4 +155,59 @@ export class FeedRepository {
     feed.state = FeedState.SUBSCRIBED;
     return this.addFeed(feed);
   }
+
+  // Search subscribed feeds by title/customTitle/author/description LIKE,
+  // multi-word AND, title-ascending, capped at 300 (REQ-027 场景 2.5).
+  async searchFeeds(query: string, max: number): Promise<Feed[]> {
+    const trimmed = query.trim();
+    if (trimmed.length === 0) {
+      return [];
+    }
+    const store = await this.getStore();
+    const words = this.tokenize(trimmed);
+    if (words.length === 0) {
+      return [];
+    }
+    const clauses: string[] = [];
+    const bindArgs: Array<relationalStore.ValueType> = [];
+    for (let i = 0; i < words.length; i++) {
+      const token = '%' + words[i] + '%';
+      clauses.push('(LOWER(title) LIKE LOWER(?) OR LOWER(custom_title) LIKE LOWER(?) OR ' +
+        'LOWER(author) LIKE LOWER(?) OR LOWER(description) LIKE LOWER(?))');
+      bindArgs.push(token);
+      bindArgs.push(token);
+      bindArgs.push(token);
+      bindArgs.push(token);
+    }
+    const limit = max > 0 ? max : 300;
+    const sql = 'SELECT * FROM Feed WHERE state = ' + FeedState.SUBSCRIBED.toString() +
+      ' AND ' + clauses.join(' AND ') +
+      ' ORDER BY title COLLATE NOCASE ASC LIMIT ' + limit.toString();
+    const rs = await store.querySql(sql, bindArgs);
+    const feeds = RowMappers.collectFeeds(rs);
+    rs.close();
+    return feeds;
+  }
+
+  // Manual whitespace tokenizer (mirrors EpisodeRepository.tokenize).
+  private tokenize(text: string): string[] {
+    const words: string[] = [];
+    let current: string = '';
+    const len = text.length;
+    for (let i = 0; i < len; i++) {
+      const ch = text.charAt(i);
+      if (ch === ' ' || ch === '\t' || ch === '\n' || ch === '\r') {
+        if (current.length > 0) {
+          words.push(current);
+          current = '';
+        }
+      } else {
+        current += ch;
+      }
+    }
+    if (current.length > 0) {
+      words.push(current);
+    }
+    return words;
+  }
 }

@@ -1,0 +1,129 @@
+{
+  "page_id": "page_0002_MainActivity",
+  "label": "点击'Search'后",
+  "timestamp": "2026-06-30T11:32:02.879814",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{256850795 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity t226}",
+    "current_focus": "mCurrentFocus=Window{2c12a98 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity}"
+  },
+  "clickable_count": 7,
+  "clickable_elements": [
+    {
+      "class": "android.widget.ImageButton",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "Collapse",
+      "bounds": "[0,171][168,339]",
+      "center": [
+        84,
+        255
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.AutoCompleteTextView",
+      "text": "Search",
+      "resource-id": "de.danoeh.antennapod.debug:id/search_src_text",
+      "content-desc": "",
+      "bounds": "[312,201][1320,309]",
+      "center": [
+        816,
+        255
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.AutoCompleteTextView",
+      "text": "Search",
+      "resource-id": "de.danoeh.antennapod.debug:id/search_src_text",
+      "content-desc": "",
+      "bounds": "[312,201][1320,309]",
+      "center": [
+        816,
+        255
+      ],
+      "long-clickable": true,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Queue",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_queue",
+      "content-desc": "Queue",
+      "bounds": "[269,2728][538,2920]",
+      "center": [
+        403,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Inbox",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_inbox",
+      "content-desc": "Inbox",
+      "bounds": "[538,2728][807,2920]",
+      "center": [
+        672,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Subscriptions",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_subscriptions",
+      "content-desc": "Subscriptions",
+      "bounds": "[807,2728][1076,2920]",
+      "center": [
+        941,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "More",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_more",
+      "content-desc": "More",
+      "bounds": "[1076,2728][1344,2920]",
+      "center": [
+        1210,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ],
+  "scroll_container_bounds": null,
+  "screenshot": "page_0002_MainActivity/screenshot.png",
+  "view_xml": "page_0002_MainActivity/view.xml",
+  "screenshots": [
+    "page_0002_MainActivity/screenshot.png"
+  ],
+  "view_xmls": [
+    "page_0002_MainActivity/view.xml"
+  ],
+  "came_from": "根页面",
+  "trigger_element": "Search",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "Search",
+      "center": [
+        1152,
+        255
+      ],
+      "resource-id": "de.danoeh.antennapod.debug:id/action_search",
+      "text": "",
+      "content-desc": "Search",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "page_id": "page_0009_MainActivity",
+  "label": "点击'Configure home screen'后",
+  "timestamp": "2026-06-30T11:35:44.457669",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{185877214 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity t241}",
+    "current_focus": "mCurrentFocus=Window{cb21475 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity}"
+  },
+  "clickable_count": 3,
+  "clickable_elements": [
+    {
+      "class": "android.widget.Button",
+      "text": "Reset",
+      "resource-id": "android:id/button3",
+      "content-desc": "",
+      "bounds": "[178,1978][370,2122]",
+      "center": [
+        274,
+        2050
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.Button",
+      "text": "Cancel",
+      "resource-id": "android:id/button2",
+      "content-desc": "",
+      "bounds": "[747,1978][950,2122]",
+      "center": [
+        848,
+        2050
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.Button",
+      "text": "OK",
+      "resource-id": "android:id/button1",
+      "content-desc": "",
+      "bounds": "[974,1978][1166,2122]",
+      "center": [
+        1070,
+        2050
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ],
+  "scroll_container_bounds": null,
+  "screenshot": "page_0009_MainActivity/screenshot.png",
+  "view_xml": "page_0009_MainActivity/view.xml",
+  "screenshots": [
+    "page_0009_MainActivity/screenshot.png"
+  ],
+  "view_xmls": [
+    "page_0009_MainActivity/view.xml"
+  ],
+  "came_from": "More options",
+  "trigger_element": "Configure home screen",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "More options",
+      "center": [
+        1284,
+        255
+      ],
+      "resource-id": "",
+      "text": "",
+      "content-desc": "More options",
+      "long-clickable": false,
+      "scroll_info": null
+    },
+    {
+      "from": "More options",
+      "element": "Configure home screen",
+      "center": [
+        1021,
+        424
+      ],
+      "resource-id": "",
+      "text": "Configure home screen",
+      "content-desc": "",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

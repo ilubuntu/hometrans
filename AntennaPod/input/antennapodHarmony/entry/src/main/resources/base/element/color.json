@@ -1,0 +1,116 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "white",
+      "value": "#ffFFFFFF"
+    },
+    {
+      "name": "grey100",
+      "value": "#fff5f5f5"
+    },
+    {
+      "name": "grey600",
+      "value": "#ff757575"
+    },
+    {
+      "name": "light_gray",
+      "value": "#ffbfbfbf"
+    },
+    {
+      "name": "medium_gray",
+      "value": "#ffafafaf"
+    },
+    {
+      "name": "black",
+      "value": "#ff000000"
+    },
+    {
+      "name": "image_readability_tint",
+      "value": "#80000000"
+    },
+    {
+      "name": "feed_text_bg",
+      "value": "#55333333"
+    },
+    {
+      "name": "background_light",
+      "value": "#fff9fcff"
+    },
+    {
+      "name": "background_elevated_light",
+      "value": "#ffEFEEEE"
+    },
+    {
+      "name": "background_darktheme",
+      "value": "#ff21272b"
+    },
+    {
+      "name": "background_elevated_darktheme",
+      "value": "#ff2D3337"
+    },
+    {
+      "name": "non_square_icon_background",
+      "value": "#22777777"
+    },
+    {
+      "name": "seek_background_light",
+      "value": "#90000000"
+    },
+    {
+      "name": "seek_background_dark",
+      "value": "#905B5B5B"
+    },
+    {
+      "name": "text_color_secondary_light",
+      "value": "#ff444444"
+    },
+    {
+      "name": "text_color_secondary_dark",
+      "value": "#ffcccccc"
+    },
+    {
+      "name": "color_surface_variant_light",
+      "value": "#ffD3DCE0"
+    },
+    {
+      "name": "color_surface_variant_dark",
+      "value": "#ff2F3B4F"
+    },
+    {
+      "name": "color_secondary_container_light",
+      "value": "#ffC8D8DE"
+    },
+    {
+      "name": "color_secondary_container_dark",
+      "value": "#ff3C4E68"
+    },
+    {
+      "name": "accent_light",
+      "value": "#ff0078C2"
+    },
+    {
+      "name": "accent_dark",
+      "value": "#ff3D8BFF"
+    },
+    {
+      "name": "gradient_000",
+      "value": "#ff364ff3"
+    },
+    {
+      "name": "gradient_025",
+      "value": "#ff2E6FF6"
+    },
+    {
+      "name": "gradient_075",
+      "value": "#ff1EB0FC"
+    },
+    {
+      "name": "gradient_100",
+      "value": "#ff16d0ff"
+    }
+  ]
+}

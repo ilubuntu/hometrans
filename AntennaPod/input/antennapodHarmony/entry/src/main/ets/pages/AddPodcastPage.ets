@@ -18,7 +18,7 @@ struct AddPodcastPage {
     this.viewModel.onAppear();
   }
 
-  aboutToAboutToDisappear() {
+  aboutToDisappear() {
     this.viewModel.onDisappear();
   }
 

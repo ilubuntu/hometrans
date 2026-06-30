@@ -11,7 +11,7 @@ const TAG: string = 'PodcastDatabase';
 // Schema mirrors AntennaPod's DBReader/DBWriter surface so every ViewModel
 // resolves against one coordinated store. ViewModels never persist directly.
 export const DB_NAME: string = 'Antennapod.db';
-export const DB_VERSION: number = 1;
+export const DB_VERSION: number = 2;
 
 export class PodcastDatabase {
   private static instance: PodcastDatabase | null = null;
@@ -104,6 +104,7 @@ export class PodcastDatabase {
       'mime_type TEXT NOT NULL DEFAULT \'\', ' +
       'media_download_url TEXT NOT NULL DEFAULT \'\', ' +
       'read INTEGER NOT NULL DEFAULT 0, ' +
+      'completed_date_ms INTEGER NOT NULL DEFAULT 0, ' +
       'downloaded INTEGER NOT NULL DEFAULT 0, ' +
       'auto_download INTEGER NOT NULL DEFAULT 0, ' +
       'is_favorite INTEGER NOT NULL DEFAULT 0, ' +
@@ -132,6 +133,7 @@ export class PodcastDatabase {
       'completed_date_ms INTEGER NOT NULL DEFAULT 0, ' +
       'title TEXT NOT NULL DEFAULT \'\', ' +
       'reason INTEGER NOT NULL DEFAULT 0, ' +
+      'error_type TEXT NOT NULL DEFAULT \'none\', ' +
       'source_type TEXT NOT NULL DEFAULT \'media\', ' +
       'feeditem_id INTEGER NOT NULL DEFAULT 0)');
 
@@ -149,9 +151,16 @@ export class PodcastDatabase {
     await store.executeSql('CREATE INDEX IF NOT EXISTS idx_queue_position ON Queue(position)');
   }
 
-  // Future migrations land here. Version 1 → no-op (created fresh).
+  // Future migrations land here.
   private async onUpgrade(store: relationalStore.RdbStore, oldVersion: number, newVersion: number): Promise<void> {
     hilog.info(DOMAIN, TAG, 'onUpgrade %{public}d -> %{public}d', oldVersion.toString(), newVersion.toString());
-    // switch (oldVersion) { case 1: ...; break; }  -- reserved for later schema bumps
+    if (oldVersion < 2) {
+      // v2: persist the structured error_type string so download log reads are faithful.
+      await store.executeSql(
+        'ALTER TABLE DownloadResult ADD COLUMN error_type TEXT NOT NULL DEFAULT \'none\'');
+      // v2: track the wall-clock completion timestamp for playback history ordering.
+      await store.executeSql(
+        'ALTER TABLE FeedItem ADD COLUMN completed_date_ms INTEGER NOT NULL DEFAULT 0');
+    }
   }
 }

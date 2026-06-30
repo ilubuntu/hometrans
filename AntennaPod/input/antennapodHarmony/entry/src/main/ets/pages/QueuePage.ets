@@ -18,7 +18,7 @@ struct QueuePage {
     this.viewModel.onAppear();
   }
 
-  aboutToAboutToDisappear() {
+  aboutToDisappear() {
     this.viewModel.onDisappear();
   }
 

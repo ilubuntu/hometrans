@@ -1,0 +1,64 @@
+{
+  "page_id": "page_0003_MainActivity",
+  "label": "点击'More options'后",
+  "timestamp": "2026-06-30T11:32:15.226221",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{68634923 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity t227}",
+    "current_focus": "mCurrentFocus=Window{d332afa u0 PopupWindow:b3b99fc}"
+  },
+  "clickable_count": 2,
+  "clickable_elements": [
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Refresh",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[711,208][1332,352]",
+      "center": [
+        1021,
+        280
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Configure home screen",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[711,352][1332,496]",
+      "center": [
+        1021,
+        424
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ],
+  "scroll_container_bounds": null,
+  "screenshot": "page_0003_MainActivity/screenshot.png",
+  "view_xml": "page_0003_MainActivity/view.xml",
+  "screenshots": [
+    "page_0003_MainActivity/screenshot.png"
+  ],
+  "view_xmls": [
+    "page_0003_MainActivity/view.xml"
+  ],
+  "came_from": "根页面",
+  "trigger_element": "More options",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "More options",
+      "center": [
+        1284,
+        255
+      ],
+      "resource-id": "",
+      "text": "",
+      "content-desc": "More options",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

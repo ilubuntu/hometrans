@@ -29,18 +29,27 @@ export class OpmlRepository {
   async exportOpml(): Promise<string> {
     const store = await this.getStore();
     const rs = await store.querySql(
-      'SELECT title, download_url FROM Feed WHERE state = 0 ORDER BY title COLLATE NOCASE ASC');
+      'SELECT title, download_url, link FROM Feed WHERE state = 0 ORDER BY title COLLATE NOCASE ASC');
     const lines: string[] = [];
     lines.push('<?xml version="1.0" encoding="UTF-8"?>');
     lines.push('<opml version="2.0">');
-    lines.push('  <head><title>AntennaPod subscriptions</title></head>');
+    lines.push('  <head>');
+    lines.push('    <title>AntennaPod subscriptions</title>');
+    lines.push('    <dateCreated>' + this.rfc822Date(Date.now()) + '</dateCreated>');
+    lines.push('  </head>');
     lines.push('  <body>');
     if (rs.goToFirstRow()) {
       do {
         const title = this.xmlEscape(rs.getString(rs.getColumnIndex('title')));
         const url = this.xmlEscape(rs.getString(rs.getColumnIndex('download_url')));
-        lines.push('    <outline type="rss" text="' + title +
-          '" title="' + title + '" xmlUrl="' + url + '" />');
+        const link = this.xmlEscape(rs.getString(rs.getColumnIndex('link')));
+        let outline = '    <outline type="rss" text="' + title +
+          '" title="' + title + '" xmlUrl="' + url + '"';
+        if (link.length > 0) {
+          outline += ' htmlUrl="' + link + '"';
+        }
+        outline += ' />';
+        lines.push(outline);
       } while (rs.goToNextRow());
     }
     rs.close();
@@ -108,5 +117,24 @@ export class OpmlRepository {
       }
     }
     return out;
+  }
+
+  // Format a timestamp as an RFC822 date string (e.g. "Mon, 30 Jun 2026 12:00:00 GMT").
+  private rfc822Date(timeMs: number): string {
+    const days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const d = new Date(timeMs);
+    const day = days[d.getUTCDay()];
+    const month = months[d.getUTCMonth()];
+    const hh = this.pad2(d.getUTCHours());
+    const mm = this.pad2(d.getUTCMinutes());
+    const ss = this.pad2(d.getUTCSeconds());
+    return day + ', ' + this.pad2(d.getUTCDate()) + ' ' + month + ' ' + d.getUTCFullYear() +
+      ' ' + hh + ':' + mm + ':' + ss + ' GMT';
+  }
+
+  private pad2(n: number): string {
+    return n < 10 ? '0' + n.toString() : n.toString();
   }
 }

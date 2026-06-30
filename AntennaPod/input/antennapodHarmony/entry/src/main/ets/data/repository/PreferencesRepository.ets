@@ -37,7 +37,9 @@ export class PreferencesRepository {
   }
 
   setTheme(theme: string): Promise<void> {
-    return this.store().putString(PrefKey.THEME, theme);
+    return this.store().putString(PrefKey.THEME, theme).then((): void => {
+      this.publishListChange();
+    });
   }
 
   getPureBlack(): Promise<boolean> {
@@ -45,7 +47,9 @@ export class PreferencesRepository {
   }
 
   setPureBlack(value: boolean): Promise<void> {
-    return this.store().putBoolean(PrefKey.PURE_BLACK, value);
+    return this.store().putBoolean(PrefKey.PURE_BLACK, value).then((): void => {
+      this.publishListChange();
+    });
   }
 
   getDynamicColor(): Promise<boolean> {
@@ -97,6 +101,57 @@ export class PreferencesRepository {
     });
   }
 
+  // ---- Theme appearance extras (REQ-033) ----
+  getShowRemainingTime(): Promise<boolean> {
+    return this.store().getBoolean(PrefKey.SHOW_REMAINING_TIME, true);
+  }
+
+  setShowRemainingTime(value: boolean): Promise<void> {
+    return this.store().putBoolean(PrefKey.SHOW_REMAINING_TIME, value);
+  }
+
+  getDefaultEpisodeSort(): Promise<number> {
+    return this.store().getNumber(PrefKey.DEFAULT_EPISODE_SORT, SortOrder.DATE_NEW_OLD);
+  }
+
+  setDefaultEpisodeSort(sort: number): Promise<void> {
+    return this.store().putNumber(PrefKey.DEFAULT_EPISODE_SORT, sort).then((): void => {
+      EventBus.publishSignal(EventType.EPISODE_UPDATED);
+    });
+  }
+
+  isPreferStreaming(): Promise<boolean> {
+    return this.store().getBoolean(PrefKey.PREFER_STREAMING, false);
+  }
+
+  setPreferStreaming(value: boolean): Promise<void> {
+    return this.store().putBoolean(PrefKey.PREFER_STREAMING, value);
+  }
+
+  getNotificationButtons(): Promise<string> {
+    return this.store().getString(PrefKey.NOTIFICATION_BUTTONS, 'SKIP,SKIP2');
+  }
+
+  setNotificationButtons(value: string): Promise<void> {
+    return this.store().putString(PrefKey.NOTIFICATION_BUTTONS, value);
+  }
+
+  getSwipeLeftAction(): Promise<string> {
+    return this.store().getString(PrefKey.SWIPE_LEFT_ACTION, 'FAVORITE');
+  }
+
+  setSwipeLeftAction(value: string): Promise<void> {
+    return this.store().putString(PrefKey.SWIPE_LEFT_ACTION, value);
+  }
+
+  getSwipeRightAction(): Promise<string> {
+    return this.store().getString(PrefKey.SWIPE_RIGHT_ACTION, 'ADDTOQUEUE');
+  }
+
+  setSwipeRightAction(value: string): Promise<void> {
+    return this.store().putString(PrefKey.SWIPE_RIGHT_ACTION, value);
+  }
+
   // ---- Playback / queue (REQ-035) ----
   getFastForwardSecs(): Promise<number> {
     return this.store().getNumber(PrefKey.FAST_FORWARD_SECS, 30);
@@ -120,6 +175,23 @@ export class PreferencesRepository {
 
   getSmartMarkThreshold(): Promise<number> {
     return this.store().getNumber(PrefKey.SMART_MARK_AS_PLAYED_THRESHOLD, 30);
+  }
+
+  // ---- Auto-resume (REQ-034) ----
+  isResumeAfterHeadsetConnect(): Promise<boolean> {
+    return this.store().getBoolean(PrefKey.RESUME_AFTER_HEADSET_CONNECT, false);
+  }
+
+  setResumeAfterHeadsetConnect(value: boolean): Promise<void> {
+    return this.store().putBoolean(PrefKey.RESUME_AFTER_HEADSET_CONNECT, value);
+  }
+
+  isResumeAfterBluetoothConnect(): Promise<boolean> {
+    return this.store().getBoolean(PrefKey.RESUME_AFTER_BLUETOOTH_CONNECT, false);
+  }
+
+  setResumeAfterBluetoothConnect(value: boolean): Promise<void> {
+    return this.store().putBoolean(PrefKey.RESUME_AFTER_BLUETOOTH_CONNECT, value);
   }
 
   getQueueLocked(): Promise<boolean> {
@@ -180,6 +252,39 @@ export class PreferencesRepository {
 
   isAutomaticDelete(): Promise<boolean> {
     return this.store().getBoolean(PrefKey.AUTOMATIC_DELETE, true);
+  }
+
+  // ---- Download settings extras (REQ-035) ----
+  getUpdateInterval(): Promise<number> {
+    return this.store().getNumber(PrefKey.UPDATE_INTERVAL, 12);
+  }
+
+  setUpdateInterval(hours: number): Promise<void> {
+    return this.store().putNumber(PrefKey.UPDATE_INTERVAL, hours);
+  }
+
+  getProxyHost(): Promise<string> {
+    return this.store().getString(PrefKey.PROXY_HOST, '');
+  }
+
+  setProxyHost(host: string): Promise<void> {
+    return this.store().putString(PrefKey.PROXY_HOST, host);
+  }
+
+  getProxyPort(): Promise<number> {
+    return this.store().getNumber(PrefKey.PROXY_PORT, 0);
+  }
+
+  setProxyPort(port: number): Promise<void> {
+    return this.store().putNumber(PrefKey.PROXY_PORT, port);
+  }
+
+  getStorageDir(): Promise<string> {
+    return this.store().getString(PrefKey.STORAGE_DIR, '');
+  }
+
+  setStorageDir(dir: string): Promise<void> {
+    return this.store().putString(PrefKey.STORAGE_DIR, dir);
   }
 
   // ---- Sync (REQ-036) ----

@@ -19,7 +19,7 @@ struct Index {
     this.viewModel.onAppear();
   }
 
-  aboutToAboutToDisappear() {
+  aboutToDisappear() {
     this.viewModel.onDisappear();
   }
 

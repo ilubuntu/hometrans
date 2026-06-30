@@ -25,9 +25,10 @@ export class HistoryRepository {
 
   async getHistory(): Promise<FeedItem[]> {
     const store = await this.getStore();
-    const sql = 'SELECT fi.*, f.title AS feed_title FROM FeedItem fi ' +
-      'LEFT JOIN Feed f ON f.id = fi.feed_id WHERE fi.in_history = 1 ' +
-      'ORDER BY fi.played_completion DESC, fi.pub_date_ms DESC';
+    const sql = 'SELECT fi.*, f.title AS feed_title, ' +
+      'EXISTS (SELECT 1 FROM Queue q WHERE q.feeditem_id = fi.id) AS in_queue ' +
+      'FROM FeedItem fi LEFT JOIN Feed f ON f.id = fi.feed_id WHERE fi.in_history = 1 ' +
+      'ORDER BY fi.completed_date_ms DESC, fi.pub_date_ms DESC';
     const rs = await store.querySql(sql);
     const items = RowMappers.collectFeedItems(rs);
     rs.close();
@@ -37,7 +38,8 @@ export class HistoryRepository {
   async addItem(itemId: number): Promise<void> {
     const store = await this.getStore();
     await store.executeSql(
-      'UPDATE FeedItem SET in_history = 1 WHERE id = ' + itemId.toString());
+      'UPDATE FeedItem SET in_history = 1, completed_date_ms = ' + Date.now().toString() +
+      ' WHERE id = ' + itemId.toString());
     const p = new EventPayload();
     p.feedItemId = itemId;
     EventBus.publish(EventType.EPISODE_UPDATED, p);

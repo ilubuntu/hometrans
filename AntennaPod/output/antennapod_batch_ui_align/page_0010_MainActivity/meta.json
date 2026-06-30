@@ -1,0 +1,168 @@
+{
+  "page_id": "page_0010_MainActivity",
+  "label": "点击'Search'后",
+  "timestamp": "2026-06-30T11:36:17.728057",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{162766382 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity t243}",
+    "current_focus": "mCurrentFocus=Window{b595ccf u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity}"
+  },
+  "clickable_count": 9,
+  "clickable_elements": [
+    {
+      "class": "android.widget.ImageButton",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "Collapse",
+      "bounds": "[0,171][168,339]",
+      "center": [
+        84,
+        255
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.AutoCompleteTextView",
+      "text": "Search",
+      "resource-id": "de.danoeh.antennapod.debug:id/search_src_text",
+      "content-desc": "",
+      "bounds": "[312,201][1320,309]",
+      "center": [
+        816,
+        255
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.AutoCompleteTextView",
+      "text": "Search",
+      "resource-id": "de.danoeh.antennapod.debug:id/search_src_text",
+      "content-desc": "",
+      "bounds": "[312,201][1320,309]",
+      "center": [
+        816,
+        255
+      ],
+      "long-clickable": true,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.Button",
+      "text": "Queue",
+      "resource-id": "de.danoeh.antennapod.debug:id/tag_chip",
+      "content-desc": "",
+      "bounds": "[30,351][297,495]",
+      "center": [
+        163,
+        423
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.Button",
+      "text": "Queue",
+      "resource-id": "de.danoeh.antennapod.debug:id/tag_chip",
+      "content-desc": "",
+      "bounds": "[30,351][297,495]",
+      "center": [
+        163,
+        423
+      ],
+      "long-clickable": true,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Home",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_home",
+      "content-desc": "Home",
+      "bounds": "[0,2728][269,2920]",
+      "center": [
+        134,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Inbox",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_inbox",
+      "content-desc": "Inbox",
+      "bounds": "[538,2728][807,2920]",
+      "center": [
+        672,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Subscriptions",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_subscriptions",
+      "content-desc": "Subscriptions",
+      "bounds": "[807,2728][1076,2920]",
+      "center": [
+        941,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "More",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_more",
+      "content-desc": "More",
+      "bounds": "[1076,2728][1344,2920]",
+      "center": [
+        1210,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ],
+  "scroll_container_bounds": null,
+  "screenshot": "page_0010_MainActivity/screenshot.png",
+  "view_xml": "page_0010_MainActivity/view.xml",
+  "screenshots": [
+    "page_0010_MainActivity/screenshot.png"
+  ],
+  "view_xmls": [
+    "page_0010_MainActivity/view.xml"
+  ],
+  "came_from": "Queue",
+  "trigger_element": "Search",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "Queue",
+      "center": [
+        403,
+        2824
+      ],
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_queue",
+      "text": "Queue",
+      "content-desc": "Queue",
+      "long-clickable": false,
+      "scroll_info": null
+    },
+    {
+      "from": "Queue",
+      "element": "Search",
+      "center": [
+        1152,
+        255
+      ],
+      "resource-id": "de.danoeh.antennapod.debug:id/action_search",
+      "text": "",
+      "content-desc": "Search",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "page_id": "page_0011_MainActivity",
+  "label": "点击'More options'后",
+  "timestamp": "2026-06-30T11:36:34.955771",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{166379442 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity t244}",
+    "current_focus": "mCurrentFocus=Window{1ec644b u0 PopupWindow:6e6f745}"
+  },
+  "clickable_count": 5,
+  "clickable_elements": [
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Sort",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[744,208][1332,352]",
+      "center": [
+        1038,
+        280
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Clear queue",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[744,352][1332,496]",
+      "center": [
+        1038,
+        424
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Refresh",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[744,496][1332,640]",
+      "center": [
+        1038,
+        568
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "Lock queue",
+      "resource-id": "",
+      "content-desc": "",
+      "bounds": "[744,640][1332,784]",
+      "center": [
+        1038,
+        712
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.CheckBox",
+      "text": "",
+      "resource-id": "de.danoeh.antennapod.debug:id/checkbox",
+      "content-desc": "",
+      "bounds": "[1140,640][1284,784]",
+      "center": [
+        1212,
+        712
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ],
+  "scroll_container_bounds": null,
+  "screenshot": "page_0011_MainActivity/screenshot.png",
+  "view_xml": "page_0011_MainActivity/view.xml",
+  "screenshots": [
+    "page_0011_MainActivity/screenshot.png"
+  ],
+  "view_xmls": [
+    "page_0011_MainActivity/view.xml"
+  ],
+  "came_from": "Queue",
+  "trigger_element": "More options",
+  "click_path": [
+    {
+      "from": "根页面",
+      "element": "Queue",
+      "center": [
+        403,
+        2824
+      ],
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_queue",
+      "text": "Queue",
+      "content-desc": "Queue",
+      "long-clickable": false,
+      "scroll_info": null
+    },
+    {
+      "from": "Queue",
+      "element": "More options",
+      "center": [
+        1284,
+        255
+      ],
+      "resource-id": "",
+      "text": "",
+      "content-desc": "More options",
+      "long-clickable": false,
+      "scroll_info": null
+    }
+  ]
+}

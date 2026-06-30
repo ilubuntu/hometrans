@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-06-30T12:47:22.254522",
+  "device": "adb",
+  "activity_info": {
+    "resumed_activity": "topResumedActivity=ActivityRecord{183993945 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity t264}",
+    "current_focus": "mCurrentFocus=Window{c68bb43 u0 de.danoeh.antennapod.debug/de.danoeh.antennapod.activity.MainActivity}"
+  },
+  "clickable_count": 9,
+  "clickable_elements": [
+    {
+      "class": "android.view.ViewGroup",
+      "text": "Subscriptions",
+      "resource-id": "de.danoeh.antennapod.debug:id/toolbar",
+      "content-desc": "",
+      "bounds": "[0,159][1344,351]",
+      "center": [
+        672,
+        255
+      ],
+      "long-clickable": true,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.Button",
+      "text": "",
+      "resource-id": "de.danoeh.antennapod.debug:id/action_search",
+      "content-desc": "Search",
+      "bounds": "[1080,183][1224,327]",
+      "center": [
+        1152,
+        255
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.ImageView",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "More options",
+      "bounds": "[1224,183][1344,327]",
+      "center": [
+        1284,
+        255
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.ImageView",
+      "text": "",
+      "resource-id": "",
+      "content-desc": "More options",
+      "bounds": "[1224,183][1344,327]",
+      "center": [
+        1284,
+        255
+      ],
+      "long-clickable": true,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.ImageButton",
+      "text": "",
+      "resource-id": "de.danoeh.antennapod.debug:id/subscriptions_add",
+      "content-desc": "Add podcast",
+      "bounds": "[1128,2512][1296,2680]",
+      "center": [
+        1212,
+        2596
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Home",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_home",
+      "content-desc": "Home",
+      "bounds": "[0,2728][269,2920]",
+      "center": [
+        134,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Queue",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_queue",
+      "content-desc": "Queue",
+      "bounds": "[269,2728][538,2920]",
+      "center": [
+        403,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "Inbox",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_inbox",
+      "content-desc": "Inbox",
+      "bounds": "[538,2728][807,2920]",
+      "center": [
+        672,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "More",
+      "resource-id": "de.danoeh.antennapod.debug:id/bottom_navigation_more",
+      "content-desc": "More",
+      "bounds": "[1076,2728][1344,2920]",
+      "center": [
+        1210,
+        2824
+      ],
+      "long-clickable": false,
+      "scroll_index": 0
+    }
+  ]
+}

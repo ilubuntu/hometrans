@@ -32,7 +32,9 @@ export class RowMappers {
     item.pubDate = rs.getString(rs.getColumnIndex('pub_date'));
     item.pubDateMs = rs.getLong(rs.getColumnIndex('pub_date_ms'));
     item.imageUrl = rs.getString(rs.getColumnIndex('image_url'));
-    item.isPlayed = rs.getLong(rs.getColumnIndex('read')) !== 0;
+    const readState = rs.getLong(rs.getColumnIndex('read'));
+    item.isPlayed = readState !== 0;
+    item.isNew = readState === 0;
     item.isDownloaded = rs.getLong(rs.getColumnIndex('downloaded')) !== 0;
     item.autoDownload = rs.getLong(rs.getColumnIndex('auto_download')) !== 0;
     item.isFavorite = rs.getLong(rs.getColumnIndex('is_favorite')) !== 0;
@@ -53,6 +55,11 @@ export class RowMappers {
     const feedTitleIdx = rs.getColumnIndex('feed_title');
     if (feedTitleIdx >= 0) {
       item.feedTitle = rs.getString(feedTitleIdx);
+    }
+    // isInQueue is derived via a Queue JOIN/subquery; default false if absent.
+    const inQueueIdx = rs.getColumnIndex('in_queue');
+    if (inQueueIdx >= 0) {
+      item.isInQueue = rs.getLong(inQueueIdx) !== 0;
     }
     return item;
   }
