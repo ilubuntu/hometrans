@@ -1,209 +1,209 @@
 REQ-001 首次启动与引导页
-应用首次安装后应进入 Onboarding 引导流程。引导页展示应用价值主张、插画、页码指示器、Skip 和 Next/Start cooking 操作。用户可逐页点击 Next，也可点击 Skip 跳过。
-来源: 截图 211250, OnboardingScreen.kt, SettingsRepositoryImpl.kt
-验收重点: 首屏文案为 Cook with what you have；Skip 可直接进入主界面；最后一页 Start cooking 完成引导。
+应用首次安装并打开时，应先展示三页引导内容，介绍根据厨房现有食材推荐菜谱的核心能力。
+步骤: 清除应用数据 -> 打开应用 -> 查看首屏引导 -> 点击 Next 切换下一页或点击 Skip 跳过。
+验收重点: 首屏包含 Skip、Next、页码指示器、标题 Cook with what you have 和说明文案，Next 能切换页面，Skip 能进入首页。
 
 REQ-002 引导完成状态持久化
-用户完成或跳过引导后，应用应记录 onboarding_complete。再次启动应用时不再展示引导页，直接进入 Discover 首页。
-来源: OnboardingViewModel.kt, SettingsRepositoryImpl.kt, MainActivity.kt
-验收重点: 重启后进入 Discover；清除应用数据后才重新出现引导。
+用户完成或跳过引导后，应用后续启动应直接进入 Discover 首页。
+步骤: 打开应用 -> 点击 Skip 或完成最后一页 -> 关闭并重新打开应用。
+验收重点: 重启后不再展示 Onboarding，直接进入 What can I cook 首页。
 
 REQ-003 离线菜谱数据初始化
-应用首次进入主界面时应从 assets/recipes.json 初始化本地 Room 菜谱库。数据初始化完成后可离线展示 18 个菜谱。
-来源: README.md, recipes.json, RecipeRepositoryImpl.kt, RecipeSeedSource.kt
-验收重点: 无网络时仍可看到菜谱；至少包含 Chicken Fried Rice、5-Minute Mug Cake、Banana Oat Pancakes 等固定菜谱。
+应用应内置离线菜谱数据，首次进入首页和搜索页时无需登录、联网或远程接口即可展示菜谱。
+步骤: 断开网络或保持无账号状态 -> 打开应用 -> 进入 Discover 和 Search。
+验收重点: 首页和搜索页展示 5-Minute Mug Cake、Banana Oat Pancakes、Chicken Fried Rice 等菜谱卡片。
 
 REQ-004 Discover 首页基础布局
-Discover 首页应展示问候语、标题 What can I cook?、设置入口、搜索入口、Your pantry 卡片、Browse recipes 分类和菜谱列表。
-来源: 截图 211308, HomeScreen.kt
-验收重点: 底部导航中 Discover 高亮；搜索框和 pantry 卡片可点击。
+Discover 首页应展示问候语、主标题、搜索入口、Your pantry 入口、空食材提示、分类筛选和菜谱列表。
+步骤: 跳过引导进入首页 -> 查看页面顶部、中部和菜谱列表。
+验收重点: 页面包含 Good morning/evening、What can I cook?、Search recipes, ingredients...、Your pantry、Browse recipes 和底部导航。
 
 REQ-005 空食材库时的首页提示
-当 pantry 为空时，Discover 首页的 Your pantry 显示 Add what you have at home，并显示 Tell us what's in your kitchen 提示，引导用户添加食材。
-来源: 截图 211308, HomeScreen.kt
-验收重点: 不应显示 Ready to cook 横向列表；点击提示或 pantry 卡片进入 Pantry。
+当 pantry 没有食材时，首页应提示用户添加食材后才能推荐可做菜谱。
+步骤: 清空 pantry -> 返回 Discover 首页。
+验收重点: 展示 Tell us what's in your kitchen，并提示 Add a few ingredients and we'll show the recipes you can make right now。
 
 REQ-006 首页菜谱卡片
-首页菜谱卡片应展示菜谱图片/emoji、分类、标题、简介、耗时、难度、热量、收藏按钮，以及匹配计数如 0/4。
-来源: 截图 211308, RecipeCard.kt, recipes.json
-验收重点: 5-Minute Mug Cake 显示 Dessert、5 min、Easy、400 kcal、0/4。
+首页菜谱卡片应展示图片或图标、分类、标题、描述、时间、难度、热量、食材匹配数和收藏按钮。
+步骤: 进入 Discover 首页 -> 查看任意菜谱卡片。
+验收重点: 5-Minute Mug Cake 卡片显示 Dessert、5 min、Easy、400 kcal、0/4 和心形收藏按钮。
 
 REQ-007 首页分类筛选
-首页 Browse recipes 支持 All、Breakfast、Lunch、Dinner、Dessert、Snack、Drinks 分类筛选。选择分类后列表只展示对应分类菜谱。
-来源: 截图 211308, RecipeCategory.kt, HomeViewModel.kt
-验收重点: All 默认选中；Dinner 筛选后可看到 Chicken Fried Rice 等晚餐菜谱。
+首页分类筛选应支持 All、Breakfast、Lunch、Dinner、Snack、Dessert 等分类，并按所选分类刷新菜谱列表。
+步骤: 进入首页 -> 点击 Dinner -> 再点击 All。
+验收重点: Dinner 只展示晚餐类菜谱，All 恢复全部菜谱。
 
 REQ-008 Pantry 页面基础布局
-Pantry 页面应展示标题 My pantry、当前食材数量、手动添加输入框、In your kitchen 已添加食材区、Clear all，以及 Quick add 分类食材区。
-来源: 截图 211345, PantryScreen.kt
-验收重点: 已添加 5 个食材时标题下显示 5 ingredients on hand。
+Pantry 页面用于管理现有食材，应显示标题、食材数量、手动输入框、已添加食材、Clear all 和 Quick add 分类区。
+步骤: 点击首页 Your pantry 或底部 Pantry -> 查看页面。
+验收重点: 页面标题为 My pantry，显示 N ingredients on hand，包含 Add your own ingredient...、In your kitchen、Quick add。
 
 REQ-009 Pantry 快速添加食材
-用户可在 Quick add 中点击食材 chip 将其加入 pantry。已加入的食材应从 Quick add 建议中移除，并出现在 In your kitchen。
-来源: 截图 211345, PantryCatalog.kt, PantryViewModel.kt
-验收重点: 点击 Cucumber、Avocado、Carrot、Garlic、Onion 后显示对应 chip。
+用户可以从 Quick add 中点击食材 chip 的加号，将食材加入 In your kitchen。
+步骤: 进入 Pantry -> 点击 Tomato、Rice、Chicken 等食材的加号。
+验收重点: 被点击的食材出现在 In your kitchen，食材数量同步增加。
 
 REQ-010 Pantry 手动添加食材
-用户可在 Add your own ingredient 输入框输入食材名并点击加号或键盘 Done 添加。空字符串不应添加。
-来源: PantryScreen.kt, PantryViewModel.kt
-验收重点: 输入 chicken breast 后 pantry 中保存为可匹配 chicken 的食材。
+用户可以在输入框中输入自定义食材并点击加号添加。
+步骤: 进入 Pantry -> 输入 apple -> 点击右侧加号。
+验收重点: apple 出现在 In your kitchen，空输入或仅空格不能新增食材。
 
 REQ-011 Pantry 移除单个食材
-In your kitchen 中每个食材 chip 带关闭按钮，点击后从 pantry 移除，并回到 Quick add 可选状态。
-来源: 截图 211345, PantryScreen.kt, PantryRepositoryImpl.kt
-验收重点: 删除 Garlic 后计数减少，相关菜谱匹配状态同步变化。
+已添加食材应以 chip 展示，并支持点击 x 删除单个食材。
+步骤: 添加 Cucumber -> 点击 Cucumber chip 上的 x。
+验收重点: Cucumber 从 In your kitchen 消失，食材数量减少。
 
 REQ-012 Pantry 清空
-点击 Clear all 应清空 pantry 中所有食材，首页和搜索页匹配状态应恢复为空 pantry 状态。
-来源: 截图 211345, PantryScreen.kt, SettingsScreen.kt
-验收重点: 清空后 My pantry 显示空态文案，首页 pantry 卡片显示 Add what you have at home。
+用户可以通过 Clear all 一次性清空所有 pantry 食材。
+步骤: 添加多个食材 -> 点击 Clear all。
+验收重点: In your kitchen 变为空，食材数量变为 0，首页和详情页匹配状态同步刷新。
 
 REQ-013 食材分类展示
-Quick add 按 Produce、Meat & Seafood、Dairy & Eggs、Grains & Bread、Pantry、Condiments、Spices 分类展示常用食材。
-来源: 截图 211345, PantryCatalog.kt, IngredientCategory.kt
-验收重点: Produce 中包含 Tomato、Potato、Bell pepper；Dairy & Eggs 中包含 Egg、Milk、Butter、Cheese。
+Quick add 应按 Produce、Meat & Seafood、Dairy & Eggs、Grains & Bread 等分类展示常用食材。
+步骤: 进入 Pantry -> 向下滚动 Quick add。
+验收重点: 各分类标题和食材 chip 正确展示，滚动后仍可添加食材。
 
 REQ-014 食材归一化与同义词匹配
-匹配逻辑应支持单复数和常见同义词/包含关系，如 eggs 匹配 egg、scallions 匹配 green onion、chicken breast 匹配 chicken、garlic cloves 匹配 garlic。
-来源: CookMatch.kt, 单元测试
-验收重点: 手动添加 chicken breast 后 Chicken Fried Rice 的 Chicken 被判定已拥有。
+食材匹配应支持大小写、复数和常见同义词，避免因为文本差异导致可做状态错误。
+步骤: 手动添加 eggs 或 scallion -> 查看包含 Egg 或 Green onion 的菜谱详情。
+验收重点: eggs 可匹配 Egg，scallion 可匹配 Green onion。
 
 REQ-015 菜谱匹配计数
-每个菜谱应根据 pantry 与 essential ingredients 计算 haveCount/essentialCount，卡片和详情页展示类似 3/7、0/4 的匹配计数。
-来源: 截图 211358, CookMatch.kt, RecipeCard.kt
-验收重点: pantry 含 carrot、green onion、garlic 时 Chicken Fried Rice 显示 3/7。
+菜谱卡片和详情页应根据 pantry 中已有食材显示匹配数量。
+步骤: 添加 Carrot、Garlic、Onion -> 查看 Chicken Fried Rice 卡片和详情。
+验收重点: 匹配计数显示为已有数量/总必需食材数，例如 3/7。
 
 REQ-016 可做状态 Ready
-当 pantry 覆盖菜谱全部必需食材时，菜谱状态为 Ready to cook 或详情页展示 You're all set! You have everything to make this。
-来源: 截图 211407, CookMatch.kt, RecipeDetailScreen.kt
-验收重点: Chicken Fried Rice 必需食材齐全后详情页展示绿色完成状态。
+当 pantry 覆盖某菜谱全部必需食材时，详情页应展示可做状态。
+步骤: 打开 Chicken Fried Rice 详情 -> 点击 Add missing to pantry -> 再次查看状态。
+验收重点: 展示 You're all set! You have everything to make this.，必需食材均为已满足。
 
 REQ-017 缺少食材状态 Missing N
-当菜谱仍缺少必需食材时，详情页应显示 You're missing N ingredients，并列出缺少食材，提供 Add missing to pantry 操作。
-来源: 截图 211358, RecipeDetailScreen.kt
-验收重点: Chicken Fried Rice 缺 rice、chicken、egg、soy sauce 时显示缺少 4 个。
+当 pantry 缺少必需食材时，详情页应明确展示缺少数量和缺少食材列表。
+步骤: 只添加 Carrot、Garlic、Onion -> 打开 Chicken Fried Rice 详情。
+验收重点: 展示 You're missing 4 ingredients，并列出 Rice、Chicken、Egg、Soy sauce。
 
 REQ-018 可一键补齐缺少食材
-在详情页点击 Add missing to pantry 后，应把缺少的必需食材加入 pantry，并立即更新匹配状态为 You're all set。
-来源: 截图 211358, 截图 211407, RecipeDetailViewModel.kt
-验收重点: 点击后 rice、chicken、egg、soy sauce 都进入 pantry，Chicken Fried Rice 变为 7/7。
+详情页应提供 Add missing to pantry 按钮，把缺少的必需食材加入 pantry。
+步骤: 打开有缺失的 Chicken Fried Rice 详情 -> 点击 Add missing to pantry。
+验收重点: 缺少食材被加入 pantry，状态从缺少变为 You're all set。
 
 REQ-019 可选食材不影响可做状态
-菜谱中的 optional ingredients 不应阻塞 Ready 状态。详情页应将可选食材标记为 Optional。
-来源: 截图 211407, CookMatch.kt, RecipeDetailScreen.kt
-验收重点: Chicken Fried Rice 缺 Olive oil 时仍显示 You're all set，Olive oil 标记 Optional。
+可选食材不应阻塞可做判断。
+步骤: 打开 Chicken Fried Rice 详情 -> 补齐必需食材但不添加 Olive oil。
+验收重点: 页面仍显示 You're all set，Olive oil 标记为 Optional。
 
 REQ-020 Recipe Detail 基础信息
-详情页应展示返回按钮、收藏按钮、菜谱图、分类、标题、简介、标签、耗时、份数、难度、热量。
-来源: 截图 211358, RecipeDetailScreen.kt, recipes.json
-验收重点: Chicken Fried Rice 显示 Dinner、High protein、Meal prep、25 min、3 Serves、Medium、480 Kcal。
+菜谱详情页应展示头图、返回按钮、收藏按钮、分类、标题、描述、标签、时间、份数、难度和热量。
+步骤: 从首页或搜索页点击 Chicken Fried Rice。
+验收重点: 详情页显示 Dinner、Chicken Fried Rice、High protein、Meal prep、25 min、3 Serves、Medium、480 Kcal。
 
 REQ-021 Recipe Detail 食材清单
-详情页应展示 Ingredients 列表。已拥有的食材带勾选状态；缺失的必需食材显示 Missing；可选缺失食材显示 Optional。
-来源: 截图 211358, 截图 211407, RecipeDetailScreen.kt
-验收重点: Rice/Chicken/Egg 可从 Missing 切换为勾选；Olive oil 保持 Optional。
+详情页应展示食材数量、名称、缺失状态、已满足状态和可选标记。
+步骤: 打开 Chicken Fried Rice 详情 -> 滚动 Ingredients 区域。
+验收重点: 已有食材显示选中状态，缺少食材显示 Missing，可选食材显示 Optional。
 
 REQ-022 Recipe Detail 步骤进度
-详情页下方应展示 Steps 列表和完成进度。点击步骤可切换完成状态，进度从 0/N 递增或递减。
-来源: 截图 211407, RecipeDetailScreen.kt
-验收重点: 点击第一步后进度由 0/5 变为 1/5，再次点击恢复 0/5。
+详情页应展示做菜步骤，用户可逐步勾选并看到进度变化。
+步骤: 打开菜谱详情 -> 滚动到 Steps -> 勾选第一个步骤 -> 再取消。
+验收重点: 步骤计数从 0/N 变为 1/N，取消后恢复。
 
 REQ-023 Search 页面基础布局
-Search 页面应展示标题 Search、搜索输入框、分类筛选、Cookable 开关、Best match/Quickest/Fewest missing 排序，以及菜谱结果列表。
-来源: 截图 211331, SearchScreen.kt
-验收重点: 默认 All、Best match 选中；底部导航 Search 高亮。
+Search 页面应展示标题、搜索框、分类筛选、Cookable 筛选和排序选项。
+步骤: 点击底部 Search -> 查看页面顶部和列表。
+验收重点: 页面包含 Search、Search recipes...、All、Breakfast、Lunch、Dinner、Cookable、Best match、Quickest、Fewest missing。
 
 REQ-024 Search 文本搜索
-用户输入搜索词后，应按菜谱标题、分类、标签、食材匹配过滤结果。
-来源: SearchViewModel.kt
-验收重点: 搜索 rice 显示 Chicken Fried Rice；搜索 yogurt 显示 Honey Yogurt Parfait 和 Mango Lassi。
+用户输入菜谱名或食材关键词后，搜索结果应即时过滤。
+步骤: 进入 Search -> 输入 rice -> 清空后输入 yogurt。
+验收重点: rice 能找到 Chicken Fried Rice，yogurt 能找到包含 Yogurt 的相关菜谱。
 
 REQ-025 Search 分类筛选
-Search 页面分类筛选应与首页一致，选择 Breakfast/Lunch/Dinner 等后只展示对应分类结果。
-来源: SearchScreen.kt, SearchViewModel.kt
-验收重点: 选择 Breakfast 后可看到 Banana Oat Pancakes，不应看到 Chicken Fried Rice。
+Search 页面分类筛选应与搜索词共同生效。
+步骤: 进入 Search -> 点击 Breakfast -> 再输入 banana。
+验收重点: 只展示早餐分类中匹配 banana 的菜谱。
 
 REQ-026 Search Cookable 筛选
-打开 Cookable 后，只展示 pantry 已满足全部必需食材的菜谱。
-来源: 截图 211331, SearchViewModel.kt
-验收重点: pantry 为空时 Cookable 结果为空；补齐 Chicken Fried Rice 后 Cookable 显示该菜谱。
+Cookable 筛选只展示当前 pantry 已满足必需食材的菜谱。
+步骤: 清空 pantry -> 打开 Search 点击 Cookable -> 添加一组可做菜谱食材后再查看。
+验收重点: 空 pantry 时 Cookable 结果为空或提示无可做菜谱；补齐后展示可做菜谱。
 
 REQ-027 Search Best match 排序
-Best match 排序应按匹配比例降序，再按标题排序。
-来源: SearchViewModel.kt
-验收重点: 已添加 carrot、green onion、garlic 时，匹配比例高的菜谱排在更前。
+Best match 应根据当前 pantry 的食材匹配度排序。
+步骤: 添加 Rice、Chicken、Egg -> 打开 Search -> 选择 Best match。
+验收重点: 匹配度更高的菜谱排在更前，卡片匹配计数同步显示。
 
 REQ-028 Search Quickest 排序
-Quickest 排序应按 timeMinutes 从小到大展示。
-来源: SearchViewModel.kt, recipes.json
-验收重点: 5-Minute Mug Cake、Honey Yogurt Parfait、Mango Lassi 等 5 分钟菜谱应靠前。
+Quickest 应按制作时间从短到长排序。
+步骤: 打开 Search -> 点击 Quickest。
+验收重点: 5-Minute Mug Cake 等短时间菜谱排在前面。
 
 REQ-029 Search Fewest missing 排序
-Fewest missing 排序应按缺少必需食材数量升序，再按匹配比例排序。
-来源: SearchViewModel.kt
-验收重点: 当前 pantry 更接近完成的菜谱优先展示。
+Fewest missing 应按缺少必需食材数量从少到多排序。
+步骤: 添加部分食材 -> 打开 Search -> 点击 Fewest missing。
+验收重点: 缺少食材更少的菜谱排在更前。
 
 REQ-030 Search 空结果
-当搜索词和筛选组合无匹配结果时，应显示 No recipes found，并提示 Try a different ingredient or clear your filters。
-来源: SearchScreen.kt
-验收重点: 搜索不存在的字符串显示空态，不应崩溃或展示旧结果。
+当搜索词没有匹配菜谱时，页面应展示空态。
+步骤: 打开 Search -> 输入 zzz-not-exist。
+验收重点: 页面不崩溃，显示无结果提示或空列表状态。
 
 REQ-031 收藏菜谱
-用户可在首页、搜索页或详情页点击心形按钮收藏菜谱。收藏状态应实时反映在对应卡片和详情页。
-来源: HomeViewModel.kt, SearchViewModel.kt, RecipeDetailViewModel.kt, RecipeRepositoryImpl.kt
-验收重点: 收藏 5-Minute Mug Cake 后心形变为已选状态。
+用户可以从首页、搜索页或详情页收藏菜谱。
+步骤: 在首页点击 5-Minute Mug Cake 心形按钮 -> 打开详情查看心形状态。
+验收重点: 心形变为已收藏状态，详情页同步已收藏。
 
 REQ-032 Saved 收藏页空态
-当没有收藏时，Saved 页应显示 No saved recipes yet、说明文案和 Browse recipes 操作。
-来源: FavoritesScreen.kt
-验收重点: 点击 Browse recipes 返回 Discover。
+当没有收藏菜谱时，Saved 页面应展示空态和浏览入口。
+步骤: 取消全部收藏 -> 进入 Saved。
+验收重点: 展示 No saved recipes，并提供 Browse recipes 或类似入口。
 
 REQ-033 Saved 收藏列表
-收藏菜谱后，Saved 页应显示收藏列表、收藏数量文案，并可点击进入详情。
-来源: FavoritesScreen.kt, RecipeRepositoryImpl.kt
-验收重点: 收藏 Chicken Fried Rice 后 Saved 显示 1 recipe in your cookbook。
+Saved 页面应展示所有收藏菜谱，并支持点击进入详情。
+步骤: 收藏 5-Minute Mug Cake -> 进入 Saved -> 点击该卡片。
+验收重点: Saved 列表显示该菜谱，点击进入对应详情页。
 
 REQ-034 取消收藏
-用户在 Saved 页或详情页取消收藏后，该菜谱应从 Saved 列表移除；当列表为空时恢复空态。
-来源: FavoritesViewModel.kt, RecipeRepositoryImpl.kt
-验收重点: 取消唯一收藏后显示 No saved recipes yet。
+用户可以从 Saved 或详情页取消收藏。
+步骤: 收藏一个菜谱 -> 进入 Saved -> 点击心形取消收藏。
+验收重点: 菜谱从 Saved 列表移除；若无收藏，显示空态。
 
 REQ-035 收藏顺序
-Saved 页应按收藏时间倒序展示，最近收藏的菜谱排在前面。
-来源: FavoriteDao.kt, RecipeRepositoryImpl.kt
-验收重点: 先收藏 A 再收藏 B，Saved 首项为 B。
+收藏列表应按最近收藏优先展示。
+步骤: 依次收藏 A 菜谱和 B 菜谱 -> 进入 Saved。
+验收重点: 后收藏的 B 菜谱排在 A 菜谱前。
 
 REQ-036 Settings 页面基础信息
-Settings 页面应展示 Appearance、Data、About 三组内容，包括 Theme、Clear pantry、App、Version、Built with 和离线说明。
-来源: SettingsScreen.kt
-验收重点: About 显示 App WhatCanICook、Version 1.0.0、Built with Jetpack Compose。
+Settings 页面应展示主题设置、数据管理和 About 信息。
+步骤: 点击首页右上角设置按钮 -> 查看 Settings。
+验收重点: 显示 Appearance、Light、Dark、Match system、Clear pantry、About、App WhatCanICook、Version 1.0.0、Built with Jetpack Compose。
 
 REQ-037 主题切换
-Settings 中 Theme 支持 Match system、Light、Dark 三种模式，点击后立即切换应用主题。
-来源: SettingsScreen.kt, ThemeMode.kt, MainActivity.kt
-验收重点: 选择 Dark 后页面整体切换到深色主题。
+用户可在 Settings 中切换 Light、Dark、Match system 主题。
+步骤: 进入 Settings -> 选择 Dark -> 返回首页 -> 再切换 Light。
+验收重点: 页面颜色立即变化，切换过程中当前页面和数据状态不丢失。
 
 REQ-038 主题持久化
-用户选择的主题模式应保存到 SharedPreferences，重启应用后保持原选择。
-来源: SettingsRepositoryImpl.kt
-验收重点: 选择 Dark 后重启仍为 Dark。
+主题选择应持久保存。
+步骤: 在 Settings 选择 Dark -> 关闭并重启应用。
+验收重点: 重启后仍保持 Dark 主题。
 
 REQ-039 Settings 清空 pantry
-Settings 的 Clear pantry 应移除所有已添加食材，并影响首页、搜索页和详情页的匹配状态。
-来源: SettingsScreen.kt, SettingsViewModel.kt
-验收重点: 清空后 Chicken Fried Rice 从 You're all set 恢复为缺食材状态。
+Settings 中的 Clear pantry 应清空食材并影响所有相关页面。
+步骤: 添加多个食材 -> 进入 Settings -> 点击 Clear pantry -> 返回首页和详情页。
+验收重点: pantry 数量归零，首页提示恢复，详情页缺失状态重新计算。
 
 REQ-040 底部导航
-应用底部导航包含 Discover、Search、Pantry、Saved 四个主入口。切换主入口时应保留各 Tab 基本状态，详情页和设置页不显示底部导航。
-来源: 截图 211308, 截图 211331, 截图 211345, WccApp.kt, WccBottomBar.kt
-验收重点: 主 Tab 高亮正确；进入详情页时底部导航消失。
+应用主页面应提供 Discover、Search、Pantry、Saved 四个底部导航入口。
+步骤: 分别点击底部四个入口。
+验收重点: 每个入口进入对应页面，当前 tab 高亮，页面标题和内容正确。
 
 REQ-041 返回导航
-详情页和设置页应提供返回按钮，点击后回到进入前页面。
-来源: 截图 211358, WccApp.kt, SettingsScreen.kt, RecipeDetailScreen.kt
-验收重点: 从 Search 进入详情后返回 Search；从 Discover 进入 Settings 后返回 Discover。
+详情页和设置页等二级页面应提供返回按钮，并返回进入前的页面。
+步骤: 从首页打开详情 -> 点击返回；从首页打开 Settings -> 点击返回。
+验收重点: 返回后保持上一页状态，例如分类、搜索词或列表位置尽量不丢失。
 
 REQ-042 错误与加载状态
-首页首次初始化时应显示加载骨架；若菜谱初始化失败，应显示错误状态和 Retry。
-来源: HomeScreen.kt, RecipeRepositoryImpl.kt, StateViews.kt
-验收重点: 正常路径不长时间停留加载；错误路径可重试。
+应用在加载离线数据或出现异常时应有明确状态，不应长时间白屏或崩溃。
+步骤: 打开应用并切换各主页面 -> 观察加载和错误状态。
+验收重点: 页面可恢复、无长期空白，无崩溃；异常时显示可理解的提示。

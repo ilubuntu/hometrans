@@ -1,9 +1,0 @@
-{
-  "stage": "coder",
-  "focus_point": "Whether the ArkUI page lifecycle hook onPageShow fires when returning to a page via router.back() (back-navigation), so a per-page refresh can re-snapshot shared singleton repository state",
-  "task_excerpt": "Cross-page match-count sync: when the user adds/removes a pantry item on the Pantry page (or clears pantry on Settings, or toggles a favorite on a recipe card) and then navigates back, the Discover/Search/Saved/RecipeDetail pages must re-snapshot the shared repository singletons and recompute match counts. Plan mandates each consuming page call viewModel.refresh() in onPageShow.",
-  "project_evidence": "Pages are @Entry @Component structs navigated via router.pushUrl/router.back() (HarmonyOS router API). Each page binds an @Observed ViewModel. There is no shared reactive store; instead plan introduces singleton repositories (PantryRepository/FavoritesRepository) whose snapshot() must be re-read on page re-entry. Need to confirm onPageShow is the correct lifecycle hook for re-entry refresh on router.back(), and whether aboutToAppear also fires on back (it should not).",
-  "platform_surfaces": ["ArkUI page lifecycle (aboutToAppear/aboutToDisappear/onPageShow/onPageHide)", "router.back() navigation", "@Entry page reactivation"],
-  "extra_constraints": ["Offline only. Confirm onPageShow is invoked on router.back() re-entry to a previously-pushed page, and that aboutToAppear is NOT re-invoked on back. If onPageShow does not fire on back-nav, identify the correct alternative hook."],
-  "api_level": 22
-}

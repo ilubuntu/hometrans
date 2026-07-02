@@ -1,97 +1,84 @@
-# Trace: settings-clear-pantry (REQ-039)
+# Code trace · settings-clear-pantry
 
-## 需求原文
-Settings 的 Clear pantry 应移除所有已添加食材，并影响首页、搜索页和详情页的匹配状态。清空后 Chicken Fried Rice 从 You're all set 恢复为缺食材状态。
+## Status
+status: ok
+project-path: /Users/bb/work/hometrans/whaticantook/whaticancook
+backend: homegraph
 
-## 代码追踪
+## Recalled entry points (Path 1 + Path 2 union, deduplicated)
+- Entry 1: Settings 页面数据区块的"Clear pantry"项 — app/src/main/java/com/whaticancook/app/feature/settings/SettingsScreen.kt:76-103 — recalled by: path 1 (explore "clearPantry")
+- Entry 2: 清空后受影响的消费方（首页 / 详情页 / 搜索页 / 收藏页 / 食材库页） — recalled by: path 2 (callers of PantryRepository.observePantry / clear)
 
-### 1. Settings 页面触发入口
-**文件**: `app/src/main/java/com/whaticancook/app/feature/settings/SettingsScreen.kt:82-103`
-```kotlin
-SettingsSectionLabel("Data")
-SettingsCard {
-    Row(
-        modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp))
-            .bounceClick(onClick = viewModel::clearPantry, pressedScale = 0.98f)
-            .padding(vertical = 4.dp),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Icon(Icons.Rounded.DeleteSweep, tint = error)
-        Column(modifier = Modifier.weight(1f)) {
-            Text("Clear pantry", titleMedium, onSurface)
-            Text("Remove all ingredients you've added", bodySmall, onSurfaceVariant)
-        }
-    }
-}
-```
-- "Clear pantry" 行点击 -> `viewModel::clearPantry`。
-- 无确认对话框，直接执行。
+## Entry · Settings 页面"Clear pantry"触发清空
+- claim: 用户在"设置"页面数据区块点击"Clear pantry"项，立即清空全部已添加食材，无需二次确认。
+- layers:
+  - code:     app/src/main/java/com/whaticancook/app/feature/settings/SettingsScreen.kt:76-103 (Row.bounceClick(onClick = viewModel::clearPantry, SettingsScreen.kt:80))；SettingsViewModel.clearPantry (SettingsViewModel.kt:34-36) → pantryRepository.clear()
+  - resource: N/A: 行左侧为代码内图标 Icons.Rounded.DeleteSweep (SettingsScreen.kt:85)，无 res 资源
+  - manifest: N/A: 应用内数据操作，无 manifest 声明
+- interaction: 点击 → viewModel.clearPantry (SettingsScreen.kt:80) → SettingsViewModel.clearPantry (SettingsViewModel.kt:34) 异步执行 pantryRepository.clear()。无确认弹窗、无 toast 回执、无状态写入到设置态。
+  - PantryRepositoryImpl.clear (PantryRepositoryImpl.kt:47-49) → PantryDao.clear (PantryDao.kt:22-23: @Query("DELETE FROM pantry_items"))。
+- data_flow: bounceClick (SettingsScreen.kt:80) → SettingsViewModel.clearPantry (SettingsViewModel.kt:34) → PantryRepository.clear (PantryRepository.kt:14) → PantryRepositoryImpl.clear (PantryRepositoryImpl.kt:47) → PantryDao.clear → DELETE FROM pantry_items (PantryDao.kt:22)。
 
-### 2. ViewModel 处理
-**文件**: `app/src/main/java/com/whaticancook/app/feature/settings/SettingsViewModel.kt:33-35`
-```kotlin
-fun clearPantry() {
-    viewModelScope.launch { pantryRepository.clear() }
-}
-```
-- 调用 `pantryRepository.clear()`。
+## Entry · 清空后首页恢复空食材提示
+- claim: 清空食材后，首页食材数量归零，"可做菜谱"区不再展示，恢复为引导添加食材的空态提示。
+- layers:
+  - code:     app/src/main/java/com/whaticancook/app/feature/home/HomeViewModel.kt:68-79（combine observePantry → pantryCount）；HomeScreen.kt:98-120（PantrySummaryCard 计数 / cookNow 为空且 pantryCount==0 时展示 CookNowPrompt）
+  - resource: N/A
+  - manifest: N/A
+- interaction: observePantry 发出空列表 → HomeViewModel.buildContent 中 pantry.size=0 (HomeViewModel.kt:100)，cookNow 因 pantryNames.isNotEmpty() 为假恒为空 (HomeViewModel.kt:90)；HomeScreen 据此显示 CookNowPrompt 引导添加食材。
+- data_flow: pantry_items 表清空 → PantryDao.observeAll 发空 (PantryRepositoryImpl.kt:25-28) → HomeViewModel uiState → HomeScreen 重组。
 
-### 3. Repository 实现
-**文件**: `app/src/main/java/com/whaticancook/app/data/repository/PantryRepositoryImpl.kt:46-48`
-```kotlin
-override suspend fun clear() = withContext(io) {
-    pantryDao.clear()
-}
-```
-- 在 IO 线程执行。
+## Entry · 清空后详情页缺失状态重新计算
+- claim: 清空食材后，菜谱详情页的食材匹配状态、缺失数量与缺失列表立即按空食材库重新计算。
+- layers:
+  - code:     app/src/main/java/com/whaticancook/app/feature/detail/RecipeDetailViewModel.kt:47-63（combine observeRecipe + observePantry 重算 IngredientStatus.have 与 matchAgainst）
+  - resource: N/A
+  - manifest: N/A
+- interaction: observePantry 发空 → pantryNames 为空 → 每个 RecipeIngredient 的 have=false（除非匹配逻辑恒真，此处为 false，RecipeDetailViewModel.kt:54-60），match.missing 重算为全部必需食材。
+- data_flow: pantry_items 清空 → RecipeDetailViewModel combine → DetailUiState.Content 重发 → 详情页缺失状态刷新。
 
-### 4. DAO 层清空
-**文件**: `app/src/main/java/com/whaticancook/app/data/local/dao/PantryDao.kt:21-22`
-```kotlin
-@Query("DELETE FROM pantry_items")
-suspend fun clear()
-```
-- `DELETE FROM pantry_items` — 删除表中所有记录。
+## Entry · 清空后搜索页与收藏页匹配重新计算
+- claim: 清空食材后，搜索页菜谱匹配计数与"可做"筛选结果、收藏页匹配计数均按空食材库重新计算。
+- layers:
+  - code:     搜索: app/src/main/java/com/whaticancook/app/feature/search/SearchViewModel.kt:59-65（combine observePantry）；收藏: app/src/main/java/com/whaticancook/app/feature/favorites/FavoritesViewModel.kt:29-38（combine observePantry）
+  - resource: N/A
+  - manifest: N/A
+- interaction: observePantry 发空 → SearchViewModel.build / FavoritesViewModel 中 pantryNames 为空 → 各菜谱 match.ratio 与 isCookable 重算（空食材库下 isCookable 恒假）。
+- data_flow: pantry_items 清空 → SearchViewModel/FavoritesViewModel combine → 列表匹配刷新。
 
-### 5. 响应式传播到所有页面
-**文件**: `PantryDao.kt:12-13`
-```kotlin
-@Query("SELECT * FROM pantry_items ORDER BY addedAt DESC")
-fun observeAll(): Flow<List<PantryItemEntity>>
-```
-- `clear()` 触发 `observeAll()` Flow 重新发射空列表。
+## Implicit triggers (non-UI state changes that activate this feature)
+- None（清空动作的唯一触发是用户在设置页点击"Clear pantry"；无隐式触发。清空后各页面刷新是数据流响应，归各 Entry）
 
-#### 首页影响
-**文件**: `HomeViewModel.kt:67-79`
-```kotlin
-val uiState = combine(seedState, recipeRepository.observeRecipes(),
-    pantryRepository.observePantry(), selectedCategory) { ... }
-```
-- pantry 变空 -> `buildContent` 中 `pantryNames` 为空 -> `matchAgainst(emptyList())` -> 所有菜谱 `missing.size = essentialCount`。
-- `cookNow` 列表变空（`pantryNames.isNotEmpty()` 为 false）。
-- pantry 卡片显示 "Add what you have at home"。
+## Core business entities (data model / persistence key / state machine)
+- 食材库表 pantry_items: PantryDao.kt:13/22 — 清空操作为 DELETE FROM pantry_items，删除全部行。
+- PantryRepository.clear / PantryRepositoryImpl.clear: PantryRepository.kt:14 / PantryRepositoryImpl.kt:47-49 — 设置页清空与食材库页"Clear all"共用同一实现。
+- observePantry() Flow: PantryRepository.kt:8 / PantryRepositoryImpl.kt:25 — 所有消费方（首页/详情/搜索/收藏/食材库）订阅同一流，清空后统一收到空列表。
+- 依赖: 本 REQ 共享 `pantry-clear-SPEC.md`（REQ-012，食材库页 Clear all）的底层 PantryRepository.clear；二者入口不同但清空语义一致。
 
-#### 搜索页影响
-**文件**: `SearchViewModel.kt:60-65`
-- pantry 变空 -> `build()` 中 `pantryNames` 为空 -> 所有 `CookMatch` 重新计算 -> 排序/匹配更新。
+## Cross-entry shared declarations
+- None（清空操作无 manifest/build 跨条目声明）
 
-#### 详情页影响
-**文件**: `RecipeDetailViewModel.kt:45-55`
-- pantry 变空 -> `IngredientStatus.have` 全部为 false -> `CookMatch.isCookable = false`。
-- 之前 "You're all set!" 的菜谱变为 "You're missing N ingredients"。
+## Deviations from REQ_DESC
+1. REQ_DESC 称"点击 Clear pantry"即可清空；代码实现为点击后立即清空，无确认弹窗、无成功 toast (SettingsScreen.kt:76-103)。属补充说明，与需求"点击即清空"一致。
+2. REQ_DESC 称"pantry 数量归零，首页提示恢复，详情页缺失状态重新计算"。代码除这两处外，搜索页与收藏页的匹配计数也同步重新计算（Entry · 清空后搜索页与收藏页）。属补充覆盖，非冲突。
 
-### 6. matchAgainst 空 pantry
-**文件**: `CookMatch.kt:92-105`
-```kotlin
-for (ing in ingredients) {
-    val satisfied = pantryNames.any { IngredientMatching.matches(it, ing.name) }
-    // pantryNames 为空 -> any{} 返回 false -> 所有必需食材进入 missing
-}
-```
-- 空 pantry -> `haveCount=0`, `missing=all essential`, `ratio=0f`。
+## Scope / Boundary — Exhaustive entry enumeration
+### Touched entries (all UI paths, not limited to REQ_DESC mentions)
+- 触发清空：Settings 页"Clear pantry"项（见 Entry · Settings 页面"Clear pantry"触发清空）
+- 受影响消费方：首页空态提示 / 详情页缺失重算 / 搜索页匹配重算 / 收藏页匹配重算（见对应 Entry）/ 食材库页列表清空（PantryViewModel 订阅 observePantry，PantryViewModel.kt loading 字段，items 清空）
 
-## 关键逻辑总结
-1. Clear pantry 执行全表删除（DELETE FROM pantry_items）。
-2. Room Flow 响应式传播到所有观察 pantry 的页面（首页/搜索/详情/食材库）。
-3. 清空后所有菜谱匹配状态从 "已拥有" 回归为 "缺少全部必需食材"。
-4. 无确认对话框，操作立即执行。
+### Consumers (who reads this state / data)
+- Consumer: HomeViewModel — app/src/main/java/com/whaticancook/app/feature/home/HomeViewModel.kt:71
+- Consumer: RecipeDetailViewModel — app/src/main/java/com/whaticancook/app/feature/detail/RecipeDetailViewModel.kt:49
+- Consumer: SearchViewModel — app/src/main/java/com/whaticancook/app/feature/search/SearchViewModel.kt:61
+- Consumer: FavoritesViewModel — app/src/main/java/com/whaticancook/app/feature/favorites/FavoritesViewModel.kt:31
+- Consumer: PantryViewModel — app/src/main/java/com/whaticancook/app/feature/pantry/PantryViewModel.kt
+
+### Non-consumers (boundary counter-examples with evidence)
+- claim: 清空食材不影响收藏关系数据（favorites 表）、菜谱种子数据（recipes 表）与主题/引导设置
+  - closure_layers: [code, resource, manifest]
+  - tools: [homegraph_impact "clear" depth 2 projectPath, Grep "DELETE FROM" over data/local/dao]
+  - zero_hits: PantryDao.clear 仅 DELETE FROM pantry_items (PantryDao.kt:22)；FavoriteDao 的 DELETE 仅按 recipeId 删除单条 (FavoriteDao.kt:19)，无全清；Grep "pantry_items" 命中仅 PantryDao/PantryRepositoryImpl/PantryItemEntity，未涉及 favorites/recipes/onboarding/theme
+
+## Same-source cross-reference (if applicable)
+- 本 REQ 与 `pantry-clear-SPEC.md`（REQ-012）共享同一 PantryRepository.clear 与 pantry_items 表清空语义；区别仅在入口：本 SPEC 入口为"设置"页面数据区块的"Clear pantry"，`pantry-clear-SPEC.md` 入口为"食材库"页面的"Clear all"。两份 SPEC 独立生成，互相引用。
