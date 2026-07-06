@@ -2,11 +2,15 @@
 /HomeTrans/
 /nowinandroid/
 /majiajia/
+/AntennaPod/AntennaPod/
+/catchup/CatchUp/
+/wanAndroid/WanAndroid/
 /calculate/SiliconeCalculator/
 /calculate/input/calculatorHarmony/
 /whaticantook/whaticancook/
 /empty_hos_project/
 /whaticantook/input/whaticancookHarmony/
+**/input/*Harmony/
 
 # macOS / IDE
 .DS_Store
@@ -41,8 +45,12 @@ oh-package-lock.json5
 *.webm
 *.hap
 *.apk
+ppt_assets/
 
 **/.trace/
+**/output/
 **/output/**/page_*_*/
 **/output/*_pipeline/
 **/task_[0-9]*/
+/AntennaPod/AntennaPod/
+/AntennaPod/input/antennapodHarmony/
