@@ -45,7 +45,9 @@ oh-package-lock.json5
 *.webm
 *.hap
 *.apk
+*.pptx
 ppt_assets/
+**/harmony_screenshots/
 
 **/.trace/
 **/output/

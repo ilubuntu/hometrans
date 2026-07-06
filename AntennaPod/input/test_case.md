@@ -10,7 +10,7 @@
 ### Scenario: 首次启动和底部导航
 - 覆盖需求：REQ-001, REQ-002
 - 前置条件：清除应用数据后首次启动。
-- 动作：打开应用 -> 依次点击 Home、Queue、Inbox、Subscriptions -> 点击 More。
+- 动作：打开com.example.antennapodharmony -> 依次点击 Home、Queue、Inbox、Subscriptions -> 点击 More。
 - 预期结果：应用正常进入主界面；Home、Queue、Inbox、Subscriptions 可切换且选中状态正确；点击 More 时在当前页面弹出菜单，不进入独立 More 空页面。
 
 ### Scenario: More 菜单进入 Settings
@@ -88,5 +88,5 @@
 ### Scenario: 设置、OPML 和数据持久化
 - 覆盖需求：REQ-030, REQ-031, REQ-032, REQ-033, REQ-034, REQ-035, REQ-037, REQ-040
 - 前置条件：已订阅播客、收藏单集、加入 Queue，并准备固定 OPML 文件。
-- 动作：进入 Settings -> 修改外观、播放或下载设置 -> 导入或导出 OPML -> 打开 Statistics -> 关闭并重新打开应用。
+- 动作：进入 Settings -> 修改外观、播放或下载设置 -> 导入或导出 OPML -> 打开 Statistics -> 关闭并重新打开com.example.antennapodharmony。
 - 预期结果：设置项可打开并保存；OPML 导入/导出流程可进入；Statistics 展示统计或合理空态；重启后订阅、Queue、Favorites、History 和设置仍然保持。

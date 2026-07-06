@@ -1,0 +1,145 @@
+# WhatCanICook 迁移统计报告
+
+## 总体评价
+
+本次迁移的功能还原完善度较高，核心页面、主流程和数据链路基本完成；UI 布局还原度也较高，主要页面形态和视觉结构已经接近 Android 原应用。
+
+主要不足集中在 UI 状态反馈和工程质量：部分按钮、筛选项、Switch、主题选项切换后颜色或选中态没有及时更新；数据还原问题不大，但代码质量偏低，大量使用废弃 API，导航仍使用 `router`，状态管理偏 V1 装饰器写法，也缺少面向 HarmonyOS 现代工程实践的专项增强。
+
+自测试阶段暴露的问题更多来自测试环境和脚本控制：启动报错后仍继续执行全部用例，导致用例实际无法正常验证，浪费了大量时间；多模态测试链路反复截图、等待模型判断，也带来了较高 Token 消耗。
+
+## 一、转换结果对比
+
+### 1.1 Android 项目概况
+
+WhatCanICook 是一个离线菜谱应用，使用 Kotlin + Jetpack Compose 实现。用户维护自己的 pantry 食材清单，应用根据本地 `recipes.json` 菜谱数据计算哪些菜能做、还缺哪些食材，并支持搜索、分类筛选、收藏、详情页、深色模式和设置页。
+
+项目规模不大，但业务链路比较完整：纯 Kotlin/Java 约 4.7k 行，包含资源、JSON 和工程脚本后总代码约 7.7k 行；包含 Onboarding、Discover、Search、Pantry、Recipe Detail、Favorites、Settings 等主要页面，使用 Room、Hilt、Navigation-Compose、Repository/MVVM 分层。
+
+### 1.2 转换结果对比
+
+完整迁移输出见 [migration-final-report.md](/Users/bb/work/hometrans/whaticantook/output/whaticancook_pipeline/migration-final-report.md)。
+
+Android 原应用录屏：[Screen_recording_20260625_210010.webm](android_video/Screen_recording_20260625_210010.webm)。
+
+HarmonyOS 迁移结果截图：
+
+<table>
+<tr>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T153728.png" width="200"/></td>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T153738.png" width="200"/></td>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T153744.png" width="200"/></td>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T153749.png" width="200"/></td>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T153753.png" width="200"/></td>
+</tr>
+<tr>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T154342.png" width="200"/></td>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T154425.png" width="200"/></td>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T154429.png" width="200"/></td>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T160254.png" width="200"/></td>
+<td><img src="harmony_screenshots/Screenshot_2026-06-27T160311.png" width="200"/></td>
+</tr>
+</table>
+
+| 维度 | 评价内容 | 本次结果 |
+|------|----------|----------|
+| 功能 | 42 个功能点是否迁移，主流程是否可用 | 覆盖 42 个 REQ，主要页面、主流程和数据链路已实现；剩余问题集中在少量细节交互和状态反馈 |
+| UI | 页面布局、视觉风格、组件形态是否接近 Android | 已完成批量 UI 对齐和增量 UI 对齐，主要页面有 HarmonyOS 截图；部分按钮、筛选项、开关的选中颜色和视觉状态仍需调整 |
+| 数据和状态 | 菜谱数据、Pantry、收藏、主题、引导状态是否正确 | 本地菜谱数据、Pantry、搜索、详情、收藏等数据链路整体互通；部分控件切换后的视觉状态未同步刷新 |
+| 工程质量 | 是否能构建运行，代码结构是否清楚，是否容易维护 | HarmonyOS 工程可构建；代码按 View、ViewModel 分类，并抽取了少量公共组件；但大量使用废弃 API，导航仍使用 router，状态管理仍偏 V1 装饰器写法，总体工程质量不高 |
+| 测试结果 | 自测和人工验收通过情况，失败集中在哪些地方 | Round 1 为 0/48；修复启动崩溃后 Round 2 为 6/48，失败集中在启动链路、测试用例期望和视觉状态判断，不能直接等同于功能未实现 |
+| 时间 | 完整迁移流程耗时 | 总耗时约 12h53m，其中两轮自测约 8h，占主要时间 |
+| Token | opencode 与 AutoTest 总消耗 | 总计约 127.30M Token；自测相关约 65.23M，占 51.2% |
+
+---
+
+## 二、时间统计
+
+| 阶段 | 子步骤 | 开始 | 结束 | 耗时 |
+|------|--------|------|------|------|
+| **阶段 1: UI 对齐** | | 06-25 21:41 | 06-26 00:07 | **~2h 45m** |
+| | Android 爬虫抓取 (59 页面) | 21:41 | 22:43 | ~1h 2m |
+| | 资源转换 + 页面/组件编写 | 22:43 | 00:07 | ~1h 24m |
+| **阶段 2: 增量对齐** | | 06-26 00:07 | 00:25 | **~18m** |
+| | 截图 + UI 对比 + 修复 | 00:07 | 00:25 | ~18m |
+| **阶段 3: 规格生成** | | 06-26 00:25 | 01:07 | **~42m** |
+| | GitNexus 索引 + 42 规格生成 | 00:25 | 01:07 | ~42m |
+| **阶段 4: 转换流水线** | | 06-26 01:08 | 10:15 | **~9h 8m** |
+| | logic-context-builder | 01:08 | 01:17 | ~9m |
+| | logic-coder (数据层实现) | 01:18 | 01:41 | ~23m |
+| | build + install | 01:42 | 01:43 | ~1m |
+| | code-review | 01:43 | 01:49 | ~6m |
+| | review-fixer + rebuild | 01:49 | 01:53 | ~4m |
+| | self-test round 1 | 01:57 | 05:39 | ~3h 42m |
+| | @Track 崩溃修复 | 05:39 | 05:50 | ~11m |
+| | self-test round 2 | 05:54 | 10:10 | ~4h 16m |
+| | 最终报告编写 | 10:11 | 10:15 | ~4m |
+| | | | **合计** | **~12h 53m** |
+
+> 自测执行占阶段 4 的 83%（两轮合计 ~8h），纯开发+审查+构建仅 ~1h 32m。
+
+---
+
+## 三、Token 统计
+
+> opencode 使用 GLM-5.1，AutoTest 使用 MiniMax，两者独立计费。
+
+### 3.1 总览
+
+| 来源 | 模型 | Token | 说明 |
+|------|------|-------|------|
+| opencode 主 Agent | GLM-5.1 | 31.12M | 全程编排 |
+| opencode 子 Agent | GLM-5.1 | 75.87M | UI 对齐、规格生成、代码迁移、自测编排 |
+| AutoTest Round 1 | MiniMax | ~10.00M | 日志已覆盖，按 Round 2 估算 |
+| AutoTest Round 2 | MiniMax | 10.31M | 659 次 LLM 调用 |
+| **合计** | | **~127.30M** | |
+
+### 3.2 opencode 子 Agent
+
+| 类型 | 会话数 | Token | 说明 |
+|------|--------|-------|------|
+| self-tester | 2 | **44.92M** | 编排自测：解析用例、安装 HAP、调度执行、分析结果 |
+| general | 11 | **17.95M** | UI 对齐 + 规格生成 |
+| logic-coder | 1 | **9.37M** | 数据层实现（4 个 Repository） |
+| logic-context-builder | 1 | **1.62M** | 数据层架构计划 |
+| code-reviewer | 1 | **1.09M** | 代码审查（43/48 PASS） |
+| review-fixer | 1 | **0.92M** | 审查修复 + 重建 |
+| 主 Agent | 1 | **31.12M** | 全程编排 |
+| **合计** | **18** | **106.99M** | |
+
+> 缓存读取占总 Token 的 ~93%，实际网络传输约 7M Token。
+
+### 3.3 阶段 Token 明细
+
+| 阶段 | Token | 主要消耗 |
+|------|-------|----------|
+| UI 对齐 | 8.11M | 6 个页面/组件转换子任务 |
+| 增量 UI 对齐 | 2.33M | UI diff 分析与修复 |
+| 规格生成 | 7.51M | 42 个 REQ/SPEC 生成 |
+| 逻辑迁移 + 构建 + 审查 | 13.00M | 数据层实现、代码审查、修复重建 |
+| self-tester 编排 | 44.92M | 两轮自测调度和轮询 |
+| AutoTest 执行 | ~20.31M | MiniMax 多模态执行用例 |
+
+> 自测相关 Token 约 65.23M，占全部 Token 的 51.2%。
+
+### 3.4 AutoTest Round 2
+
+| 指标 | 值 |
+|------|-----|
+| LLM 调用次数 | 659 |
+| **总 Token** | **10.31M** |
+| 平均每次调用 | 0.016M |
+| 测试用例数 | 48 |
+| 平均每用例 | ~0.21M |
+
+---
+
+## 四、发现的问题
+
+| 分类 | 发现的问题 | 典型现象 | 影响范围 |
+|------|------------|----------|----------|
+| 转换/测试程序设计问题 | 缺少全局 fail-fast；启动目标没有被 `bundle_name` 强约束；`app_name` 和 `bundle_name` 混用 | Round 1 启动崩溃仍跑完整 48 个用例；Round 2 尝试用 `WhatCanICook`、`nowinandroid`、`Bean Juice` 启动；Onboarding 文案期望被替换成包名 | 启动识别约 25/48（52.1%）；文案期望约 8/48（16.7%）；Round 1 48/48 受 fail-fast 缺失影响 |
+| AutoTest 实际执行问题 | 多模态闭环重试导致超时 | 多条用例超过 600 秒，集中在长链路操作和页面走偏场景 | 约 3/48（6.3%）明确归为超时；部分长链路失败也受重试影响 |
+| 需求和测试用例设计可能与代码不符 | 用例状态依赖不稳定，部分期望可能没有完全贴合原 Android 实现 | 部分用例默认已经完成引导、添加食材或收藏菜谱，但实际状态不一定满足；个别 UI 细节如搜索框清除 X 未在需求中明确，但可能被人工观察纳入差异 | 主要影响 Pantry、详情、Saved 等连续状态场景；未单独精确计数 |
+| 迁移产物实际问题 | 少量细节交互和视觉反馈不完整 | 搜索输入后的清除 X 按钮未实现；部分筛选项、排序项、主题选项、Switch 切换后颜色或选中态没有立即变化 | 搜索清除 X 未在需求和用例中明确要求；状态反馈类问题影响人工观感和 AutoTest 视觉判断，但不代表底层功能链路不通 |
+| 鸿蒙代码质量专项能力缺失 | 当前流程重点在功能迁移和可运行验证，缺少现代 HarmonyOS 工程质量提升阶段 | 产物能构建并按 View、ViewModel 做基本分类，但大量使用废弃 API，导航仍使用 router，状态管理偏 V1 装饰器，公共组件抽取有限 | 影响工程可维护性和长期演进；不一定直接影响本轮功能通过率 |
