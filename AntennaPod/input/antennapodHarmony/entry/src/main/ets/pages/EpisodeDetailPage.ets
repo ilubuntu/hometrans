@@ -87,6 +87,8 @@ struct EpisodeCoverHeader {
 struct PlayerControlRow {
   @Prop isPlaying: boolean = false;
   @Prop playbackSpeedLabel: string = '1.00';
+  @Prop rewindSeconds: number = 30;
+  @Prop fastForwardSeconds: number = 30;
   onSpeed: () => void = () => {};
   onRewind: () => void = () => {};
   onPlay: () => void = () => {};
@@ -114,7 +116,7 @@ struct PlayerControlRow {
           .width(28)
           .height(28)
           .fillColor($r('app.color.black'))
-        Text('30')
+        Text(`${this.rewindSeconds}`)
           .fontSize(11)
           .fontColor($r('app.color.text_color_secondary_light'))
           .margin({ top: 2 })
@@ -140,7 +142,7 @@ struct PlayerControlRow {
           .width(28)
           .height(28)
           .fillColor($r('app.color.black'))
-        Text('30')
+        Text(`${this.fastForwardSeconds}`)
           .fontSize(11)
           .fontColor($r('app.color.text_color_secondary_light'))
           .margin({ top: 2 })
@@ -189,6 +191,8 @@ struct EpisodeDetailPage {
   @State positionSec: number = 0;
   @State durationSec: number = 0;
   @State playbackSpeedLabel: string = '1.00';
+  @State rewindSeconds: number = 30;
+  @State fastForwardSeconds: number = 30;
   @State isPlaying: boolean = false;
   @State isFavorite: boolean = false;
   @State inQueue: boolean = false;
@@ -269,6 +273,8 @@ struct EpisodeDetailPage {
     this.positionSec = episodeDetailViewModel.positionSec;
     this.durationSec = episodeDetailViewModel.durationSec;
     this.playbackSpeedLabel = episodeDetailViewModel.playbackSpeedLabel;
+    this.rewindSeconds = episodeDetailViewModel.rewindSeconds;
+    this.fastForwardSeconds = episodeDetailViewModel.fastForwardSeconds;
     this.isPlaying = episodeDetailViewModel.isPlaying;
     this.isFavorite = episodeDetailViewModel.isFavorite;
     this.inQueue = episodeDetailViewModel.inQueue;
@@ -629,12 +635,14 @@ struct EpisodeDetailPage {
             PlayerControlRow({
               isPlaying: this.isPlaying,
               playbackSpeedLabel: this.playbackSpeedLabel,
+              rewindSeconds: this.rewindSeconds,
+              fastForwardSeconds: this.fastForwardSeconds,
               onSpeed: () => {
                 episodeDetailViewModel.cyclePlaybackSpeed();
                 this.syncFromVm();
               },
               onRewind: () => {
-                episodeDetailViewModel.seekBy(-30);
+                episodeDetailViewModel.seekBy(-this.rewindSeconds);
                 this.syncFromVm();
               },
               onPlay: () => {
@@ -642,7 +650,7 @@ struct EpisodeDetailPage {
                 this.syncFromVm();
               },
               onForward: () => {
-                episodeDetailViewModel.seekBy(30);
+                episodeDetailViewModel.seekBy(this.fastForwardSeconds);
                 this.syncFromVm();
               },
               onSkip: () => {

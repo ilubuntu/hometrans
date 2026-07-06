@@ -332,7 +332,7 @@ struct SearchPage {
               this.contextMenuVisible = false;
               router.pushUrl({
                 url: 'pages/FeedDetailPage',
-                params: { feedId: 'feed_morbid' }
+                params: { feedId: this.contextEpisode.feedId }
               });
               break;
             default:

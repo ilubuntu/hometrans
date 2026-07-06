@@ -9,6 +9,8 @@ struct SettingsPage {
   @State bottomNavEnabled: boolean = false;
   @State showRemainingTime: boolean = false;
   @State playbackSpeed: number = 1.0;
+  @State rewindSeconds: number = 10;
+  @State fastForwardSeconds: number = 30;
   @State enqueuePosition: string = 'BACK';
   @State mobileDownloadPolicy: string = 'WIFI_ONLY';
   @State removeFromInboxDontAsk: boolean = false;
@@ -17,9 +19,17 @@ struct SettingsPage {
     this.bottomNavEnabled = preferencesStore.getBooleanSync('bottomNavEnabled', true);
     this.showRemainingTime = preferencesStore.getBooleanSync('showRemainingTime', false);
     this.playbackSpeed = preferencesStore.getNumberSync('playbackSpeed', 1.0);
+    this.rewindSeconds = preferencesStore.getNumberSync('rewindSeconds', 10);
+    this.fastForwardSeconds = preferencesStore.getNumberSync('fastForwardSeconds', 30);
     this.enqueuePosition = preferencesStore.getSync('enqueuePosition', 'BACK');
     this.mobileDownloadPolicy = preferencesStore.getSync('mobileDownloadPolicy', 'WIFI_ONLY');
     this.removeFromInboxDontAsk = preferencesStore.getBooleanSync('removeFromInboxDontAsk', false);
+  }
+
+  private cycleSkipSeconds(current: number): number {
+    const values: number[] = [5, 10, 15, 20, 30, 45, 60];
+    const idx: number = values.findIndex((v: number): boolean => v === current);
+    return idx >= 0 ? values[(idx + 1) % values.length] : values[0];
   }
 
   private notAvailable(feature: string): void {
@@ -103,6 +113,16 @@ struct SettingsPage {
                 : Math.round((this.playbackSpeed + 0.25) * 100) / 100;
               this.playbackSpeed = next;
               preferencesStore.putNumber('playbackSpeed', next);
+            })
+            Divider().color($r('app.color.grey100')).strokeWidth(1)
+            this.TextRow('Rewind', `${this.rewindSeconds} seconds`, (): void => {
+              this.rewindSeconds = this.cycleSkipSeconds(this.rewindSeconds);
+              preferencesStore.putNumber('rewindSeconds', this.rewindSeconds);
+            })
+            Divider().color($r('app.color.grey100')).strokeWidth(1)
+            this.TextRow('Fast forward', `${this.fastForwardSeconds} seconds`, (): void => {
+              this.fastForwardSeconds = this.cycleSkipSeconds(this.fastForwardSeconds);
+              preferencesStore.putNumber('fastForwardSeconds', this.fastForwardSeconds);
             })
             Divider().color($r('app.color.grey100')).strokeWidth(1)
             this.ToggleRow('Show remaining time', this.showRemainingTime, (v: boolean): void => {

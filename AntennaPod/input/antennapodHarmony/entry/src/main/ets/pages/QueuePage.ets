@@ -8,6 +8,7 @@ import { eventBus, AppEvent } from '../common/event/EventBus';
 export struct QueuePage {
   @State episodes: EpisodeData[] = [];
   @State infoBar: string = '';
+  @State dragEnabled: boolean = false;
   private listener: () => void = (): void => this.reload();
 
   aboutToAppear(): void {
@@ -25,6 +26,7 @@ export struct QueuePage {
     queueViewModel.reload();
     this.episodes = queueViewModel.episodes.slice();
     this.infoBar = queueViewModel.buildInfoBar();
+    this.dragEnabled = !queueViewModel.isLockedOrKeepSort();
   }
 
   build() {
@@ -64,6 +66,7 @@ export struct QueuePage {
             ListItem() {
               QueueListItem({
                 episode: episode,
+                showDragHandle: this.dragEnabled,
                 onItemClick: (ep: EpisodeData) => {
                   router.pushUrl({
                     url: 'pages/EpisodeDetailPage',
@@ -85,6 +88,12 @@ export struct QueuePage {
               })
             }
           }, (episode: EpisodeData) => episode.id)
+            .onMove((from: number, to: number) => {
+              queueViewModel.reorder(from, to);
+              this.episodes = queueViewModel.episodes.slice();
+              this.infoBar = queueViewModel.buildInfoBar();
+              this.dragEnabled = !queueViewModel.isLockedOrKeepSort();
+            })
         }
         .width('100%')
         .layoutWeight(1)

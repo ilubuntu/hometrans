@@ -55,6 +55,11 @@ export class InboxViewModel {
     this.reload();
   }
 
+  restoreToInbox(episode: EpisodeData): void {
+    repository.restoreToInbox(episode.id);
+    this.reload();
+  }
+
   toggleSecondaryAction(episode: EpisodeData): void {
     if (episode.downloadState === DownloadState.DOWNLOADING) {
       serviceLocator.downloadService().cancel(episode.id);

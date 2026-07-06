@@ -4,6 +4,7 @@ import { EpisodeListItem } from './EpisodeListItem';
 @Component
 export struct QueueListItem {
   @ObjectLink episode: EpisodeData;
+  @Prop showDragHandle: boolean = true;
   onItemClick: (episode: EpisodeData) => void = () => {};
   onSecondaryAction: (episode: EpisodeData) => void = () => {};
   onLongPress: (episode: EpisodeData) => void = () => {};
@@ -13,7 +14,7 @@ export struct QueueListItem {
     Row() {
       EpisodeListItem({
         episode: this.episode,
-        showDragHandle: true,
+        showDragHandle: this.showDragHandle,
         onItemClick: this.onItemClick,
         onSecondaryAction: this.onSecondaryAction,
         onLongPress: this.onLongPress

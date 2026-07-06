@@ -842,6 +842,16 @@ class RepositoryImpl {
     eventBus.emit(AppEvent.EPISODES_CHANGED, { feedId: ep.feedId, episodeId } as EpisodePayload);
   }
 
+  async restoreToInbox(episodeId: string): Promise<void> {
+    const ep: EpisodeData | undefined = this.episodes.get(episodeId);
+    if (!ep) return;
+    ep.isNew = true;
+    ep.isInbox = true;
+    await this.persistEpisode(ep);
+    eventBus.emit(AppEvent.INBOX_CHANGED);
+    eventBus.emit(AppEvent.EPISODES_CHANGED, { feedId: ep.feedId, episodeId } as EpisodePayload);
+  }
+
   async removeAllFromInbox(feedId?: string): Promise<void> {
     const ids: string[] = Array.from(this.episodes.keys());
     for (let i = 0; i < ids.length; i++) {

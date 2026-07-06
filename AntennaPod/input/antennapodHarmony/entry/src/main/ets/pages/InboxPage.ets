@@ -12,6 +12,9 @@ export struct InboxPage {
   @State episodes: EpisodeData[] = [];
   @State contextMenuVisible: boolean = false;
   @State contextEpisode: EpisodeData = new EpisodeData('_placeholder', '');
+  @State undoBarVisible: boolean = false;
+  private pendingUndoEpisode: EpisodeData = new EpisodeData('_none', '');
+  private undoTimerId: number = -1;
   private listener: () => void = (): void => {
     inboxViewModel.reload();
     this.episodes = inboxViewModel.episodes.slice();
@@ -25,11 +28,41 @@ export struct InboxPage {
 
   aboutToDisappear(): void {
     eventBus.off(AppEvent.INBOX_CHANGED, this.listener);
+    if (this.undoTimerId !== -1) {
+      clearTimeout(this.undoTimerId);
+      this.undoTimerId = -1;
+    }
   }
 
   private syncFromVm(): void {
     inboxViewModel.reload();
     this.episodes = inboxViewModel.episodes.slice();
+  }
+
+  private performRemoveWithUndo(episode: EpisodeData): void {
+    this.pendingUndoEpisode = episode;
+    inboxViewModel.removeFromInbox(episode);
+    this.undoBarVisible = true;
+    if (this.undoTimerId !== -1) {
+      clearTimeout(this.undoTimerId);
+    }
+    this.undoTimerId = setTimeout((): void => {
+      this.undoBarVisible = false;
+      this.pendingUndoEpisode = new EpisodeData('_none', '');
+      this.undoTimerId = -1;
+    }, 2000);
+  }
+
+  private performUndo(): void {
+    if (this.undoTimerId !== -1) {
+      clearTimeout(this.undoTimerId);
+      this.undoTimerId = -1;
+    }
+    if (this.pendingUndoEpisode.id.length > 0 && this.pendingUndoEpisode.id !== '_none') {
+      inboxViewModel.restoreToInbox(this.pendingUndoEpisode);
+    }
+    this.undoBarVisible = false;
+    this.pendingUndoEpisode = new EpisodeData('_none', '');
   }
 
   private openEpisodeDetail(episode: EpisodeData): void {
@@ -89,7 +122,11 @@ export struct InboxPage {
             .swipeAction({
               end: {
                 builder: () => {
-                  this.SwipeMarkPlayed(episode)
+                  this.SwipeRemoveFromInbox(episode)
+                },
+                actionAreaDistance: 80,
+                onAction: () => {
+                  this.performRemoveWithUndo(episode);
                 }
               }
             })
@@ -161,15 +198,38 @@ export struct InboxPage {
           this.contextMenuVisible = false;
         }
       })
+
+      if (this.undoBarVisible) {
+        Stack({ alignContent: Alignment.Bottom }) {
+          Row() {
+            Text($r('app.string.removed_from_inbox_message'))
+              .fontSize(14)
+              .fontColor($r('app.color.white'))
+              .layoutWeight(1)
+            Button($r('app.string.undo'))
+              .type(ButtonType.Normal)
+              .backgroundColor(Color.Transparent)
+              .fontSize(14)
+              .fontColor($r('app.color.accent_light'))
+              .onClick(() => this.performUndo())
+          }
+          .width('100%')
+          .backgroundColor($r('app.color.grey600'))
+          .padding({ left: 16, right: 16, top: 14, bottom: 14 })
+        }
+        .width('100%')
+        .height('100%')
+        .hitTestBehavior(HitTestMode.Transparent)
+      }
     }
     .width('100%')
     .height('100%')
   }
 
   @Builder
-  SwipeMarkPlayed(episode: EpisodeData) {
+  SwipeRemoveFromInbox(episode: EpisodeData) {
     Button() {
-      Image($r('app.media.ic_history'))
+      Image($r('app.media.ic_inbox'))
         .width(24)
         .height(24)
         .fillColor($r('app.color.white'))
@@ -179,9 +239,8 @@ export struct InboxPage {
     .height('100%')
     .width(80)
     .onClick(() => {
-      inboxViewModel.markPlayed(episode);
-      this.syncFromVm();
+      this.performRemoveWithUndo(episode);
     })
-    .accessibilityText($r('app.string.playback_history_label'))
+    .accessibilityText($r('app.string.remove_inbox_label'))
   }
 }
