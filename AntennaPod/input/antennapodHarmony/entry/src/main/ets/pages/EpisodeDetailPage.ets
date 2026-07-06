@@ -1,5 +1,5 @@
 import { router, promptAction } from '@kit.ArkUI';
-import { EpisodeData, SecondaryActionType } from '../model/EpisodeData';
+import { EpisodeData, SecondaryActionType, DownloadState } from '../model/EpisodeData';
 import { OverflowMenuOption } from '../model/HomeSection';
 import { episodeDetailViewModel, ChapterItem } from '../viewmodel/EpisodeDetailViewModel';
 import { AppToolbar } from '../components/AppToolbar';
@@ -9,6 +9,7 @@ import { EpisodeContextMenu } from '../components/EpisodeContextMenu';
 import { DownloadDialog } from '../components/DownloadDialog';
 import { BottomNav } from '../components/BottomNav';
 import { serviceLocator } from '../common/service/ServiceLocator';
+import { eventBus, AppEvent } from '../common/event/EventBus';
 
 @Component
 struct EpisodeCoverHeader {
@@ -193,6 +194,7 @@ struct EpisodeDetailPage {
   @State inQueue: boolean = false;
   @State sleepTimerEnabled: boolean = false;
   @State websiteUrl: string = '';
+  @State downloadState: DownloadState = DownloadState.NONE;
 
   @State descExpanded: boolean = false;
   @State chaptersExpanded: boolean = false;
@@ -209,6 +211,13 @@ struct EpisodeDetailPage {
     { id: 'audio_controls', label: $r('app.string.audio_controls'), enabled: true },
     { id: 'share', label: $r('app.string.share_label'), enabled: true }
   ];
+
+  private dataListener: () => void = (): void => {
+    if (episodeDetailViewModel.episodeId.length > 0) {
+      episodeDetailViewModel.loadById(episodeDetailViewModel.episodeId);
+      this.syncFromVm();
+    }
+  };
 
   aboutToAppear(): void {
     let episodeId = 'feed_morbid_ep2';
@@ -232,6 +241,13 @@ struct EpisodeDetailPage {
       episodeDetailViewModel.loadById(episodeId);
     }
     this.syncFromVm();
+    eventBus.on(AppEvent.DOWNLOAD_PROGRESS, this.dataListener);
+    eventBus.on(AppEvent.EPISODES_CHANGED, this.dataListener);
+  }
+
+  aboutToDisappear(): void {
+    eventBus.off(AppEvent.DOWNLOAD_PROGRESS, this.dataListener);
+    eventBus.off(AppEvent.EPISODES_CHANGED, this.dataListener);
   }
 
   private syncFromVm(): void {
@@ -258,6 +274,7 @@ struct EpisodeDetailPage {
     this.inQueue = episodeDetailViewModel.inQueue;
     this.sleepTimerEnabled = episodeDetailViewModel.sleepTimerEnabled;
     this.websiteUrl = episodeDetailViewModel.websiteUrl;
+    this.downloadState = episodeDetailViewModel.downloadState;
     this.contextEpisode = this.episode;
   }
 
@@ -381,6 +398,18 @@ struct EpisodeDetailPage {
     this.downloadDialogVisible = true;
   }
 
+  private handleDownloadClick(): void {
+    if (this.downloadState === DownloadState.DOWNLOADING) {
+      episodeDetailViewModel.cancelDownload();
+      this.syncFromVm();
+    } else if (this.downloadState === DownloadState.DOWNLOADED) {
+      episodeDetailViewModel.deleteDownload();
+      this.syncFromVm();
+    } else {
+      this.confirmDownload();
+    }
+  }
+
   private onDownloadLater(): void {
     this.downloadDialogVisible = false;
     episodeDetailViewModel.startDownload();
@@ -437,19 +466,39 @@ struct EpisodeDetailPage {
               .accessibilityText($r('app.string.stream_label'))
 
               Row() {
-                Image($r('app.media.ic_download'))
-                  .width(24)
-                  .height(24)
-                  .fillColor($r('app.color.black'))
-                  .margin({ right: 8 })
-                Text($r('app.string.download_label'))
-                  .fontSize(14)
-                  .fontColor($r('app.color.black'))
+                if (this.downloadState === DownloadState.DOWNLOADING) {
+                  Progress({ value: 80, total: 100, type: ProgressType.Ring })
+                    .width(24)
+                    .height(24)
+                    .color($r('app.color.black'))
+                    .margin({ right: 8 })
+                  Text($r('app.string.cancel_label'))
+                    .fontSize(14)
+                    .fontColor($r('app.color.black'))
+                } else if (this.downloadState === DownloadState.DOWNLOADED) {
+                  Image($r('app.media.ic_delete'))
+                    .width(24)
+                    .height(24)
+                    .fillColor($r('app.color.black'))
+                    .margin({ right: 8 })
+                  Text($r('app.string.delete_label'))
+                    .fontSize(14)
+                    .fontColor($r('app.color.black'))
+                } else {
+                  Image($r('app.media.ic_download'))
+                    .width(24)
+                    .height(24)
+                    .fillColor($r('app.color.black'))
+                    .margin({ right: 8 })
+                  Text($r('app.string.download_label'))
+                    .fontSize(14)
+                    .fontColor($r('app.color.black'))
+                }
               }
               .layoutWeight(1)
               .height(48)
               .justifyContent(FlexAlign.Center)
-              .onClick(() => this.confirmDownload())
+              .onClick(() => this.handleDownloadClick())
               .accessibilityText($r('app.string.download_label'))
             }
             .width('100%')
@@ -637,7 +686,6 @@ struct EpisodeDetailPage {
               .onClick(() => {
                 episodeDetailViewModel.toggleSleepTimer();
                 this.syncFromVm();
-                episodeDetailViewModel.toggleSleepTimer(); this.syncFromVm();
               })
               .accessibilityText($r('app.string.set_sleeptimer_label'))
 

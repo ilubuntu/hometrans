@@ -12,6 +12,8 @@ export class SearchViewModel {
   @Track episodeResults: EpisodeData[] = [];
   @Track hasSearched: boolean = false;
   @Track isLoading: boolean = false;
+  @Track scopeFeedId: string = '';
+  @Track scopeFeedTitle: string = '';
 
   loadHistory(): void {
     const obj: object | undefined = preferencesStore.getObjectSync('searchHistory');
@@ -24,6 +26,15 @@ export class SearchViewModel {
     preferencesStore.putObject('searchHistory', this.history.slice());
   }
 
+  setScope(feedId: string, feedTitle: string): void {
+    this.scopeFeedId = feedId;
+    this.scopeFeedTitle = feedTitle;
+  }
+
+  isInFeedScope(): boolean {
+    return this.scopeFeedId.length > 0;
+  }
+
   search(query: string): void {
     this.query = query;
     if (query.length === 0) {
@@ -34,9 +45,14 @@ export class SearchViewModel {
       return;
     }
     this.hasSearched = true;
-    const result = serviceLocator.searchService().searchAll(query);
-    this.feedResults = result.feeds;
-    this.episodeResults = result.episodes;
+    if (this.scopeFeedId.length > 0) {
+      this.feedResults = [];
+      this.episodeResults = serviceLocator.searchService().searchInFeed(query, this.scopeFeedId);
+    } else {
+      const result = serviceLocator.searchService().searchAll(query);
+      this.feedResults = result.feeds;
+      this.episodeResults = result.episodes;
+    }
     this.isLoading = false;
   }
 

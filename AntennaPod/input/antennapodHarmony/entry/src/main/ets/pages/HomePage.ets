@@ -10,20 +10,24 @@ import { eventBus, AppEvent } from '../common/event/EventBus';
 @Component
 export struct HomePage {
   @State sections: HomeSection[] = [];
+  @State hasEpisodes: boolean = true;
   onMoreSection: (section: HomeSection) => void = () => {};
   private listener: () => void = (): void => {
     homeViewModel.reload();
     this.sections = homeViewModel.sections.slice();
+    this.hasEpisodes = homeViewModel.hasEpisodes();
   };
 
   aboutToAppear(): void {
     homeViewModel.load();
     this.sections = homeViewModel.sections.slice();
+    this.hasEpisodes = homeViewModel.hasEpisodes();
     eventBus.on(AppEvent.FEEDS_CHANGED, this.listener);
     eventBus.on(AppEvent.EPISODES_CHANGED, this.listener);
     eventBus.on(AppEvent.QUEUE_CHANGED, this.listener);
     eventBus.on(AppEvent.DOWNLOAD_PROGRESS, this.listener);
     eventBus.on(AppEvent.INBOX_CHANGED, this.listener);
+    eventBus.on(AppEvent.REPOSITORY_READY, this.listener);
   }
 
   aboutToDisappear(): void {
@@ -32,6 +36,7 @@ export struct HomePage {
     eventBus.off(AppEvent.QUEUE_CHANGED, this.listener);
     eventBus.off(AppEvent.DOWNLOAD_PROGRESS, this.listener);
     eventBus.off(AppEvent.INBOX_CHANGED, this.listener);
+    eventBus.off(AppEvent.REPOSITORY_READY, this.listener);
   }
 
   private openEpisode(episode: EpisodeData): void {
@@ -197,6 +202,9 @@ export struct HomePage {
   build() {
     Scroll() {
       Column() {
+        if (!this.hasEpisodes) {
+          this.EmptyLibraryState()
+        }
         ForEach(this.sections, (section: HomeSection) => {
           Column() {
             this.SectionHeader(section)
@@ -224,5 +232,40 @@ export struct HomePage {
     .height('100%')
     .backgroundColor($r('app.color.background_light'))
     .scrollBar(BarState.Auto)
+  }
+
+  @Builder
+  EmptyLibraryState() {
+    Column() {
+      Image($r('app.media.ic_feed'))
+        .width(96)
+        .height(96)
+        .fillColor($r('app.color.grey600'))
+        .margin({ bottom: 16 })
+      Text($r('app.string.home_welcome_title'))
+        .fontSize(22)
+        .fontWeight(FontWeight.Medium)
+        .fontColor($r('app.color.black'))
+        .margin({ bottom: 8 })
+      Text($r('app.string.home_welcome_text'))
+        .fontSize(14)
+        .fontColor($r('app.color.grey600'))
+        .textAlign(TextAlign.Center)
+        .padding({ left: 32, right: 32, bottom: 16 })
+      Button($r('app.string.add_feed_label'))
+        .type(ButtonType.Capsule)
+        .backgroundColor($r('app.color.accent_light'))
+        .fontColor($r('app.color.white'))
+        .fontSize(14)
+        .height(40)
+        .margin({ bottom: 16 })
+        .onClick(() => {
+          router.pushUrl({ url: 'pages/AddFeedPage' });
+        })
+    }
+    .width('100%')
+    .alignItems(HorizontalAlign.Center)
+    .backgroundColor($r('app.color.background_light'))
+    .padding({ top: 48, bottom: 24 })
   }
 }

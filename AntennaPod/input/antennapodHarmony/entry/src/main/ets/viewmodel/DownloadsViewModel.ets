@@ -20,6 +20,15 @@ export class DownloadsViewModel {
     this.reload();
   }
 
+  deletePlayed(): void {
+    const played: EpisodeData[] = this.episodes.filter((ep: EpisodeData): boolean =>
+      ep.downloadState === DownloadState.DOWNLOADED && ep.isPlayed);
+    for (let i = 0; i < played.length; i++) {
+      serviceLocator.downloadService().delete(played[i].id);
+    }
+    this.reload();
+  }
+
   toggleSecondaryAction(episode: EpisodeData): void {
     if (episode.downloadState === DownloadState.DOWNLOADING) {
       serviceLocator.downloadService().cancel(episode.id);

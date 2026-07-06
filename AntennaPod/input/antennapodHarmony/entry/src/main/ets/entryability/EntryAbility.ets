@@ -3,6 +3,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { repository } from '../common/data/Repository';
 import { preferencesStore } from '../common/data/PreferencesStore';
+import { eventBus, AppEvent } from '../common/event/EventBus';
 
 const DOMAIN = 0x0000;
 
@@ -18,8 +19,23 @@ export default class EntryAbility extends UIAbility {
       return repository.init(this.context);
     }).then((): void => {
       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Repository initialized');
+      // Notify pages so they can re-render after the async repository load completes.
+      try {
+        eventBus.emit(AppEvent.REPOSITORY_READY);
+        eventBus.emit(AppEvent.FEEDS_CHANGED);
+        eventBus.emit(AppEvent.EPISODES_CHANGED);
+        eventBus.emit(AppEvent.INBOX_CHANGED);
+      } catch (e) {
+        hilog.error(DOMAIN, 'testTag', 'Repository ready emit failed: %{public}s', `${e}`);
+      }
     }).catch((e: Error): void => {
       hilog.error(DOMAIN, 'testTag', 'Repository init failed: %{public}s', `${e}`);
+      // Even on failure, broadcast ready so pages can render whatever data was seeded.
+      try {
+        eventBus.emit(AppEvent.REPOSITORY_READY);
+      } catch (err) {
+        // ignore
+      }
     });
   }
 

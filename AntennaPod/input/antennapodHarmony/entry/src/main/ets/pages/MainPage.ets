@@ -1,4 +1,4 @@
-import { router } from '@kit.ArkUI';
+import { router, promptAction } from '@kit.ArkUI';
 import { AppToolbar } from '../components/AppToolbar';
 import { BottomNav } from '../components/BottomNav';
 import { OverflowMenu } from '../components/OverflowMenu';
@@ -16,6 +16,7 @@ import { repository } from '../common/data/Repository';
 import { preferencesStore } from '../common/data/PreferencesStore';
 import { playbackController, PlaybackControllerImpl } from '../common/playback/PlaybackController';
 import { eventBus, AppEvent } from '../common/event/EventBus';
+import { queueViewModel } from '../viewmodel/QueueViewModel';
 
 @Entry
 @Component
@@ -81,6 +82,7 @@ struct MainPage {
 
   private playbackListener: (() => void) | null = null;
   private inboxListener: (() => void) | null = null;
+  private repositoryListener: (() => void) | null = null;
 
   aboutToAppear(): void {
     const lastPage: number = preferencesStore.getNumberSync('lastPage', -1);
@@ -92,6 +94,11 @@ struct MainPage {
     if (this.inboxListener === null) {
       this.inboxListener = (): void => this.refreshInboxBadge();
       eventBus.on(AppEvent.INBOX_CHANGED, this.inboxListener);
+    }
+    if (this.repositoryListener === null) {
+      this.repositoryListener = (): void => this.refreshInboxBadge();
+      eventBus.on(AppEvent.REPOSITORY_READY, this.repositoryListener);
+      eventBus.on(AppEvent.EPISODES_CHANGED, this.repositoryListener);
     }
     if (this.playbackListener === null) {
       this.playbackListener = (): void => {
@@ -105,6 +112,11 @@ struct MainPage {
     if (this.inboxListener !== null) {
       eventBus.off(AppEvent.INBOX_CHANGED, this.inboxListener);
       this.inboxListener = null;
+    }
+    if (this.repositoryListener !== null) {
+      eventBus.off(AppEvent.REPOSITORY_READY, this.repositoryListener);
+      eventBus.off(AppEvent.EPISODES_CHANGED, this.repositoryListener);
+      this.repositoryListener = null;
     }
     if (this.playbackListener !== null) {
       eventBus.off(AppEvent.PLAYBACK_STATE_CHANGED, this.playbackListener);
@@ -174,8 +186,65 @@ struct MainPage {
           this.configureDialogVisible = true;
         }
         break;
+      case 'queue_lock':
+        queueViewModel.toggleLock();
+        break;
+      case 'queue_sort':
+        queueViewModel.sortQueue().then((): void => {
+          // QUEUE_CHANGED event will refresh QueuePage; nothing else to do
+        });
+        break;
+      case 'clear_queue':
+        this.confirmClearQueue();
+        break;
+      case 'remove_all_inbox':
+        this.confirmRemoveAllFromInbox();
+        break;
       default:
         break;
+    }
+  }
+
+  private confirmClearQueue(): void {
+    try {
+      promptAction.showDialog({
+        title: $r('app.string.clear_queue_label'),
+        message: 'Remove all episodes from the queue?',
+        buttons: [
+          { text: $r('app.string.cancel_label'), color: '#666666' },
+          { text: $r('app.string.clear_queue_label'), color: '#F3682A' }
+        ]
+      }).then((result: promptAction.ShowDialogSuccessResponse): void => {
+        if (result.index === 1) {
+          queueViewModel.clearQueue();
+        }
+      });
+    } catch (e) {
+      // ignore dialog errors
+    }
+  }
+
+  private confirmRemoveAllFromInbox(): void {
+    const dontAsk: boolean = preferencesStore.getBooleanSync('removeFromInboxDontAsk', false);
+    if (dontAsk) {
+      repository.removeAllFromInbox();
+      return;
+    }
+    try {
+      promptAction.showDialog({
+        title: $r('app.string.remove_all_inbox_label'),
+        message: 'Remove all episodes from the inbox?',
+        buttons: [
+          { text: $r('app.string.cancel_label'), color: '#666666' },
+          { text: $r('app.string.remove_all_inbox_label'), color: '#F3682A' }
+        ]
+      }).then((result: promptAction.ShowDialogSuccessResponse): void => {
+        if (result.index === 1) {
+          repository.removeAllFromInbox();
+        }
+      });
+    } catch (e) {
+      // ignore dialog errors
     }
   }
 
@@ -303,6 +372,7 @@ struct MainPage {
 
         BottomNav({
           currentIndex: this.currentTab,
+          inboxBadge: this.inboxBadge,
           onTabSelected: (index: number) => {
             if (index === 4) {
               this.moreMenuVisible = true;

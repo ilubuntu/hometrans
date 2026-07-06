@@ -9,8 +9,8 @@ import { EpisodeListItem } from '../components/EpisodeListItem';
 import { EpisodeContextMenu } from '../components/EpisodeContextMenu';
 import { MiniPlayerBar } from '../components/MiniPlayerBar';
 import { BottomNav } from '../components/BottomNav';
-import { serviceLocator } from '../common/service/ServiceLocator';
 import { playbackController, PlaybackControllerImpl } from '../common/playback/PlaybackController';
+import { eventBus, AppEvent } from '../common/event/EventBus';
 
 @Entry
 @Component
@@ -24,15 +24,32 @@ struct EpisodesPage {
   @State bottomTab: number = -1;
   @State contextMenuVisible: boolean = false;
   @State contextEpisode: EpisodeData = new EpisodeData('_placeholder', '');
+  @StorageLink('playback') playbackObj: PlaybackControllerImpl = playbackController;
 
   private episodesMenu: OverflowMenuOption[] = [
     { id: 'episodes_sort', label: $r('app.string.sort'), enabled: true },
     { id: 'refresh', label: $r('app.string.refresh_label'), enabled: true }
   ];
 
+  private listener: () => void = (): void => {
+    episodesViewModel.load();
+    this.syncFromVm();
+  };
+
   aboutToAppear(): void {
     episodesViewModel.load();
     this.syncFromVm();
+    eventBus.on(AppEvent.EPISODES_CHANGED, this.listener);
+    eventBus.on(AppEvent.DOWNLOAD_PROGRESS, this.listener);
+    eventBus.on(AppEvent.QUEUE_CHANGED, this.listener);
+    eventBus.on(AppEvent.FAVORITES_CHANGED, this.listener);
+  }
+
+  aboutToDisappear(): void {
+    eventBus.off(AppEvent.EPISODES_CHANGED, this.listener);
+    eventBus.off(AppEvent.DOWNLOAD_PROGRESS, this.listener);
+    eventBus.off(AppEvent.QUEUE_CHANGED, this.listener);
+    eventBus.off(AppEvent.FAVORITES_CHANGED, this.listener);
   }
 
   private syncFromVm(): void {
@@ -148,19 +165,21 @@ struct EpisodesPage {
         }
 
         MiniPlayerBar({
-          title: 'Listener Tales 111: Camping Tales',
-          author: 'Morbid',
-          cover: $r('app.media.ic_feed'),
-          progress: 47,
-          isPlaying: true,
+          title: this.playbackObj.hasEpisode ? this.playbackObj.title : '',
+          author: this.playbackObj.hasEpisode ? this.playbackObj.author : '',
+          cover: this.playbackObj.hasEpisode ? this.playbackObj.cover : $r('app.media.ic_feed'),
+          progress: this.playbackObj.progressPct,
+          isPlaying: this.playbackObj.isPlaying,
           onPlayClick: () => {
-            serviceLocator.playbackService().toggle();
+            this.playbackObj.togglePlay();
           },
           onBarClick: () => {
-            router.pushUrl({
-              url: 'pages/AudioPlayerPage',
-              params: { episodeId: 'feed_morbid_ep2', episodeTitle: 'Listener Tales 111: Camping Tales' }
-            });
+            if (this.playbackObj.hasEpisode) {
+              router.pushUrl({
+                url: 'pages/AudioPlayerPage',
+                params: { episodeId: this.playbackObj.currentEpisodeId, episodeTitle: this.playbackObj.title }
+              });
+            }
           }
         })
 

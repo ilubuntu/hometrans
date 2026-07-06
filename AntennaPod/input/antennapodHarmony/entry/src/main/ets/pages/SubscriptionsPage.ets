@@ -1,5 +1,6 @@
 import { FeedData } from '../model/FeedData';
 import { subscriptionsViewModel } from '../viewmodel/SubscriptionsViewModel';
+import { eventBus, AppEvent } from '../common/event/EventBus';
 
 @Component
 export struct SubscriptionsPage {
@@ -8,9 +9,21 @@ export struct SubscriptionsPage {
   onItemClick: (feed: FeedData) => void = () => {};
   onAddPodcast: () => void = () => {};
 
+  private listener: () => void = (): void => {
+    subscriptionsViewModel.load();
+    this.feeds = subscriptionsViewModel.feeds.slice();
+  };
+
   aboutToAppear(): void {
     subscriptionsViewModel.load();
-    this.feeds = subscriptionsViewModel.feeds;
+    this.feeds = subscriptionsViewModel.feeds.slice();
+    eventBus.on(AppEvent.FEEDS_CHANGED, this.listener);
+    eventBus.on(AppEvent.EPISODES_CHANGED, this.listener);
+  }
+
+  aboutToDisappear(): void {
+    eventBus.off(AppEvent.FEEDS_CHANGED, this.listener);
+    eventBus.off(AppEvent.EPISODES_CHANGED, this.listener);
   }
 
   private formatCount(count: number): string {

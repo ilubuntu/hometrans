@@ -6,7 +6,9 @@ import { EpisodeListItem } from '../components/EpisodeListItem';
 import { EpisodeContextMenu } from '../components/EpisodeContextMenu';
 import { MiniPlayerBar } from '../components/MiniPlayerBar';
 import { BottomNav } from '../components/BottomNav';
-import { serviceLocator } from '../common/service/ServiceLocator';
+import { playbackController, PlaybackControllerImpl } from '../common/playback/PlaybackController';
+import { eventBus, AppEvent } from '../common/event/EventBus';
+import { repository } from '../common/data/Repository';
 
 @Entry
 @Component
@@ -20,11 +22,47 @@ struct SearchPage {
   @State bottomTab: number = -1;
   @State contextMenuVisible: boolean = false;
   @State contextEpisode: EpisodeData = new EpisodeData('_placeholder', '');
+  @State scopeFeedTitle: string = '';
+  @StorageLink('playback') playbackObj: PlaybackControllerImpl = playbackController;
 
   private debounceId: number = -1;
+  private listener: () => void = (): void => {
+    if (this.query.length > 0) {
+      searchViewModel.search(this.query);
+    }
+    this.syncFromVm();
+  };
 
   aboutToAppear(): void {
+    let scopeFeedId: string = '';
+    let scopeFeedTitle: string = '';
+    try {
+      const params = router.getParams() as Record<string, string>;
+      if (params) {
+        if (params.feedId && params.feedId.length > 0) {
+          scopeFeedId = params.feedId;
+        }
+        if (params.feedTitle && params.feedTitle.length > 0) {
+          scopeFeedTitle = params.feedTitle;
+        }
+      }
+    } catch (e) {
+      // no params
+    }
+    if (scopeFeedId.length > 0 && scopeFeedTitle.length === 0) {
+      const feed = repository.queryFeeds().find((f: FeedData): boolean => f.id === scopeFeedId);
+      scopeFeedTitle = feed ? feed.title : '';
+    }
+    searchViewModel.setScope(scopeFeedId, scopeFeedTitle);
+    this.scopeFeedTitle = scopeFeedTitle;
     this.syncFromVm();
+    eventBus.on(AppEvent.EPISODES_CHANGED, this.listener);
+    eventBus.on(AppEvent.FEEDS_CHANGED, this.listener);
+  }
+
+  aboutToDisappear(): void {
+    eventBus.off(AppEvent.EPISODES_CHANGED, this.listener);
+    eventBus.off(AppEvent.FEEDS_CHANGED, this.listener);
   }
 
   private syncFromVm(): void {
@@ -149,6 +187,26 @@ struct SearchPage {
         .alignItems(VerticalAlign.Center)
         .backgroundColor($r('app.color.background_light'))
 
+        if (this.scopeFeedTitle.length > 0) {
+          Row() {
+            Image($r('app.media.ic_subscriptions'))
+              .width(16)
+              .height(16)
+              .margin({ left: 16, right: 6 })
+              .fillColor($r('app.color.accent_light'))
+            Text(this.scopeFeedTitle)
+              .fontSize(13)
+              .fontColor($r('app.color.accent_light'))
+              .maxLines(1)
+              .textOverflow({ overflow: TextOverflow.Ellipsis })
+              .layoutWeight(1)
+          }
+          .width('100%')
+          .height(32)
+          .alignItems(VerticalAlign.Center)
+          .backgroundColor($r('app.color.background_light'))
+        }
+
         if (this.query.length === 0) {
           this.EmptyStateView()
         } else if (this.isLoading) {
@@ -213,19 +271,21 @@ struct SearchPage {
         }
 
         MiniPlayerBar({
-          title: 'Listener Tales 111: Camping Tales',
-          author: 'Morbid',
-          cover: $r('app.media.ic_feed'),
-          progress: 47,
-          isPlaying: true,
+          title: this.playbackObj.hasEpisode ? this.playbackObj.title : '',
+          author: this.playbackObj.hasEpisode ? this.playbackObj.author : '',
+          cover: this.playbackObj.hasEpisode ? this.playbackObj.cover : $r('app.media.ic_feed'),
+          progress: this.playbackObj.progressPct,
+          isPlaying: this.playbackObj.isPlaying,
           onPlayClick: () => {
-            serviceLocator.playbackService().toggle();
+            this.playbackObj.togglePlay();
           },
           onBarClick: () => {
-            router.pushUrl({
-              url: 'pages/AudioPlayerPage',
-              params: { episodeId: 'feed_morbid_ep2', episodeTitle: 'Listener Tales 111: Camping Tales' }
-            });
+            if (this.playbackObj.hasEpisode) {
+              router.pushUrl({
+                url: 'pages/AudioPlayerPage',
+                params: { episodeId: this.playbackObj.currentEpisodeId, episodeTitle: this.playbackObj.title }
+              });
+            }
           }
         })
 

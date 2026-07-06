@@ -6,6 +6,7 @@ interface BottomNavItem {
 @Component
 export struct BottomNav {
   @Link currentIndex: number;
+  @Prop inboxBadge: number = 0;
   onTabSelected: (index: number) => void = () => {};
 
   private items: BottomNavItem[] = [
@@ -19,25 +20,40 @@ export struct BottomNav {
   build() {
     Row() {
       ForEach(this.items, (item: BottomNavItem, index: number) => {
-        Column() {
-          Image(item.icon)
-            .width(24)
-            .height(24)
-            .fillColor(this.currentIndex === index ? $r('app.color.accent_light') : $r('app.color.grey600'))
-          Text(item.label)
-            .fontSize(12)
-            .margin({ top: 4 })
-            .fontColor(this.currentIndex === index ? $r('app.color.accent_light') : $r('app.color.grey600'))
+        Stack({ alignContent: Alignment.TopEnd }) {
+          Column() {
+            Image(item.icon)
+              .width(24)
+              .height(24)
+              .fillColor(this.currentIndex === index ? $r('app.color.accent_light') : $r('app.color.grey600'))
+            Text(item.label)
+              .fontSize(12)
+              .margin({ top: 4 })
+              .fontColor(this.currentIndex === index ? $r('app.color.accent_light') : $r('app.color.grey600'))
+          }
+          .layoutWeight(1)
+          .height('100%')
+          .padding({ top: 6, bottom: 12 })
+          .justifyContent(FlexAlign.Center)
+          .onClick(() => {
+            this.currentIndex = index;
+            this.onTabSelected(index);
+          })
+          .accessibilityText(item.label)
+
+          if (index === 2 && this.inboxBadge > 0) {
+            Text(this.inboxBadge > 99 ? '99+' : `${this.inboxBadge}`)
+              .fontSize(10)
+              .fontColor($r('app.color.white'))
+              .backgroundColor($r('app.color.accent_light'))
+              .borderRadius(8)
+              .padding({ left: 4, right: 4, top: 1, bottom: 1 })
+              .margin({ top: 2, right: 8 })
+              .align(Alignment.TopEnd)
+          }
         }
         .layoutWeight(1)
         .height('100%')
-        .padding({ top: 6, bottom: 12 })
-        .justifyContent(FlexAlign.Center)
-        .onClick(() => {
-          this.currentIndex = index;
-          this.onTabSelected(index);
-        })
-        .accessibilityText(item.label)
       }, (item: BottomNavItem, index: number) => `${index}`)
     }
     .width('100%')

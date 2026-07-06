@@ -2,6 +2,7 @@ import { EpisodeData, SecondaryActionType, DownloadState } from '../model/Episod
 import { repository } from '../common/data/Repository';
 import { SampleData } from '../common/data/SampleData';
 import { serviceLocator } from '../common/service/ServiceLocator';
+import { preferencesStore } from '../common/data/PreferencesStore';
 
 export interface ChapterItem {
   index: number;
@@ -42,7 +43,7 @@ export class EpisodeDetailViewModel {
   @Track websiteUrl: string = '';
   @Track downloadState: DownloadState = DownloadState.NONE;
 
-  @Track rewindSeconds: number = 30;
+  @Track rewindSeconds: number = 10;
   @Track fastForwardSeconds: number = 30;
 
   loadById(episodeId: string): void {
@@ -85,6 +86,8 @@ export class EpisodeDetailViewModel {
     this.sleepTimerEnabled = false;
     this.websiteUrl = ep.websiteUrl;
     this.downloadState = ep.downloadState;
+    this.rewindSeconds = preferencesStore.getNumberSync('rewindSeconds', 10);
+    this.fastForwardSeconds = preferencesStore.getNumberSync('fastForwardSeconds', 30);
     this.relatedFeedIds = this.buildRelatedFeedIds(ep.feedId);
     this.relatedEpisodes = this.buildRelated(ep);
     this.refreshTimeLabels();

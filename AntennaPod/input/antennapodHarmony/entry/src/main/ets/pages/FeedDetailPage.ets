@@ -10,7 +10,7 @@ import { EpisodeListItem } from '../components/EpisodeListItem';
 import { EpisodeContextMenu } from '../components/EpisodeContextMenu';
 import { MiniPlayerBar } from '../components/MiniPlayerBar';
 import { BottomNav } from '../components/BottomNav';
-import { serviceLocator } from '../common/service/ServiceLocator';
+import { playbackController, PlaybackControllerImpl } from '../common/playback/PlaybackController';
 
 @Component
 struct FeedHeaderView {
@@ -194,6 +194,7 @@ struct FeedDetailPage {
   @State bottomTab: number = -1;
   @State contextMenuVisible: boolean = false;
   @State contextEpisode: EpisodeData = new EpisodeData('_placeholder', '');
+  @StorageLink('playback') playbackObj: PlaybackControllerImpl = playbackController;
 
   private feedMenu: OverflowMenuOption[] = [
     { id: 'sort', label: $r('app.string.sort'), enabled: true },
@@ -319,7 +320,10 @@ struct FeedDetailPage {
             router.back();
           },
           onSearch: () => {
-            router.pushUrl({ url: 'pages/SearchPage' });
+            router.pushUrl({
+              url: 'pages/SearchPage',
+              params: { feedId: this.feed.id, feedTitle: this.feed.title }
+            });
           },
           onMore: () => {
             this.overflowVisible = !this.overflowVisible;
@@ -429,19 +433,21 @@ struct FeedDetailPage {
         }
 
         MiniPlayerBar({
-          title: 'Listener Tales 111: Camping Tales',
-          author: this.feed.author,
-          cover: this.feed.cover,
-          progress: 47,
-          isPlaying: true,
+          title: this.playbackObj.hasEpisode ? this.playbackObj.title : '',
+          author: this.playbackObj.hasEpisode ? this.playbackObj.author : '',
+          cover: this.playbackObj.hasEpisode ? this.playbackObj.cover : $r('app.media.ic_feed'),
+          progress: this.playbackObj.progressPct,
+          isPlaying: this.playbackObj.isPlaying,
           onPlayClick: () => {
-            serviceLocator.playbackService().toggle();
+            this.playbackObj.togglePlay();
           },
           onBarClick: () => {
-            router.pushUrl({
-              url: 'pages/AudioPlayerPage',
-              params: { episodeId: 'feed_morbid_ep2', episodeTitle: 'Listener Tales 111: Camping Tales' }
-            });
+            if (this.playbackObj.hasEpisode) {
+              router.pushUrl({
+                url: 'pages/AudioPlayerPage',
+                params: { episodeId: this.playbackObj.currentEpisodeId, episodeTitle: this.playbackObj.title }
+              });
+            }
           }
         })
 
