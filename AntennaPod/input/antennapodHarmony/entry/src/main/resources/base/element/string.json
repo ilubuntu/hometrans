@@ -1,0 +1,3300 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "design_time_lorem_ipsum",
+      "value": "\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper\n        tempor metus, at varius tellus dignissim et. Fusce quis justo sollicitudin,\n        feugiat mi in, accumsan erat. Fusce tempor, sapien ut luctus scelerisque,\n        lectus nisi hendrerit odio, eget mattis lorem massa id eros. Integer consequat\n        tellus eu rhoncus pellentesque. Quisque et leo faucibus, aliquam nisi ut,\n        feugiat lectus.\n    "
+    },
+    {
+      "name": "design_time_downloaded_log_failure_reason",
+      "value": "\n        IO Error: failed to connect to feeds.example.com/100.100.100.100\n        (port 80) after 3000ms: isConnected failed: ECONNREFUSED (Connection refused)\n    "
+    },
+    {
+      "name": "svg_animatable_play",
+      "value": "M 8 5 L 8 12 L 19 12 L 19 12 M 8 19 L 8 12 L 19 12 L 19 12"
+    },
+    {
+      "name": "svg_animatable_pause",
+      "value": "M 5 6 L 5 10 L 19 10 L 19 6 M 5 18 L 5 14 L 19 14 L 19 18"
+    },
+    {
+      "name": "wear_capability_phone",
+      "value": "antennapod_phone_v1"
+    },
+    {
+      "name": "general_expand_button",
+      "value": "Expand"
+    },
+    {
+      "name": "general_collapse_button",
+      "value": "Collapse"
+    },
+    {
+      "name": "provider_authority",
+      "value": "de.danoeh.antennapod.provider"
+    },
+    {
+      "name": "feed_update_receiver_name",
+      "value": "Update subscriptions"
+    },
+    {
+      "name": "statistics_label",
+      "value": "Statistics"
+    },
+    {
+      "name": "statistics_label_short",
+      "value": "Stats"
+    },
+    {
+      "name": "add_feed_label",
+      "value": "Add podcast"
+    },
+    {
+      "name": "add_feed_label_short",
+      "value": "Add"
+    },
+    {
+      "name": "episodes_label",
+      "value": "Episodes"
+    },
+    {
+      "name": "episodes_label_short",
+      "value": "Episodes"
+    },
+    {
+      "name": "home_label",
+      "value": "Home"
+    },
+    {
+      "name": "home_label_short",
+      "value": "Home"
+    },
+    {
+      "name": "queue_label",
+      "value": "Queue"
+    },
+    {
+      "name": "queue_label_short",
+      "value": "Queue"
+    },
+    {
+      "name": "inbox_label",
+      "value": "Inbox"
+    },
+    {
+      "name": "inbox_label_short",
+      "value": "Inbox"
+    },
+    {
+      "name": "favorite_episodes_label",
+      "value": "Favorites"
+    },
+    {
+      "name": "favorite_episodes_label_short",
+      "value": "Favorites"
+    },
+    {
+      "name": "settings_label",
+      "value": "Settings"
+    },
+    {
+      "name": "downloads_label",
+      "value": "Downloads"
+    },
+    {
+      "name": "downloads_label_short",
+      "value": "Downloads"
+    },
+    {
+      "name": "downloads_log_label",
+      "value": "Download log"
+    },
+    {
+      "name": "subscriptions_label",
+      "value": "Subscriptions"
+    },
+    {
+      "name": "subscriptions_label_short",
+      "value": "Subscriptions"
+    },
+    {
+      "name": "subscriptions_list_label",
+      "value": "Subscriptions list"
+    },
+    {
+      "name": "cancel_download_label",
+      "value": "Cancel download"
+    },
+    {
+      "name": "playback_history_label",
+      "value": "Playback history"
+    },
+    {
+      "name": "playback_history_label_short",
+      "value": "History"
+    },
+    {
+      "name": "years_statistics_label",
+      "value": "Years"
+    },
+    {
+      "name": "notification_pref_fragment",
+      "value": "Notifications"
+    },
+    {
+      "name": "current_playing_episode",
+      "value": "Current"
+    },
+    {
+      "name": "app_action_not_found",
+      "value": "\"%1$s\" not found"
+    },
+    {
+      "name": "swipeactions_label",
+      "value": "Swipe actions"
+    },
+    {
+      "name": "swipeactions_summary",
+      "value": "Choose what happens when swiping an episode in a list"
+    },
+    {
+      "name": "swipe_right",
+      "value": "Swipe right"
+    },
+    {
+      "name": "swipe_left",
+      "value": "Swipe left"
+    },
+    {
+      "name": "enable_swipeactions",
+      "value": "Enable swipe actions for this screen"
+    },
+    {
+      "name": "change_setting",
+      "value": "Change"
+    },
+    {
+      "name": "individual_subscription",
+      "value": "Individual subscription"
+    },
+    {
+      "name": "statistics_include_marked",
+      "value": "Include duration of episodes that are just marked as played"
+    },
+    {
+      "name": "statistics_speed_not_counted",
+      "value": "Notice: Playback speed is never taken into account."
+    },
+    {
+      "name": "statistics_from",
+      "value": "From"
+    },
+    {
+      "name": "statistics_to",
+      "value": "To"
+    },
+    {
+      "name": "statistics_today",
+      "value": "Today"
+    },
+    {
+      "name": "statistics_filter_all_time",
+      "value": "All time"
+    },
+    {
+      "name": "statistics_filter_past_year",
+      "value": "Past year"
+    },
+    {
+      "name": "statistics_reset_data",
+      "value": "Reset statistics data"
+    },
+    {
+      "name": "statistics_reset_data_msg",
+      "value": "This will erase the history of duration played for all episodes. Are you sure you want to proceed?"
+    },
+    {
+      "name": "statistics_counting_range",
+      "value": "Played between %1$s and %2$s"
+    },
+    {
+      "name": "statistics_counting_total",
+      "value": "Played in total"
+    },
+    {
+      "name": "home_surprise_title",
+      "value": "Get surprised"
+    },
+    {
+      "name": "home_classics_title",
+      "value": "Check your classics"
+    },
+    {
+      "name": "home_continue_title",
+      "value": "Continue listening"
+    },
+    {
+      "name": "home_new_title",
+      "value": "See what's new"
+    },
+    {
+      "name": "home_downloads_title",
+      "value": "Manage downloads"
+    },
+    {
+      "name": "home_no_recent_unplayed_episodes_text",
+      "value": "You already played all recent episodes. Nothing to be surprised here ;)"
+    },
+    {
+      "name": "home_continue_empty_text",
+      "value": "You can add episodes by downloading them or long-pressing them and selecting \"Add to queue\"."
+    },
+    {
+      "name": "home_new_empty_text",
+      "value": "New episodes will show up here. You can then decide whether you are interested in them."
+    },
+    {
+      "name": "home_downloads_empty_text",
+      "value": "You can download any episode to listen to it offline."
+    },
+    {
+      "name": "home_welcome_title",
+      "value": "Welcome to AntennaPod!"
+    },
+    {
+      "name": "home_welcome_text",
+      "value": "You are not subscribed to any podcasts yet. Open the menu to add a podcast."
+    },
+    {
+      "name": "notification_permission_denied",
+      "value": "You denied the permission."
+    },
+    {
+      "name": "configure_home",
+      "value": "Configure home screen"
+    },
+    {
+      "name": "section_hidden",
+      "value": "Hidden"
+    },
+    {
+      "name": "section_shown",
+      "value": "Shown"
+    },
+    {
+      "name": "drawer_open",
+      "value": "Open menu"
+    },
+    {
+      "name": "drawer_close",
+      "value": "Close menu"
+    },
+    {
+      "name": "drawer_preferences",
+      "value": "Drawer preferences"
+    },
+    {
+      "name": "drawer_feed_order_unplayed_episodes",
+      "value": "Sort by counter"
+    },
+    {
+      "name": "drawer_feed_order_alphabetical",
+      "value": "Sort alphabetically"
+    },
+    {
+      "name": "drawer_feed_order_last_update",
+      "value": "Sort by publication date"
+    },
+    {
+      "name": "drawer_feed_order_most_played",
+      "value": "Sort by number of played episodes"
+    },
+    {
+      "name": "drawer_feed_counter_inbox",
+      "value": "Number of episodes in the inbox"
+    },
+    {
+      "name": "drawer_feed_counter_unplayed",
+      "value": "Number of unplayed episodes"
+    },
+    {
+      "name": "drawer_feed_counter_downloaded",
+      "value": "Number of downloaded episodes"
+    },
+    {
+      "name": "drawer_feed_counter_downloaded_unplayed",
+      "value": "Number of downloaded and unplayed episodes"
+    },
+    {
+      "name": "drawer_feed_counter_none",
+      "value": "None"
+    },
+    {
+      "name": "log_file_share_exception",
+      "value": "No compatible apps found"
+    },
+    {
+      "name": "export_logs_menu_title",
+      "value": "Export detailed logs"
+    },
+    {
+      "name": "confirm_export_log_dialog_message",
+      "value": "Detailed logs may contain sensitive information, such as your subscriptions list"
+    },
+    {
+      "name": "open_in_browser_label",
+      "value": "Open in browser"
+    },
+    {
+      "name": "copy_url_label",
+      "value": "Copy URL"
+    },
+    {
+      "name": "share_url_label",
+      "value": "Share URL"
+    },
+    {
+      "name": "go_to_position_label",
+      "value": "Go to this position"
+    },
+    {
+      "name": "clear_history_label",
+      "value": "Clear history"
+    },
+    {
+      "name": "clear_playback_history_msg",
+      "value": "This will clear the entire playback history. Are you sure you want to proceed?"
+    },
+    {
+      "name": "remove_history_label",
+      "value": "Remove from history"
+    },
+    {
+      "name": "removed_history_label",
+      "value": "Removed from history"
+    },
+    {
+      "name": "confirm_label",
+      "value": "Confirm"
+    },
+    {
+      "name": "cancel_label",
+      "value": "Cancel"
+    },
+    {
+      "name": "yes",
+      "value": "Yes"
+    },
+    {
+      "name": "no",
+      "value": "No"
+    },
+    {
+      "name": "enabled",
+      "value": "Enabled"
+    },
+    {
+      "name": "disabled",
+      "value": "Disabled"
+    },
+    {
+      "name": "reset",
+      "value": "Reset"
+    },
+    {
+      "name": "global_default",
+      "value": "Global default"
+    },
+    {
+      "name": "global_default_with_value",
+      "value": "Global default (%1$s)"
+    },
+    {
+      "name": "url_label",
+      "value": "URL"
+    },
+    {
+      "name": "support_funding_label",
+      "value": "Support"
+    },
+    {
+      "name": "support_podcast",
+      "value": "Support this podcast"
+    },
+    {
+      "name": "error_label",
+      "value": "Error"
+    },
+    {
+      "name": "error_msg_prefix",
+      "value": "An error occurred:"
+    },
+    {
+      "name": "refresh_label",
+      "value": "Refresh"
+    },
+    {
+      "name": "chapters_label",
+      "value": "Chapters"
+    },
+    {
+      "name": "no_chapters_label",
+      "value": "No chapters"
+    },
+    {
+      "name": "chapter_duration",
+      "value": "Duration: %1$s"
+    },
+    {
+      "name": "description_label",
+      "value": "Description"
+    },
+    {
+      "name": "shownotes_label",
+      "value": "Shownotes"
+    },
+    {
+      "name": "shownotes_contentdescription",
+      "value": "swipe up to read shownotes"
+    },
+    {
+      "name": "close_label",
+      "value": "Close"
+    },
+    {
+      "name": "retry_label",
+      "value": "Retry"
+    },
+    {
+      "name": "auto_download_label",
+      "value": "Include in auto downloads"
+    },
+    {
+      "name": "feed_volume_adapdation",
+      "value": "Volume adaptation"
+    },
+    {
+      "name": "feed_volume_adaptation_summary",
+      "value": "Turn volume for episodes of this podcast up or down: %1$s"
+    },
+    {
+      "name": "feed_volume_reduction_off",
+      "value": "No adaption"
+    },
+    {
+      "name": "feed_volume_reduction_light",
+      "value": "Light reduction"
+    },
+    {
+      "name": "feed_volume_reduction_heavy",
+      "value": "Heavy reduction"
+    },
+    {
+      "name": "feed_volume_boost_light",
+      "value": "Light boost"
+    },
+    {
+      "name": "feed_volume_boost_medium",
+      "value": "Medium boost"
+    },
+    {
+      "name": "feed_volume_boost_heavy",
+      "value": "Heavy boost"
+    },
+    {
+      "name": "feed_auto_download_always",
+      "value": "Always"
+    },
+    {
+      "name": "feed_auto_download_never",
+      "value": "Never"
+    },
+    {
+      "name": "feed_new_episodes_action_add_to_inbox",
+      "value": "Add to inbox"
+    },
+    {
+      "name": "feed_new_episodes_action_add_to_queue",
+      "value": "Add to queue"
+    },
+    {
+      "name": "feed_new_episodes_action_nothing",
+      "value": "Nothing"
+    },
+    {
+      "name": "feed_new_episodes_action_summary_autodownload",
+      "value": "Automatic download enabled. Episodes are added to the inbox and then moved to the queue once downloaded."
+    },
+    {
+      "name": "feed_new_episodes_action_snackbar",
+      "value": "Cannot be changed when automatic download is enabled."
+    },
+    {
+      "name": "episode_cleanup_never",
+      "value": "Never"
+    },
+    {
+      "name": "episode_cleanup_except_favorite_removal",
+      "value": "When not favorited"
+    },
+    {
+      "name": "episode_cleanup_queue_removal",
+      "value": "When not in queue"
+    },
+    {
+      "name": "episode_cleanup_after_listening",
+      "value": "After finishing"
+    },
+    {
+      "name": "episode_notification",
+      "value": "Episode notifications"
+    },
+    {
+      "name": "episode_notification_summary",
+      "value": "Show a notification when a new episode is released"
+    },
+    {
+      "name": "new_episode_notification_group_text",
+      "value": "Your subscriptions have new episodes."
+    },
+    {
+      "name": "remove_all_inbox_label",
+      "value": "Remove all from inbox"
+    },
+    {
+      "name": "removed_all_inbox_msg",
+      "value": "Removed all from inbox"
+    },
+    {
+      "name": "remove_all_inbox_confirmation_msg",
+      "value": "Please confirm that you want to remove all from the inbox."
+    },
+    {
+      "name": "multi_select_mark_played_confirmation",
+      "value": "Please confirm that you want to mark all selected items as played."
+    },
+    {
+      "name": "multi_select_mark_unplayed_confirmation",
+      "value": "Please confirm that you want to mark all selected items as unplayed."
+    },
+    {
+      "name": "show_info_label",
+      "value": "Show information"
+    },
+    {
+      "name": "show_feed_settings_label",
+      "value": "Show podcast settings"
+    },
+    {
+      "name": "feed_settings_label",
+      "value": "Podcast settings"
+    },
+    {
+      "name": "rename_feed_label",
+      "value": "Rename"
+    },
+    {
+      "name": "archive_feed_label_verb",
+      "value": "Archive"
+    },
+    {
+      "name": "archive_feed_label_noun",
+      "value": "Archive"
+    },
+    {
+      "name": "restore_archive_label",
+      "value": "Restore"
+    },
+    {
+      "name": "remove_archive_feed_label",
+      "value": "Unsubscribe / archive"
+    },
+    {
+      "name": "remove_restore_feed_label",
+      "value": "Unsubscribe / restore"
+    },
+    {
+      "name": "remove_feed_label",
+      "value": "Unsubscribe"
+    },
+    {
+      "name": "share_label",
+      "value": "Share"
+    },
+    {
+      "name": "share_file_label",
+      "value": "Share file"
+    },
+    {
+      "name": "feed_delete_explanation_delete",
+      "value": "Unsubscribing removes the subscription including all its episodes, downloads, playback history, and statistics."
+    },
+    {
+      "name": "feed_delete_explanation_archive",
+      "value": "Archiving hides the subscription from the list and stops looking for new episodes. Downloads, statistics and playback state are kept."
+    },
+    {
+      "name": "archiving_podcast_progress",
+      "value": "Archiving podcast %1$d of %2$d…"
+    },
+    {
+      "name": "restoring_podcast_progress",
+      "value": "Restoring podcast %1$d of %2$d…"
+    },
+    {
+      "name": "deleting_podcast_progress",
+      "value": "Unsubscribing from podcast %1$d of %2$d…"
+    },
+    {
+      "name": "load_complete_feed",
+      "value": "Refresh complete podcast"
+    },
+    {
+      "name": "multi_select",
+      "value": "Multi select"
+    },
+    {
+      "name": "select_all_above",
+      "value": "Select all above"
+    },
+    {
+      "name": "select_all_below",
+      "value": "Select all below"
+    },
+    {
+      "name": "multi_select_started_talkback",
+      "value": "Multi select actions shown at the bottom"
+    },
+    {
+      "name": "filtered_label",
+      "value": "Filtered"
+    },
+    {
+      "name": "refresh_failed_msg",
+      "value": "Last refresh failed. Tap to view details."
+    },
+    {
+      "name": "please_wait_before_refreshing",
+      "value": "Please wait some time before refreshing podcasts again."
+    },
+    {
+      "name": "open_podcast",
+      "value": "Open podcast"
+    },
+    {
+      "name": "please_wait_for_data",
+      "value": "Please wait until the data is loaded"
+    },
+    {
+      "name": "updates_disabled_label",
+      "value": "Updates disabled"
+    },
+    {
+      "name": "edit_tags",
+      "value": "Edit tags"
+    },
+    {
+      "name": "add_tag",
+      "value": "Add tag"
+    },
+    {
+      "name": "rename_tag_label",
+      "value": "Rename tag"
+    },
+    {
+      "name": "delete_tag_label",
+      "value": "Delete tag"
+    },
+    {
+      "name": "delete_tag_confirmation",
+      "value": "Please confirm that you want to delete the tag \"%1$s\"."
+    },
+    {
+      "name": "confirm_mobile_feed_refresh_dialog_message",
+      "value": "Refreshing podcasts over mobile data connection is disabled in the settings.\n\nDo you want to refresh anyway?"
+    },
+    {
+      "name": "confirm_mobile_feed_refresh_dialog_message_vpn",
+      "value": "Your VPN app pretends to be a mobile network (metered connection). Refreshing podcasts over mobile data connection is disabled in the settings.\n\nDo you want to refresh anyway? If you want this problem to be fixed, contact the creators of your VPN app."
+    },
+    {
+      "name": "delete_downloads_played",
+      "value": "Delete played"
+    },
+    {
+      "name": "delete_downloads_played_confirmation",
+      "value": "Please confirm that you want to delete all played downloads."
+    },
+    {
+      "name": "download_label",
+      "value": "Download"
+    },
+    {
+      "name": "play_label",
+      "value": "Play"
+    },
+    {
+      "name": "pause_label",
+      "value": "Pause"
+    },
+    {
+      "name": "stream_label",
+      "value": "Stream"
+    },
+    {
+      "name": "delete_label",
+      "value": "Delete"
+    },
+    {
+      "name": "remove_inbox_label",
+      "value": "Remove from inbox"
+    },
+    {
+      "name": "removed_from_inbox_message",
+      "value": "Removed from inbox"
+    },
+    {
+      "name": "mark_as_played_label",
+      "value": "Mark as played"
+    },
+    {
+      "name": "toggle_played_label",
+      "value": "Toggle played state"
+    },
+    {
+      "name": "mark_read_no_media_label",
+      "value": "Mark as read"
+    },
+    {
+      "name": "play_this_to_seek_position_message",
+      "value": "To jump to positions, you need to play the episode"
+    },
+    {
+      "name": "mark_as_unplayed_label",
+      "value": "Mark as unplayed"
+    },
+    {
+      "name": "mark_unread_label_no_media",
+      "value": "Mark as unread"
+    },
+    {
+      "name": "add_to_queue_label",
+      "value": "Add to queue"
+    },
+    {
+      "name": "remove_from_queue_label",
+      "value": "Remove from queue"
+    },
+    {
+      "name": "add_to_favorite_label",
+      "value": "Add to favorites"
+    },
+    {
+      "name": "remove_from_favorite_label",
+      "value": "Remove from favorites"
+    },
+    {
+      "name": "show_transcript",
+      "value": "Show transcript"
+    },
+    {
+      "name": "transcript",
+      "value": "Transcript"
+    },
+    {
+      "name": "transcript_follow_audio_label",
+      "value": "Follow audio"
+    },
+    {
+      "name": "no_transcript_label",
+      "value": "No transcript"
+    },
+    {
+      "name": "visit_website_label",
+      "value": "Visit website"
+    },
+    {
+      "name": "visit_social_interact_label",
+      "value": "Show comments"
+    },
+    {
+      "name": "visit_social_interact_confirm_dialog_title",
+      "value": "You are leaving AntennaPod"
+    },
+    {
+      "name": "visit_social_interact_confirm_dialog_message",
+      "value": "Please make sure that you trust the website \"%1$s\"."
+    },
+    {
+      "name": "skip_episode_label",
+      "value": "Skip episode"
+    },
+    {
+      "name": "reset_playback_position_label",
+      "value": "Reset playback position"
+    },
+    {
+      "name": "no_items_selected_message",
+      "value": "No items selected"
+    },
+    {
+      "name": "delete_local_feed_confirmation_dialog_message",
+      "value": "Deleting removes the episode from AntennaPod and deletes the media file from your device storage. It cannot be downloaded again through AntennaPod."
+    },
+    {
+      "name": "download_successful",
+      "value": "successful"
+    },
+    {
+      "name": "download_pending",
+      "value": "Download pending"
+    },
+    {
+      "name": "download_running",
+      "value": "Download running"
+    },
+    {
+      "name": "download_error_details",
+      "value": "Details"
+    },
+    {
+      "name": "download_log_details_message",
+      "value": "%1$s \n\nTechnical reason: \n%2$s \n\nFile URL:\n%3$s"
+    },
+    {
+      "name": "download_log_details_human_readable_reason_title",
+      "value": "Status"
+    },
+    {
+      "name": "download_log_details_technical_reason_title",
+      "value": "Technical details"
+    },
+    {
+      "name": "download_log_details_file_url_title",
+      "value": "File URL"
+    },
+    {
+      "name": "download_log_open_feed",
+      "value": "Open"
+    },
+    {
+      "name": "download_error_retrying",
+      "value": "Download of \"%1$s\" failed. Will be retried later."
+    },
+    {
+      "name": "download_error_not_retrying",
+      "value": "Download of \"%1$s\" failed."
+    },
+    {
+      "name": "download_error_tap_for_details",
+      "value": "Tap to view details."
+    },
+    {
+      "name": "download_error_device_not_found",
+      "value": "Storage Device not found"
+    },
+    {
+      "name": "download_error_insufficient_space",
+      "value": "There is not enough space left on your device."
+    },
+    {
+      "name": "download_error_http_data_error",
+      "value": "HTTP data error"
+    },
+    {
+      "name": "download_error_error_unknown",
+      "value": "Unknown error"
+    },
+    {
+      "name": "download_error_parser_exception",
+      "value": "The podcast host's server sent a broken podcast feed. We recommend checking with a podcast validator such as castfeedvalidator.com and contacting the podcast creator to let them know."
+    },
+    {
+      "name": "download_error_unsupported_type",
+      "value": "Unsupported feed type"
+    },
+    {
+      "name": "download_error_unsupported_type_html",
+      "value": "The podcast host's server sent a website, not a podcast."
+    },
+    {
+      "name": "download_error_unsupported_type_html_manual",
+      "value": "The address you entered is a website address, not a podcast RSS address."
+    },
+    {
+      "name": "download_error_not_found",
+      "value": "The podcast host's server does not know where to find the file. It may have been deleted."
+    },
+    {
+      "name": "download_error_connection_error",
+      "value": "Connection error"
+    },
+    {
+      "name": "download_error_no_connection",
+      "value": "No network connection"
+    },
+    {
+      "name": "download_error_unknown_host",
+      "value": "Cannot find the server. Check if the address is typed correctly and if you have a working network connection."
+    },
+    {
+      "name": "download_error_unauthorized",
+      "value": "Authentication error. Make sure that username and password are correct."
+    },
+    {
+      "name": "download_error_file_type_type",
+      "value": "File type error"
+    },
+    {
+      "name": "download_error_forbidden",
+      "value": "The podcast host's server refuses to respond."
+    },
+    {
+      "name": "download_canceled_msg",
+      "value": "Download canceled"
+    },
+    {
+      "name": "download_error_wrong_size",
+      "value": "The server connection was lost before completing the download"
+    },
+    {
+      "name": "download_error_blocked",
+      "value": "The download was blocked by another app on your device (like a VPN or ad blocker)."
+    },
+    {
+      "name": "download_error_certificate",
+      "value": "Unable to establish a secure connection. This can mean that another app on your device (like a VPN or an ad blocker) blocked the download, or that something is wrong with the server certificates."
+    },
+    {
+      "name": "episode_download_failed",
+      "value": "Episode download failed"
+    },
+    {
+      "name": "download_error_io_error",
+      "value": "IO error"
+    },
+    {
+      "name": "download_error_request_error",
+      "value": "Request error"
+    },
+    {
+      "name": "download_error_db_access",
+      "value": "Database access error"
+    },
+    {
+      "name": "download_notification_title_feeds",
+      "value": "Refreshing podcasts"
+    },
+    {
+      "name": "download_notification_title_episodes",
+      "value": "Downloading episodes"
+    },
+    {
+      "name": "download_log_title_unknown",
+      "value": "Unknown title"
+    },
+    {
+      "name": "download_type_feed",
+      "value": "Feed"
+    },
+    {
+      "name": "download_type_media",
+      "value": "Media file"
+    },
+    {
+      "name": "null_value_podcast_error",
+      "value": "The link you tapped does not contain a valid podcast URL. Please verify the link and try again, or search for the podcast manually."
+    },
+    {
+      "name": "no_feed_url_podcast_found_by_search",
+      "value": "The suggested podcast did not have an RSS link, AntennaPod found a podcast that could match"
+    },
+    {
+      "name": "authentication_notification_title",
+      "value": "Authentication required"
+    },
+    {
+      "name": "confirm_mobile_download_dialog_title",
+      "value": "Confirm mobile download"
+    },
+    {
+      "name": "confirm_mobile_download_dialog_message",
+      "value": "Downloading over mobile data connection is disabled in the settings. AntennaPod can download the episode later automatically when Wi-Fi is available."
+    },
+    {
+      "name": "confirm_mobile_download_dialog_message_vpn",
+      "value": "- Using a VPN? Your VPN app pretends to be a mobile network (metered connection). If you want this problem fixed, contact the creators of your VPN app.\n- Not using a VPN? Open the Android Wi-Fi settings and change the type of your Wi-Fi to not be metered."
+    },
+    {
+      "name": "confirm_mobile_download_dialog_download_later",
+      "value": "Download later"
+    },
+    {
+      "name": "confirm_mobile_download_dialog_allow_this_time",
+      "value": "Download anyway"
+    },
+    {
+      "name": "confirm_mobile_streaming_notification_title",
+      "value": "Confirm mobile streaming"
+    },
+    {
+      "name": "confirm_mobile_streaming_notification_message",
+      "value": "Streaming over mobile data connection is disabled in the settings. Tap to stream anyway."
+    },
+    {
+      "name": "confirm_mobile_streaming_button_always",
+      "value": "Always"
+    },
+    {
+      "name": "confirm_mobile_streaming_button_once",
+      "value": "Once"
+    },
+    {
+      "name": "already_downloaded",
+      "value": "Episode is already downloaded"
+    },
+    {
+      "name": "playback_error_generic",
+      "value": "The media file could not be played.\n\n- Try deleting and re-downloading the episode.\n- Check your network connection, and make sure no VPN or login page is blocking access.\n- Try long-pressing and sharing the \"Media address\" to your web browser to see if it can be played there. If not, contact the podcast creators."
+    },
+    {
+      "name": "no_media_playing_label",
+      "value": "No media playing"
+    },
+    {
+      "name": "position_default_label",
+      "value": "00:00:00"
+    },
+    {
+      "name": "unknown_media_key",
+      "value": "AntennaPod - Unknown media key: %1$d"
+    },
+    {
+      "name": "error_file_not_found",
+      "value": "File not found"
+    },
+    {
+      "name": "no_media_label",
+      "value": "Item does not contain a media file"
+    },
+    {
+      "name": "no_following_in_queue",
+      "value": "This was the last episode in the queue"
+    },
+    {
+      "name": "lock_queue",
+      "value": "Lock queue"
+    },
+    {
+      "name": "queue_locked",
+      "value": "Queue locked"
+    },
+    {
+      "name": "queue_unlocked",
+      "value": "Queue unlocked"
+    },
+    {
+      "name": "queue_lock_warning",
+      "value": "If you lock the queue, you can no longer reorder episodes."
+    },
+    {
+      "name": "checkbox_do_not_show_again",
+      "value": "Do not show again"
+    },
+    {
+      "name": "clear_queue_label",
+      "value": "Clear queue"
+    },
+    {
+      "name": "undo",
+      "value": "Undo"
+    },
+    {
+      "name": "move_to_top_label",
+      "value": "Move to top"
+    },
+    {
+      "name": "move_to_bottom_label",
+      "value": "Move to bottom"
+    },
+    {
+      "name": "sort",
+      "value": "Sort"
+    },
+    {
+      "name": "keep_sorted",
+      "value": "Keep sorted"
+    },
+    {
+      "name": "date",
+      "value": "Date"
+    },
+    {
+      "name": "duration",
+      "value": "Duration"
+    },
+    {
+      "name": "episode",
+      "value": "Episode"
+    },
+    {
+      "name": "episode_title",
+      "value": "Episode title"
+    },
+    {
+      "name": "feed",
+      "value": "Podcast"
+    },
+    {
+      "name": "feed_title",
+      "value": "Podcast title"
+    },
+    {
+      "name": "random",
+      "value": "Random"
+    },
+    {
+      "name": "smart_shuffle",
+      "value": "Smart shuffle"
+    },
+    {
+      "name": "size",
+      "value": "Size"
+    },
+    {
+      "name": "clear_queue_confirmation_msg",
+      "value": "Please confirm that you want to remove ALL episodes from the queue."
+    },
+    {
+      "name": "queue_time_left_label",
+      "value": "%1$s • %2$s left"
+    },
+    {
+      "name": "speed_presets",
+      "value": "Presets"
+    },
+    {
+      "name": "preset_already_exists",
+      "value": "%1$.2fx is already saved as a preset."
+    },
+    {
+      "name": "no_items_header_label",
+      "value": "No queued episodes"
+    },
+    {
+      "name": "no_items_label",
+      "value": "Add an episode by downloading it, or long press an episode and select \"Add to queue\"."
+    },
+    {
+      "name": "no_queue_items_inbox_has_items_label",
+      "value": "No episodes lined up, but there are new episodes that await you!"
+    },
+    {
+      "name": "no_queue_items_inbox_has_items_button_label",
+      "value": "Go to inbox"
+    },
+    {
+      "name": "no_shownotes_label",
+      "value": "This episode has no shownotes."
+    },
+    {
+      "name": "no_comp_downloads_head_label",
+      "value": "No downloaded episodes"
+    },
+    {
+      "name": "no_comp_downloads_label",
+      "value": "You can download episodes on the podcast details screen."
+    },
+    {
+      "name": "no_log_downloads_head_label",
+      "value": "No download log"
+    },
+    {
+      "name": "no_log_downloads_label",
+      "value": "Download logs will appear here when available."
+    },
+    {
+      "name": "no_history_head_label",
+      "value": "No history"
+    },
+    {
+      "name": "no_history_label",
+      "value": "After you listen to an episode, it will appear here."
+    },
+    {
+      "name": "no_fav_episodes_head_label",
+      "value": "No favorites"
+    },
+    {
+      "name": "no_fav_episodes_label",
+      "value": "Mark episodes as favorites by tapping the star icon."
+    },
+    {
+      "name": "no_all_episodes_head_label",
+      "value": "No episodes"
+    },
+    {
+      "name": "no_all_episodes_label",
+      "value": "When you add a podcast, the episodes will be shown here."
+    },
+    {
+      "name": "no_all_episodes_filtered_label",
+      "value": "Try clearing the filter to see more episodes."
+    },
+    {
+      "name": "no_inbox_head_label",
+      "value": "No episodes in the inbox"
+    },
+    {
+      "name": "no_subscriptions_head_label",
+      "value": "No subscriptions"
+    },
+    {
+      "name": "no_subscriptions_label",
+      "value": "Subscribe to a podcast to see it here"
+    },
+    {
+      "name": "no_favorite_episodes_label",
+      "value": "No favorite episodes yet"
+    },
+    {
+      "name": "no_playback_history_label",
+      "value": "You have not played any episodes yet"
+    },
+    {
+      "name": "no_archive_head_label",
+      "value": "Nothing archived"
+    },
+    {
+      "name": "no_archive_label",
+      "value": "You can archive podcasts from the main subscriptions screen."
+    },
+    {
+      "name": "project_pref",
+      "value": "Project"
+    },
+    {
+      "name": "synchronization_pref",
+      "value": "Synchronization"
+    },
+    {
+      "name": "synchronization_sum",
+      "value": "Synchronize with other devices"
+    },
+    {
+      "name": "automation",
+      "value": "Automation"
+    },
+    {
+      "name": "download_pref_details",
+      "value": "Details"
+    },
+    {
+      "name": "import_export_pref",
+      "value": "Backup & restore"
+    },
+    {
+      "name": "import_export_search_keywords",
+      "value": "import, export"
+    },
+    {
+      "name": "theming",
+      "value": "Theming"
+    },
+    {
+      "name": "external_elements",
+      "value": "External elements"
+    },
+    {
+      "name": "interruptions",
+      "value": "Interruptions"
+    },
+    {
+      "name": "playback_control",
+      "value": "Playback control"
+    },
+    {
+      "name": "reassign_hardware_buttons",
+      "value": "Reassign hardware buttons"
+    },
+    {
+      "name": "preference_search_hint",
+      "value": "Search…"
+    },
+    {
+      "name": "preference_search_no_results",
+      "value": "No results"
+    },
+    {
+      "name": "preference_search_clear_history",
+      "value": "Clear history"
+    },
+    {
+      "name": "preference_search_clear_input",
+      "value": "Clear"
+    },
+    {
+      "name": "overflow_more",
+      "value": "More"
+    },
+    {
+      "name": "pref_episode_cleanup_title",
+      "value": "Delete before auto download"
+    },
+    {
+      "name": "pref_episode_cleanup_summary",
+      "value": "Episodes that should be eligible for removal if Auto Download needs space for new episodes"
+    },
+    {
+      "name": "pref_pauseOnDisconnect_sum",
+      "value": "Pause playback when headphones or Bluetooth devices get disconnected"
+    },
+    {
+      "name": "pref_unpauseOnHeadsetReconnect_sum",
+      "value": "Resume playback when the headphones get reconnected"
+    },
+    {
+      "name": "pref_unpauseOnBluetoothReconnect_sum",
+      "value": "Resume playback when bluetooth reconnects"
+    },
+    {
+      "name": "pref_hardware_forward_button_title",
+      "value": "Forward button"
+    },
+    {
+      "name": "pref_hardware_forward_button_summary",
+      "value": "Customize the forward button behavior"
+    },
+    {
+      "name": "pref_hardware_previous_button_title",
+      "value": "Previous button"
+    },
+    {
+      "name": "pref_hardware_previous_button_summary",
+      "value": "Customize the previous button behavior"
+    },
+    {
+      "name": "button_action_fast_forward",
+      "value": "Fast-forward"
+    },
+    {
+      "name": "button_action_rewind",
+      "value": "Rewind"
+    },
+    {
+      "name": "button_action_skip_episode",
+      "value": "Skip episode"
+    },
+    {
+      "name": "button_action_restart_episode",
+      "value": "Restart episode"
+    },
+    {
+      "name": "pref_followQueue_sum",
+      "value": "Jump to next queue item when playback completes"
+    },
+    {
+      "name": "pref_auto_delete_playback_sum",
+      "value": "Delete episode when playback completes"
+    },
+    {
+      "name": "pref_auto_delete_playback_title",
+      "value": "Delete after playing"
+    },
+    {
+      "name": "pref_auto_delete_title",
+      "value": "Automatic deletion"
+    },
+    {
+      "name": "pref_auto_delete_sum",
+      "value": "Delete episodes after playing or when automatic download needs space"
+    },
+    {
+      "name": "pref_auto_local_delete_title",
+      "value": "Auto delete from local folders"
+    },
+    {
+      "name": "pref_auto_local_delete_sum",
+      "value": "Also delete files added through \"add local folder\". Note that these are not downloaded by AntennaPod and cannot be re-downloaded"
+    },
+    {
+      "name": "pref_auto_local_delete_dialog_body",
+      "value": "Note that for local folders this will remove episodes from AntennaPod and delete their media files from your device storage. They cannot be downloaded again through AntennaPod. Enable auto delete?"
+    },
+    {
+      "name": "pref_smart_mark_as_played_sum",
+      "value": "Mark episodes as played even if less than a certain amount of seconds of playing time is still left"
+    },
+    {
+      "name": "pref_smart_mark_as_played_title",
+      "value": "Smart mark as played"
+    },
+    {
+      "name": "pref_skip_keeps_episodes_sum",
+      "value": "Keep episodes when they are skipped"
+    },
+    {
+      "name": "pref_skip_keeps_episodes_title",
+      "value": "Keep skipped episodes"
+    },
+    {
+      "name": "pref_favorite_keeps_episodes_sum",
+      "value": "Keep episodes when they are marked favorite"
+    },
+    {
+      "name": "pref_favorite_keeps_episodes_title",
+      "value": "Keep favorite episodes"
+    },
+    {
+      "name": "playback_pref",
+      "value": "Playback"
+    },
+    {
+      "name": "playback_pref_sum",
+      "value": "Headphone controls, Skip intervals, Queue"
+    },
+    {
+      "name": "downloads_pref",
+      "value": "Downloads"
+    },
+    {
+      "name": "downloads_pref_sum",
+      "value": "Update interval, Mobile data, Automatic download, Automatic deletion"
+    },
+    {
+      "name": "feed_refresh_title",
+      "value": "Refresh podcasts"
+    },
+    {
+      "name": "feed_refresh_sum",
+      "value": "Specify an interval at which AntennaPod looks for new episodes automatically"
+    },
+    {
+      "name": "feed_refresh_never",
+      "value": "Never"
+    },
+    {
+      "name": "feed_every_hour",
+      "value": "Every hour"
+    },
+    {
+      "name": "feed_every_2_hours",
+      "value": "Every 2 hours"
+    },
+    {
+      "name": "feed_every_4_hours",
+      "value": "Every 4 hours"
+    },
+    {
+      "name": "feed_every_8_hours",
+      "value": "Every 8 hours"
+    },
+    {
+      "name": "feed_every_12_hours",
+      "value": "Every 12 hours"
+    },
+    {
+      "name": "feed_every_24_hours",
+      "value": "Every day"
+    },
+    {
+      "name": "feed_every_72_hours",
+      "value": "Every 3 days"
+    },
+    {
+      "name": "pref_followQueue_title",
+      "value": "Continuous playback"
+    },
+    {
+      "name": "pref_pauseOnHeadsetDisconnect_title",
+      "value": "Headphones or Bluetooth disconnect"
+    },
+    {
+      "name": "pref_unpauseOnHeadsetReconnect_title",
+      "value": "Headphones reconnect"
+    },
+    {
+      "name": "pref_unpauseOnBluetoothReconnect_title",
+      "value": "Bluetooth reconnect"
+    },
+    {
+      "name": "pref_stream_over_download_title",
+      "value": "Prefer streaming"
+    },
+    {
+      "name": "pref_stream_over_download_sum",
+      "value": "Display stream button instead of download button in lists"
+    },
+    {
+      "name": "pref_mobileUpdate_title",
+      "value": "Mobile updates"
+    },
+    {
+      "name": "pref_mobileUpdate_sum",
+      "value": "Select what should be allowed over the mobile data connection"
+    },
+    {
+      "name": "pref_mobileUpdate_refresh",
+      "value": "Podcast refresh"
+    },
+    {
+      "name": "pref_mobileUpdate_images",
+      "value": "Cover images"
+    },
+    {
+      "name": "pref_mobileUpdate_episode_download",
+      "value": "Episode download"
+    },
+    {
+      "name": "pref_mobileUpdate_streaming",
+      "value": "Streaming"
+    },
+    {
+      "name": "user_interface_label",
+      "value": "User interface"
+    },
+    {
+      "name": "user_interface_sum",
+      "value": "Appearance, subscriptions, lockscreen"
+    },
+    {
+      "name": "pref_black_theme_title",
+      "value": "Full black"
+    },
+    {
+      "name": "pref_black_theme_message",
+      "value": "Use full black for the dark theme"
+    },
+    {
+      "name": "pref_tinted_theme_title",
+      "value": "Dynamic colors"
+    },
+    {
+      "name": "pref_tinted_theme_message",
+      "value": "Adapt app colors based on the wallpaper"
+    },
+    {
+      "name": "bottom_navigation",
+      "value": "Bottom navigation"
+    },
+    {
+      "name": "bottom_navigation_summary",
+      "value": "Access the most important screens from everywhere, in a single tap"
+    },
+    {
+      "name": "bottom_navigation_deprecation_warning",
+      "value": "Unfortunately we have to remove side navigation in a future update. AntennaPod is developed by a small group of volunteers, and after maintaining both navigation styles for years, it has become too much overhead. \n\nIf you absolutely rely on side navigation, please disable updates for AntennaPod in your app store."
+    },
+    {
+      "name": "pref_nav_drawer_items_title",
+      "value": "Customize navigation"
+    },
+    {
+      "name": "pref_nav_drawer_items_sum",
+      "value": "Change which items appear in the navigation drawer or bottom navigation"
+    },
+    {
+      "name": "pref_nav_drawer_feed_counter_title",
+      "value": "Counter"
+    },
+    {
+      "name": "pref_automatic_download_title",
+      "value": "Automatic download"
+    },
+    {
+      "name": "pref_automatic_download_global_description",
+      "value": "Automatically download episodes from the inbox. Can be overridden per podcast."
+    },
+    {
+      "name": "pref_automatic_download_queue_title",
+      "value": "Download queued"
+    },
+    {
+      "name": "pref_automatic_download_queue_description",
+      "value": "Automatically download queued episodes"
+    },
+    {
+      "name": "pref_automatic_download_sum",
+      "value": "Configure the automatic download of episodes"
+    },
+    {
+      "name": "pref_automatic_download_on_battery_title",
+      "value": "Download when not charging"
+    },
+    {
+      "name": "pref_automatic_download_on_battery_sum",
+      "value": "Allow automatic download when the battery is not charging"
+    },
+    {
+      "name": "pref_episode_cache_title",
+      "value": "Episode limit"
+    },
+    {
+      "name": "pref_episode_cache_summary",
+      "value": "Automatic download is stopped if this number is reached"
+    },
+    {
+      "name": "pref_episode_cover_title",
+      "value": "Use episode cover"
+    },
+    {
+      "name": "pref_episode_cover_summary",
+      "value": "Use the episode specific cover in lists whenever available. If unchecked, the app will always use the podcast cover image."
+    },
+    {
+      "name": "pref_show_remain_time_title",
+      "value": "Show remaining time"
+    },
+    {
+      "name": "pref_show_remain_time_summary",
+      "value": "Display remaining time of episodes when checked. If unchecked, display total duration of episodes."
+    },
+    {
+      "name": "pref_theme_title_automatic",
+      "value": "Automatic"
+    },
+    {
+      "name": "pref_theme_title_light",
+      "value": "Light"
+    },
+    {
+      "name": "pref_theme_title_dark",
+      "value": "Dark"
+    },
+    {
+      "name": "pref_episode_cache_unlimited",
+      "value": "Unlimited"
+    },
+    {
+      "name": "pref_playback_speed_sum",
+      "value": "Customize the speeds available for variable speed playback"
+    },
+    {
+      "name": "pref_feed_playback_speed_sum",
+      "value": "The speed to use when starting audio playback for episodes in this podcast"
+    },
+    {
+      "name": "pref_feed_skip",
+      "value": "Auto skip"
+    },
+    {
+      "name": "pref_feed_skip_sum",
+      "value": "Skip introductions and ending credits"
+    },
+    {
+      "name": "pref_feed_skip_ending",
+      "value": "Skip last"
+    },
+    {
+      "name": "pref_feed_skip_intro",
+      "value": "Skip first"
+    },
+    {
+      "name": "pref_feed_skip_ending_toast",
+      "value": "Skipped last %d seconds"
+    },
+    {
+      "name": "pref_feed_skip_intro_toast",
+      "value": "Skipped first %d seconds"
+    },
+    {
+      "name": "pref_playback_time_respects_speed_title",
+      "value": "Adjust media info to playback speed"
+    },
+    {
+      "name": "pref_playback_time_respects_speed_sum",
+      "value": "Displayed position and duration are adapted to playback speed"
+    },
+    {
+      "name": "pref_fast_forward",
+      "value": "Fast-forward skip time"
+    },
+    {
+      "name": "pref_fast_forward_sum",
+      "value": "Customize the number of seconds to jump forward when the fast-forward button is clicked"
+    },
+    {
+      "name": "pref_rewind",
+      "value": "Rewind skip time"
+    },
+    {
+      "name": "pref_rewind_sum",
+      "value": "Customize the number of seconds to jump backwards when the rewind button is clicked"
+    },
+    {
+      "name": "pref_expandNotify_title",
+      "value": "High notification priority"
+    },
+    {
+      "name": "pref_expandNotify_sum",
+      "value": "This usually expands the notification to show playback buttons."
+    },
+    {
+      "name": "pref_persistNotify_title",
+      "value": "Persistent playback controls"
+    },
+    {
+      "name": "pref_persistNotify_sum",
+      "value": "Keep notification and lockscreen controls when playback is paused"
+    },
+    {
+      "name": "pref_compact_notification_buttons_dialog_error_exact",
+      "value": "You must select exactly two items"
+    },
+    {
+      "name": "pref_full_notification_buttons_title",
+      "value": "Set notification buttons"
+    },
+    {
+      "name": "pref_full_notification_buttons_sum",
+      "value": "Change the buttons on the playback notification"
+    },
+    {
+      "name": "pref_enqueue_location_title",
+      "value": "Enqueue location"
+    },
+    {
+      "name": "pref_enqueue_location_sum",
+      "value": "Add episodes to: %1$s"
+    },
+    {
+      "name": "enqueue_location_back",
+      "value": "Back"
+    },
+    {
+      "name": "enqueue_location_front",
+      "value": "Front"
+    },
+    {
+      "name": "enqueue_location_after_current",
+      "value": "After current episode"
+    },
+    {
+      "name": "enqueue_location_random",
+      "value": "Random"
+    },
+    {
+      "name": "pref_smart_mark_as_played_disabled",
+      "value": "Disabled"
+    },
+    {
+      "name": "documentation_support",
+      "value": "Documentation & support"
+    },
+    {
+      "name": "visit_user_forum",
+      "value": "User forum"
+    },
+    {
+      "name": "copy_to_clipboard",
+      "value": "Copy to clipboard"
+    },
+    {
+      "name": "copied_to_clipboard",
+      "value": "Copied to clipboard"
+    },
+    {
+      "name": "pref_proxy_title",
+      "value": "Proxy"
+    },
+    {
+      "name": "pref_proxy_sum",
+      "value": "Set a network proxy"
+    },
+    {
+      "name": "pref_no_browser_found",
+      "value": "No web browser found."
+    },
+    {
+      "name": "pref_enqueue_downloaded_title",
+      "value": "Enqueue downloaded"
+    },
+    {
+      "name": "pref_enqueue_downloaded_summary",
+      "value": "Add downloaded episodes to the queue"
+    },
+    {
+      "name": "pref_skip_silence_title",
+      "value": "Skip silence in audio"
+    },
+    {
+      "name": "behavior",
+      "value": "Behavior"
+    },
+    {
+      "name": "episode_lists",
+      "value": "Episode lists"
+    },
+    {
+      "name": "pref_default_page",
+      "value": "Default page"
+    },
+    {
+      "name": "pref_default_page_sum",
+      "value": "Screen that is opened when starting AntennaPod"
+    },
+    {
+      "name": "pref_back_button_opens_drawer",
+      "value": "Back button opens drawer"
+    },
+    {
+      "name": "pref_back_button_opens_drawer_summary",
+      "value": "Pressing the back button on the default page opens the navigation drawer"
+    },
+    {
+      "name": "remember_last_page",
+      "value": "Remember last page"
+    },
+    {
+      "name": "pref_delete_removes_from_queue_title",
+      "value": "Delete removes from queue"
+    },
+    {
+      "name": "pref_delete_removes_from_queue_sum",
+      "value": "Automatically remove an episode from the queue when it is deleted"
+    },
+    {
+      "name": "pref_downloads_button_action_title",
+      "value": "Play from downloads screen"
+    },
+    {
+      "name": "pref_downloads_button_action_sum",
+      "value": "Display play button instead of delete button on downloads screen"
+    },
+    {
+      "name": "subscriptions_counter_greater_zero",
+      "value": "Counter greater than zero"
+    },
+    {
+      "name": "auto_downloaded",
+      "value": "Auto downloaded"
+    },
+    {
+      "name": "not_auto_downloaded",
+      "value": "Not auto downloaded"
+    },
+    {
+      "name": "kept_updated",
+      "value": "Kept updated"
+    },
+    {
+      "name": "not_kept_updated",
+      "value": "Not kept updated"
+    },
+    {
+      "name": "new_episode_notification_enabled",
+      "value": "Notification enabled"
+    },
+    {
+      "name": "new_episode_notification_disabled",
+      "value": "Notification disabled"
+    },
+    {
+      "name": "pref_feed_settings_dialog_msg",
+      "value": "This setting is unique to each podcast. You can change it by opening the podcast page."
+    },
+    {
+      "name": "pref_contribute",
+      "value": "Contribute"
+    },
+    {
+      "name": "pref_show_subscription_title",
+      "value": "Show titles"
+    },
+    {
+      "name": "pref_new_episodes_action_title",
+      "value": "New episodes action"
+    },
+    {
+      "name": "pref_new_episodes_action_sum",
+      "value": "Action to take for new episodes"
+    },
+    {
+      "name": "episode_information",
+      "value": "Episode information"
+    },
+    {
+      "name": "pref_global_default_episode_list_sort_order_title",
+      "value": "Default sort order"
+    },
+    {
+      "name": "pref_global_default_episode_list_sort_order_sum",
+      "value": "Choose the default order for episodes on the podcast screen"
+    },
+    {
+      "name": "report_bug_title",
+      "value": "Report bug"
+    },
+    {
+      "name": "report_bug_message",
+      "value": "Sorry to hear something isn’t working. We’d love your help to improve AntennaPod. Please check our forum or GitHub to see if the issue has already been reported. If not, let us know and we’ll investigate."
+    },
+    {
+      "name": "report_bug_device_info_title",
+      "value": "Device"
+    },
+    {
+      "name": "report_bug_attrib_app_version",
+      "value": "App version"
+    },
+    {
+      "name": "report_bug_attrib_android_version",
+      "value": "Android version"
+    },
+    {
+      "name": "report_bug_attrib_device_name",
+      "value": "Device Name"
+    },
+    {
+      "name": "report_bug_crash_log_title",
+      "value": "Crash log"
+    },
+    {
+      "name": "report_bug_crash_log_message",
+      "value": "Created: %1$s."
+    },
+    {
+      "name": "report_bug_forum_title",
+      "value": "Forum"
+    },
+    {
+      "name": "report_bug_github_title",
+      "value": "GitHub"
+    },
+    {
+      "name": "pref_advanced",
+      "value": "Advanced"
+    },
+    {
+      "name": "pref_display",
+      "value": "Display"
+    },
+    {
+      "name": "about_pref",
+      "value": "About"
+    },
+    {
+      "name": "antennapod_version",
+      "value": "AntennaPod version"
+    },
+    {
+      "name": "contributors",
+      "value": "Contributors"
+    },
+    {
+      "name": "contributors_summary",
+      "value": "Everyone can help to make AntennaPod better - with code, translations or by helping users in our forum"
+    },
+    {
+      "name": "developers",
+      "value": "Developers"
+    },
+    {
+      "name": "translators",
+      "value": "Translators"
+    },
+    {
+      "name": "special_thanks",
+      "value": "Special thanks"
+    },
+    {
+      "name": "privacy_policy",
+      "value": "Privacy policy"
+    },
+    {
+      "name": "licenses",
+      "value": "Licenses"
+    },
+    {
+      "name": "licenses_summary",
+      "value": "AntennaPod uses other great software"
+    },
+    {
+      "name": "search_status_no_results",
+      "value": "No results were found"
+    },
+    {
+      "name": "type_to_search",
+      "value": "Type a query to search"
+    },
+    {
+      "name": "search_label",
+      "value": "Search"
+    },
+    {
+      "name": "no_results_for_query",
+      "value": "No results were found for \"%1$s\""
+    },
+    {
+      "name": "search_online",
+      "value": "Search online"
+    },
+    {
+      "name": "sync_status_started",
+      "value": "Sync started"
+    },
+    {
+      "name": "sync_status_episodes_upload",
+      "value": "Uploading episode changes…"
+    },
+    {
+      "name": "sync_status_episodes_download",
+      "value": "Downloading episode changes…"
+    },
+    {
+      "name": "sync_status_upload_played",
+      "value": "Uploading played status…"
+    },
+    {
+      "name": "sync_status_subscriptions",
+      "value": "Synchronizing subscriptions…"
+    },
+    {
+      "name": "sync_status_wait_for_downloads",
+      "value": "Waiting for subscriptions refresh…"
+    },
+    {
+      "name": "sync_status_success",
+      "value": "Synchronization successful"
+    },
+    {
+      "name": "sync_status_error",
+      "value": "Synchronization failed"
+    },
+    {
+      "name": "import_export_summary",
+      "value": "Move subscriptions and queue to another device"
+    },
+    {
+      "name": "database",
+      "value": "Database"
+    },
+    {
+      "name": "opml",
+      "value": "OPML"
+    },
+    {
+      "name": "html",
+      "value": "HTML"
+    },
+    {
+      "name": "html_export_summary",
+      "value": "Show your subscriptions to a friend"
+    },
+    {
+      "name": "opml_export_summary",
+      "value": "Transfer your subscriptions to another podcast app"
+    },
+    {
+      "name": "opml_import_summary",
+      "value": "Import your subscriptions from another podcast app"
+    },
+    {
+      "name": "database_export_summary",
+      "value": "Transfer subscriptions, listened episodes and queue to AntennaPod on another device"
+    },
+    {
+      "name": "database_import_summary",
+      "value": "Import AntennaPod database from another device"
+    },
+    {
+      "name": "opml_import_label",
+      "value": "OPML import"
+    },
+    {
+      "name": "opml_add_podcast_label",
+      "value": "Import podcast list (OPML)"
+    },
+    {
+      "name": "opml_reader_error",
+      "value": "An error has occurred while reading the file. Make sure that you have actually selected an OPML file and that the file is valid."
+    },
+    {
+      "name": "opml_import_error_no_file",
+      "value": "No file selected!"
+    },
+    {
+      "name": "select_all_label",
+      "value": "Select all"
+    },
+    {
+      "name": "deselect_all_label",
+      "value": "Deselect all"
+    },
+    {
+      "name": "opml_export_label",
+      "value": "OPML export"
+    },
+    {
+      "name": "html_export_label",
+      "value": "HTML export"
+    },
+    {
+      "name": "database_export_label",
+      "value": "Database export"
+    },
+    {
+      "name": "automatic_database_export_label",
+      "value": "Automatic database export"
+    },
+    {
+      "name": "automatic_database_export_summary",
+      "value": "Create a backup of the AntennaPod database every 3 days. Only keep the 5 most recent backups."
+    },
+    {
+      "name": "automatic_database_export_error",
+      "value": "Error during automatic database backup"
+    },
+    {
+      "name": "database_import_label",
+      "value": "Database import"
+    },
+    {
+      "name": "database_import_warning",
+      "value": "Importing a database will replace all of your current subscriptions and playing history. You should export your current database as a backup. Do you want to replace?"
+    },
+    {
+      "name": "please_wait",
+      "value": "Please wait…"
+    },
+    {
+      "name": "export_error_label",
+      "value": "Export error"
+    },
+    {
+      "name": "export_success_title",
+      "value": "Export successful"
+    },
+    {
+      "name": "opml_import_ask_read_permission",
+      "value": "Access to external storage is required to read the OPML file"
+    },
+    {
+      "name": "successful_import_label",
+      "value": "Import successful"
+    },
+    {
+      "name": "import_ok",
+      "value": "Please press OK to restart AntennaPod"
+    },
+    {
+      "name": "import_no_downgrade",
+      "value": "This database was exported with a newer version of AntennaPod. Your current installation does not yet know how to handle this file."
+    },
+    {
+      "name": "import_error_label",
+      "value": "Import error"
+    },
+    {
+      "name": "favorites_export_label",
+      "value": "Favorites export"
+    },
+    {
+      "name": "favorites_export_summary",
+      "value": "Export saved favorites to file"
+    },
+    {
+      "name": "set_sleeptimer_label",
+      "value": "Set sleep timer"
+    },
+    {
+      "name": "disable_sleeptimer_label",
+      "value": "Disable sleep timer"
+    },
+    {
+      "name": "extend_sleep_timer_label",
+      "value": "+%d min"
+    },
+    {
+      "name": "sleep_timer_episodes_label",
+      "value": "episodes"
+    },
+    {
+      "name": "sleep_timer_without_continuous_playback",
+      "value": "Disable continuous playback"
+    },
+    {
+      "name": "sleep_timer_without_continuous_playback_change_hours",
+      "value": "Change hours"
+    },
+    {
+      "name": "sleep_timer_without_continuous_playback_message",
+      "value": "Instead of always automatically enabling the sleep timer with one episode, please instead disable \"continuous playback\" in the settings."
+    },
+    {
+      "name": "sleep_timer_always",
+      "value": "Always"
+    },
+    {
+      "name": "sleep_timer_label",
+      "value": "Sleep timer"
+    },
+    {
+      "name": "time_dialog_invalid_input",
+      "value": "Invalid input, time has to be an integer"
+    },
+    {
+      "name": "multiple_sleep_episodes_while_continuous_playback_disabled",
+      "value": "Continuous playback is disabled in the settings. Always stopping at the end of the episode."
+    },
+    {
+      "name": "shake_to_reset_label",
+      "value": "Shake to reset"
+    },
+    {
+      "name": "timer_vibration_label",
+      "value": "Vibrate shortly before end"
+    },
+    {
+      "name": "time_seconds",
+      "value": "seconds"
+    },
+    {
+      "name": "time_minutes",
+      "value": "minutes"
+    },
+    {
+      "name": "time_hours",
+      "value": "hours"
+    },
+    {
+      "name": "auto_enable_label",
+      "value": "Automatically activate the sleep timer when pressing play"
+    },
+    {
+      "name": "auto_enable_label_with_times",
+      "value": "Automatically activate the sleep timer when pressing play between %1$s and %2$s"
+    },
+    {
+      "name": "auto_enable_change_times",
+      "value": "Change time range"
+    },
+    {
+      "name": "sleep_timer_enabled_label",
+      "value": "Sleep timer enabled"
+    },
+    {
+      "name": "synchronization_choose_title",
+      "value": "Choose synchronization provider"
+    },
+    {
+      "name": "synchronization_summary_unchoosen",
+      "value": "You can choose from multiple providers to synchronize your subscriptions and episode play state with"
+    },
+    {
+      "name": "dialog_choose_sync_service_title",
+      "value": "Choose synchronization provider"
+    },
+    {
+      "name": "gpodnet_description",
+      "value": "Gpodder.net is an open-source podcast synchronization service that you can install on your own server. Gpodder.net is independent of the AntennaPod project."
+    },
+    {
+      "name": "synchronization_summary_nextcloud",
+      "value": "Gpodder Sync is an open-source Nextcloud app that you can easily install on your own server. Gpodder Sync is independent of the AntennaPod project."
+    },
+    {
+      "name": "synchronization_host_explanation",
+      "value": "You can pick your own server to synchronize with. When you have identified your preferred synchronization server, please enter its address here."
+    },
+    {
+      "name": "synchronization_host_label",
+      "value": "Server address"
+    },
+    {
+      "name": "proceed_to_login_butLabel",
+      "value": "Proceed to login"
+    },
+    {
+      "name": "synchronization_nextcloud_authenticate_browser",
+      "value": "Grant access using the opened web browser and come back to AntennaPod."
+    },
+    {
+      "name": "gpodnetauth_login_butLabel",
+      "value": "Login"
+    },
+    {
+      "name": "synchronization_credentials_explanation",
+      "value": "Please provide the credentials of your account on the synchronization server."
+    },
+    {
+      "name": "gpodnetauth_encryption_warning",
+      "value": "Password and data are not encrypted!"
+    },
+    {
+      "name": "username_label",
+      "value": "Username"
+    },
+    {
+      "name": "password_label",
+      "value": "Password"
+    },
+    {
+      "name": "wrong_password",
+      "value": "Wrong password"
+    },
+    {
+      "name": "show_password_accessibility",
+      "value": "Show password"
+    },
+    {
+      "name": "synchronization_login_butLabel",
+      "value": "Log in"
+    },
+    {
+      "name": "synchronization_selectDevice_explanation",
+      "value": "Please select the device that you created on the synchronization server or create a new one."
+    },
+    {
+      "name": "gpodnetauth_device_name",
+      "value": "Device name"
+    },
+    {
+      "name": "gpodnetauth_device_name_default",
+      "value": "AntennaPod on %1$s"
+    },
+    {
+      "name": "gpodnetauth_existing_devices",
+      "value": "Existing devices"
+    },
+    {
+      "name": "gpodnetauth_create_device",
+      "value": "Create device"
+    },
+    {
+      "name": "gpodnetauth_finish_descr",
+      "value": "Congratulations! Your gpodder.net account is now linked with your device. AntennaPod will from now on automatically sync subscriptions on your device with your gpodder.net account."
+    },
+    {
+      "name": "pref_gpodnet_setlogin_information_title",
+      "value": "Change login information"
+    },
+    {
+      "name": "pref_gpodnet_setlogin_information_sum",
+      "value": "Change the login information for your gpodder.net account."
+    },
+    {
+      "name": "synchronization_sync_changes_title",
+      "value": "Synchronize now"
+    },
+    {
+      "name": "synchronization_sync_summary",
+      "value": "Synchronize subscription and episode state changes"
+    },
+    {
+      "name": "synchronization_full_sync_title",
+      "value": "Force full synchronization"
+    },
+    {
+      "name": "synchronization_force_sync_summary",
+      "value": "Re-synchronize all subscriptions and episode states"
+    },
+    {
+      "name": "synchronization_logout",
+      "value": "Logout"
+    },
+    {
+      "name": "synchronization_login_status",
+      "value": "Logged in as %1$s on %2$s.\n\nYou can choose your synchronization provider again once you have logged out."
+    },
+    {
+      "name": "pref_synchronization_logout_toast",
+      "value": "Logout was successful"
+    },
+    {
+      "name": "gpodnetsync_error_title",
+      "value": "gpodder.net sync error"
+    },
+    {
+      "name": "gpodnetsync_error_descr",
+      "value": "An error occurred during syncing:\\u0020"
+    },
+    {
+      "name": "gpodnetsync_pref_report_successful",
+      "value": "Successful"
+    },
+    {
+      "name": "gpodnetsync_pref_report_failed",
+      "value": "Failed"
+    },
+    {
+      "name": "gpodnetsync_username_characters_error",
+      "value": "Usernames may only contain letters, digits, hyphens and underscores."
+    },
+    {
+      "name": "nextcloud_login_error_generic",
+      "value": "Unable to log into your Nextcloud.\n\n- Check your network connection.\n- Confirm that you are using the correct server address.\n- Make sure that the Gpodder Sync Nextcloud plugin is installed."
+    },
+    {
+      "name": "choose_data_directory",
+      "value": "Choose data folder"
+    },
+    {
+      "name": "choose_data_directory_message",
+      "value": "Please choose the base of your data folder. AntennaPod will create the appropriate subdirectories."
+    },
+    {
+      "name": "choose_data_directory_available_space",
+      "value": "%1$s of %2$s free"
+    },
+    {
+      "name": "rating_tagline",
+      "value": "Since %1$s, you played %2$s%3$d%4$s hours of podcasts."
+    },
+    {
+      "name": "rating_contribute_label",
+      "value": "Want to join? Whether you want to translate, support, design or code, we would be happy to have you!"
+    },
+    {
+      "name": "rating_contribute_button",
+      "value": "Discover ways to contribute"
+    },
+    {
+      "name": "rating_volunteers_label",
+      "value": "AntennaPod is developed by volunteers in their free time. Share your appreciation of their work by leaving a nice rating."
+    },
+    {
+      "name": "rating_rate",
+      "value": "Rate AntennaPod"
+    },
+    {
+      "name": "rating_later",
+      "value": "Later"
+    },
+    {
+      "name": "subscribe_label",
+      "value": "Subscribe"
+    },
+    {
+      "name": "preview_episodes",
+      "value": "Episodes preview"
+    },
+    {
+      "name": "state_deleted_not_subscribed",
+      "value": "You are not subscribed to this podcast yet. Subscribe for free to access it more easily and keep its playback history."
+    },
+    {
+      "name": "toolbar_back_button_content_description",
+      "value": "Back"
+    },
+    {
+      "name": "rewind_label",
+      "value": "Rewind"
+    },
+    {
+      "name": "fast_forward_label",
+      "value": "Fast-forward"
+    },
+    {
+      "name": "increase_speed",
+      "value": "Increase speed"
+    },
+    {
+      "name": "decrease_speed",
+      "value": "Decrease speed"
+    },
+    {
+      "name": "media_type_video_label",
+      "value": "Video"
+    },
+    {
+      "name": "status_downloading_label",
+      "value": "Episode is being downloaded"
+    },
+    {
+      "name": "in_queue_label",
+      "value": "In the queue"
+    },
+    {
+      "name": "is_favorite_label",
+      "value": "Marked as favorite"
+    },
+    {
+      "name": "is_inbox_label",
+      "value": "In the inbox"
+    },
+    {
+      "name": "is_played",
+      "value": "Played"
+    },
+    {
+      "name": "load_next_page_label",
+      "value": "Load next page"
+    },
+    {
+      "name": "position",
+      "value": "Position: %1$s"
+    },
+    {
+      "name": "remaining_time",
+      "value": "Remaining time: %1$s"
+    },
+    {
+      "name": "play_chapter",
+      "value": "Play chapter"
+    },
+    {
+      "name": "prev_chapter",
+      "value": "Previous chapter"
+    },
+    {
+      "name": "next_chapter",
+      "value": "Next chapter"
+    },
+    {
+      "name": "shuffle_suggestions",
+      "value": "Shuffle suggestions"
+    },
+    {
+      "name": "add_preset",
+      "value": "Add preset"
+    },
+    {
+      "name": "download_started_talkback",
+      "value": "Download started for %1$s"
+    },
+    {
+      "name": "download_completed_talkback",
+      "value": "Download completed for %1$s"
+    },
+    {
+      "name": "authentication_label",
+      "value": "Authentication"
+    },
+    {
+      "name": "authentication_descr",
+      "value": "Change your username and password for this podcast and its episodes"
+    },
+    {
+      "name": "feed_tags_label",
+      "value": "Tags"
+    },
+    {
+      "name": "feed_tags_summary",
+      "value": "Change the tags of this podcast to help organize your subscriptions"
+    },
+    {
+      "name": "feed_folders_include_root",
+      "value": "Show above tags (side navigation only)"
+    },
+    {
+      "name": "tag_all",
+      "value": "All"
+    },
+    {
+      "name": "tag_untagged",
+      "value": "Untagged"
+    },
+    {
+      "name": "multi_feed_common_tags_info",
+      "value": "Only common tags from all selected subscriptions are shown. Other tags stay unaffected."
+    },
+    {
+      "name": "episode_filters_label",
+      "value": "Episode filter"
+    },
+    {
+      "name": "episode_filters_description",
+      "value": "List of terms used to decide if an episode should be included or excluded when auto downloading"
+    },
+    {
+      "name": "add_term",
+      "value": "Add term"
+    },
+    {
+      "name": "exclude_terms",
+      "value": "Exclude episodes containing any of the terms below"
+    },
+    {
+      "name": "include_terms",
+      "value": "Include only episodes containing any of the terms below"
+    },
+    {
+      "name": "exclude_episodes_shorter_than",
+      "value": "Exclude episodes shorter than"
+    },
+    {
+      "name": "keep_updated",
+      "value": "Keep updated"
+    },
+    {
+      "name": "keep_updated_summary",
+      "value": "Include this podcast when (auto-)refreshing all podcasts"
+    },
+    {
+      "name": "statistics_time_total",
+      "value": "total"
+    },
+    {
+      "name": "statistics_time_played",
+      "value": "played"
+    },
+    {
+      "name": "statistics_episodes_space",
+      "value": "space taken"
+    },
+    {
+      "name": "statistics_release_schedule",
+      "value": "release schedule"
+    },
+    {
+      "name": "statistics_release_next",
+      "value": "next episode (estimate)"
+    },
+    {
+      "name": "statistics_expected_next_episode_any_day",
+      "value": "Any day now"
+    },
+    {
+      "name": "statistics_expected_next_episode_any_time",
+      "value": "Any time now"
+    },
+    {
+      "name": "statistics_expected_next_episode_unknown",
+      "value": "Unknown"
+    },
+    {
+      "name": "statistics_view_all",
+      "value": "All podcasts »"
+    },
+    {
+      "name": "statistics_years_barchart_description",
+      "value": "Time played per month"
+    },
+    {
+      "name": "wait_icon",
+      "value": "…"
+    },
+    {
+      "name": "edit_url_menu",
+      "value": "Edit feed URL"
+    },
+    {
+      "name": "edit_url_menu_summary",
+      "value": "Risky: can permanently break episodes list, history, and playback state"
+    },
+    {
+      "name": "edit_url_confirmation_msg",
+      "value": "Changing the RSS address can easily break the playback state and episode listings of the podcast. We do NOT recommend changing it and will NOT provide support if anything goes wrong. This cannot be undone. The broken subscription CANNOT be repaired by simply changing the address back. We recommend creating a backup before continuing."
+    },
+    {
+      "name": "release_schedule_multiple_per_day",
+      "value": "multiple times per day"
+    },
+    {
+      "name": "release_schedule_daily",
+      "value": "daily"
+    },
+    {
+      "name": "release_schedule_weekdays",
+      "value": "on weekdays"
+    },
+    {
+      "name": "release_schedule_weekly",
+      "value": "weekly"
+    },
+    {
+      "name": "release_schedule_biweekly",
+      "value": "every two weeks"
+    },
+    {
+      "name": "release_schedule_monthly",
+      "value": "monthly"
+    },
+    {
+      "name": "release_schedule_monday",
+      "value": "Mon"
+    },
+    {
+      "name": "release_schedule_tuesday",
+      "value": "Tue"
+    },
+    {
+      "name": "release_schedule_wednesday",
+      "value": "Wed"
+    },
+    {
+      "name": "release_schedule_thursday",
+      "value": "Thu"
+    },
+    {
+      "name": "release_schedule_friday",
+      "value": "Fri"
+    },
+    {
+      "name": "release_schedule_saturday",
+      "value": "Sat"
+    },
+    {
+      "name": "release_schedule_sunday",
+      "value": "Sun"
+    },
+    {
+      "name": "search_podcast_hint",
+      "value": "Search podcast…"
+    },
+    {
+      "name": "search_itunes_label",
+      "value": "Search Apple Podcasts"
+    },
+    {
+      "name": "search_podcastindex_label",
+      "value": "Search Podcast Index"
+    },
+    {
+      "name": "search_fyyd_label",
+      "value": "Search fyyd"
+    },
+    {
+      "name": "add_podcast_by_url",
+      "value": "Add podcast by RSS address"
+    },
+    {
+      "name": "rss_address",
+      "value": "RSS address"
+    },
+    {
+      "name": "rss_address_invalid",
+      "value": "The RSS address you entered is not valid."
+    },
+    {
+      "name": "discover",
+      "value": "Discover"
+    },
+    {
+      "name": "discover_hide",
+      "value": "Hide"
+    },
+    {
+      "name": "discover_is_hidden",
+      "value": "You selected to hide suggestions."
+    },
+    {
+      "name": "discover_more",
+      "value": "Discover more »"
+    },
+    {
+      "name": "discover_powered_by_itunes",
+      "value": "Suggestions by Apple Podcasts"
+    },
+    {
+      "name": "discover_confirm",
+      "value": "Show suggestions"
+    },
+    {
+      "name": "search_powered_by",
+      "value": "Results by %1$s"
+    },
+    {
+      "name": "select_country",
+      "value": "Select country"
+    },
+    {
+      "name": "add_local_folder",
+      "value": "Add local folder"
+    },
+    {
+      "name": "local_folder",
+      "value": "Local folder"
+    },
+    {
+      "name": "reconnect_local_folder",
+      "value": "Re-connect local folder"
+    },
+    {
+      "name": "reconnect_local_folder_summary",
+      "value": "Risky: only re-connect to the exact same folder. Otherwise, you will lose all your playback state."
+    },
+    {
+      "name": "reconnect_local_folder_warning",
+      "value": "In case of permission denials, you can use this to re-connect to the exact same folder. Do not select another folder."
+    },
+    {
+      "name": "local_feed_description",
+      "value": "This virtual podcast was created by adding a folder to AntennaPod."
+    },
+    {
+      "name": "unable_to_start_system_file_manager",
+      "value": "Unable to start system file manager"
+    },
+    {
+      "name": "filter",
+      "value": "Filter"
+    },
+    {
+      "name": "hide_is_favorite_label",
+      "value": "Is favorite"
+    },
+    {
+      "name": "not_favorite",
+      "value": "Not favorite"
+    },
+    {
+      "name": "hide_downloaded_episodes_label",
+      "value": "Downloaded"
+    },
+    {
+      "name": "hide_not_downloaded_episodes_label",
+      "value": "Not downloaded"
+    },
+    {
+      "name": "queued_label",
+      "value": "Queued"
+    },
+    {
+      "name": "not_queued_label",
+      "value": "Not queued"
+    },
+    {
+      "name": "has_media",
+      "value": "Has media"
+    },
+    {
+      "name": "no_media",
+      "value": "No media"
+    },
+    {
+      "name": "hide_paused_episodes_label",
+      "value": "Paused"
+    },
+    {
+      "name": "not_paused",
+      "value": "Not paused"
+    },
+    {
+      "name": "hide_played_episodes_label",
+      "value": "Played"
+    },
+    {
+      "name": "not_played",
+      "value": "Not played"
+    },
+    {
+      "name": "filename",
+      "value": "File name"
+    },
+    {
+      "name": "share_playback_position_dialog_label",
+      "value": "Include playback position"
+    },
+    {
+      "name": "share_dialog_episode_website_label",
+      "value": "Episode webpage"
+    },
+    {
+      "name": "share_dialog_for_social",
+      "value": "Social message"
+    },
+    {
+      "name": "share_dialog_media_address",
+      "value": "Media address"
+    },
+    {
+      "name": "share_dialog_media_file_label",
+      "value": "Media file"
+    },
+    {
+      "name": "share_starting_position_label",
+      "value": "Starting from"
+    },
+    {
+      "name": "audio_controls",
+      "value": "Audio controls"
+    },
+    {
+      "name": "playback_speed",
+      "value": "Playback speed"
+    },
+    {
+      "name": "player_switch_to_audio_only",
+      "value": "Switch to audio only"
+    },
+    {
+      "name": "proxy_type_label",
+      "value": "Type"
+    },
+    {
+      "name": "host_label",
+      "value": "Host"
+    },
+    {
+      "name": "port_label",
+      "value": "Port"
+    },
+    {
+      "name": "proxy_test_label",
+      "value": "Test"
+    },
+    {
+      "name": "proxy_checking",
+      "value": "Checking…"
+    },
+    {
+      "name": "proxy_test_successful",
+      "value": "Test successful"
+    },
+    {
+      "name": "proxy_test_failed",
+      "value": "Test failed"
+    },
+    {
+      "name": "proxy_host_empty_error",
+      "value": "Host can not be empty"
+    },
+    {
+      "name": "proxy_host_invalid_error",
+      "value": "Host is not a valid IP address or domain"
+    },
+    {
+      "name": "proxy_port_invalid_error",
+      "value": "Port not valid"
+    },
+    {
+      "name": "subscription_num_columns",
+      "value": "Number of columns"
+    },
+    {
+      "name": "subscription_display_list",
+      "value": "List"
+    },
+    {
+      "name": "notification_group_errors",
+      "value": "Errors"
+    },
+    {
+      "name": "notification_group_news",
+      "value": "News"
+    },
+    {
+      "name": "notification_channel_user_action",
+      "value": "Action required"
+    },
+    {
+      "name": "notification_channel_user_action_description",
+      "value": "Shown if your action is required, for example if you need to enter a password."
+    },
+    {
+      "name": "notification_channel_downloading",
+      "value": "Downloading episodes"
+    },
+    {
+      "name": "notification_channel_downloading_description",
+      "value": "Shown while currently downloading episodes."
+    },
+    {
+      "name": "notification_channel_refreshing",
+      "value": "Refreshing podcasts"
+    },
+    {
+      "name": "notification_channel_refreshing_description",
+      "value": "Shown while checking for new episodes."
+    },
+    {
+      "name": "notification_channel_playing",
+      "value": "Currently playing"
+    },
+    {
+      "name": "notification_channel_playing_description",
+      "value": "Allows to control playback. This is the main notification you see while playing a podcast."
+    },
+    {
+      "name": "notification_channel_download_error",
+      "value": "Download failed"
+    },
+    {
+      "name": "notification_channel_download_error_description",
+      "value": "Shown when download or feed update fails."
+    },
+    {
+      "name": "notification_channel_sync_error",
+      "value": "Synchronization failed"
+    },
+    {
+      "name": "notification_channel_sync_error_description",
+      "value": "Shown when gpodder synchronization fails."
+    },
+    {
+      "name": "notification_channel_new_episode",
+      "value": "New episode"
+    },
+    {
+      "name": "notification_channel_new_episode_description",
+      "value": "Shown when a new episode of a podcast was found, where notifications are enabled"
+    },
+    {
+      "name": "widget_settings",
+      "value": "Widget settings"
+    },
+    {
+      "name": "widget_create_button",
+      "value": "Create widget"
+    },
+    {
+      "name": "widget_opacity",
+      "value": "Opacity"
+    },
+    {
+      "name": "cover_as_background",
+      "value": "Cover as background"
+    },
+    {
+      "name": "on_demand_config_setting_changed",
+      "value": "Setting updated successfully."
+    },
+    {
+      "name": "on_demand_config_stream_text",
+      "value": "Looks like you stream a lot. Do you want episode lists to show stream buttons?"
+    },
+    {
+      "name": "on_demand_config_download_text",
+      "value": "Looks like you download a lot. Do you want episode lists to show download buttons?"
+    },
+    {
+      "name": "shortcut_subscription_label",
+      "value": "Subscription shortcut"
+    },
+    {
+      "name": "shortcut_select_subscription",
+      "value": "Select subscription"
+    },
+    {
+      "name": "add_shortcut",
+      "value": "Add shortcut"
+    },
+    {
+      "name": "pref_parental_control_set_password",
+      "value": "Set Password"
+    },
+    {
+      "name": "pref_parental_control_confirm_password",
+      "value": "Confirm password"
+    },
+    {
+      "name": "pref_parental_control_passwords_dont_match",
+      "value": "Passwords don't match"
+    },
+    {
+      "name": "pref_parental_control_password_empty",
+      "value": "Password cannot be empty"
+    },
+    {
+      "name": "pref_parental_control_title",
+      "value": "Parental Controls"
+    },
+    {
+      "name": "pref_parental_control_sum",
+      "value": "Restrict features with a password"
+    },
+    {
+      "name": "pref_parental_control_enabled_title",
+      "value": "Enable"
+    },
+    {
+      "name": "pref_parental_control_require_subscribe_title",
+      "value": "Restrict subscribing"
+    },
+    {
+      "name": "pref_parental_control_require_subscribe_sum",
+      "value": "Ask for the parental control password when subscribing to new podcasts"
+    },
+    {
+      "name": "antennapod_echo",
+      "value": "AntennaPod Echo"
+    },
+    {
+      "name": "antennapod_echo_year",
+      "value": "AntennaPod Echo %d"
+    },
+    {
+      "name": "echo_home_header",
+      "value": "Review the year"
+    },
+    {
+      "name": "echo_home_subtitle",
+      "value": "Your top podcasts and stats from the past year. Exclusively on your phone."
+    },
+    {
+      "name": "echo_intro_your_year",
+      "value": "Your year"
+    },
+    {
+      "name": "echo_intro_in_podcasts",
+      "value": "in podcasts"
+    },
+    {
+      "name": "echo_intro_locally",
+      "value": "generated privately on your phone"
+    },
+    {
+      "name": "echo_hours_this_year",
+      "value": "This year you played"
+    },
+    {
+      "name": "echo_queue_title_clean",
+      "value": "And you're ready to make a clean start of the year. You have"
+    },
+    {
+      "name": "echo_queue_title_many",
+      "value": "And you still have quite a bit to go this year. You have"
+    },
+    {
+      "name": "echo_queue_hours_clean",
+      "value": "That's about %1$s each day until %2$d starts."
+    },
+    {
+      "name": "echo_queue_hours_normal",
+      "value": "That's about %1$s each day until %2$d starts. You can start the year clean if you skip a few episodes."
+    },
+    {
+      "name": "echo_queue_hours_much",
+      "value": "That's about %1$s each day until %2$d starts. Wait, what?"
+    },
+    {
+      "name": "echo_listened_after_title",
+      "value": "We've run some analysis on when episodes are released, and when you completed them. Our conclusion?"
+    },
+    {
+      "name": "echo_listened_after_emoji_yoga",
+      "value": "\\uD83E\\uDDD8"
+    },
+    {
+      "name": "echo_listened_after_comment_easy",
+      "value": "You're easy going"
+    },
+    {
+      "name": "echo_listened_after_time",
+      "value": "Typically, you completed an episode %1$s after it was released."
+    },
+    {
+      "name": "echo_listened_after_emoji_run",
+      "value": "\\uD83C\\uDFC3"
+    },
+    {
+      "name": "echo_listened_after_comment_addict",
+      "value": "You're a podcast addict"
+    },
+    {
+      "name": "echo_hoarder_title",
+      "value": "We've also been wondering: do you listen to the podcasts that you're subscribed to?"
+    },
+    {
+      "name": "echo_hoarder_subtitle_hoarder",
+      "value": "Looking at the numbers, we think you're a hoarder"
+    },
+    {
+      "name": "echo_hoarder_emoji_cabinet",
+      "value": "\\uD83D\\uDDC4\\uFE0F"
+    },
+    {
+      "name": "echo_hoarder_comment_hoarder",
+      "value": "Numbers don't lie, they say. And with only %1$d%% of your %2$d active subscriptions having been played this year, we're probably right."
+    },
+    {
+      "name": "echo_hoarder_subtitle_medium",
+      "value": "Check. No hoarding here."
+    },
+    {
+      "name": "echo_hoarder_emoji_check",
+      "value": "\\u2705"
+    },
+    {
+      "name": "echo_hoarder_comment_medium",
+      "value": "You've played episodes from %1$d%% of your %2$d active subscriptions this year. How about checking out \"%3$s\" again?"
+    },
+    {
+      "name": "echo_hoarder_subtitle_clean",
+      "value": "Clean!"
+    },
+    {
+      "name": "echo_hoarder_emoji_clean",
+      "value": "\\u2728"
+    },
+    {
+      "name": "echo_hoarder_comment_clean",
+      "value": "You've played episodes from %1$d%% of your %2$d active subscriptions this year. We bet you keep your desk clean, too!"
+    },
+    {
+      "name": "echo_thanks_large",
+      "value": "Thanks"
+    },
+    {
+      "name": "echo_thanks_we_are_glad_old",
+      "value": "for sticking with us this year!\n\nYou played your first episode with us in %1$s. It's been our honor to serve you since."
+    },
+    {
+      "name": "echo_thanks_we_are_glad_new",
+      "value": "for joining us this year!\n\nWhether you've moved over from another app, or started your podcast adventure with us: we're glad to have you!"
+    },
+    {
+      "name": "echo_thanks_now_favorite",
+      "value": "Now, let's take a look at your favorite podcasts…"
+    },
+    {
+      "name": "echo_share_heading",
+      "value": "My favorite podcasts"
+    },
+    {
+      "name": "echo_share",
+      "value": "My year %d in podcasts. #AntennaPodEcho"
+    },
+    {
+      "name": "wearos_connected_to",
+      "value": "Connected to %s"
+    },
+    {
+      "name": "wearos_version",
+      "value": "Version %s"
+    },
+    {
+      "name": "wearos_phone_not_supported",
+      "value": "Phone not compatible. Make sure you are running the most recent version of AntennaPod from Google Play on your phone."
+    },
+    {
+      "name": "wearos_no_items",
+      "value": "No items"
+    },
+    {
+      "name": "wearos_phone_not_reachable",
+      "value": "Could not reach the phone. Make sure your phone is nearby and AntennaPod is installed."
+    },
+    {
+      "name": "wearos_play_on_phone",
+      "value": "Play on phone"
+    },
+    {
+      "name": "wearos_browse_phone",
+      "value": "Browse phone"
+    },
+    {
+      "name": "wearos_open_on_phone",
+      "value": "Open on phone"
+    },
+    {
+      "name": "keycode_media_next",
+      "value": "87"
+    },
+    {
+      "name": "keycode_media_previous",
+      "value": "88"
+    },
+    {
+      "name": "keycode_media_rewind",
+      "value": "89"
+    },
+    {
+      "name": "keycode_media_fast_forward",
+      "value": "90"
+    }
+  ]
+}

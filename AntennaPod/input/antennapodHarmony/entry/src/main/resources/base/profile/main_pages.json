@@ -1,0 +1,17 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/MainPage",
+    "pages/FeedDetailPage",
+    "pages/EpisodesPage",
+    "pages/DownloadsPage",
+    "pages/SearchPage",
+    "pages/EpisodeDetailPage",
+    "pages/AudioPlayerPage",
+    "pages/FavoritesPage",
+    "pages/PlaybackHistoryPage",
+    "pages/StatisticsPage",
+    "pages/AddFeedPage",
+    "pages/SettingsPage"
+  ]
+}
