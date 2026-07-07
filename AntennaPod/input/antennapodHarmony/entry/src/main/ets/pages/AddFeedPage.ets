@@ -16,6 +16,9 @@ struct AddFeedPage {
   @State results: FetchResult[] = [];
   @State hasSearched: boolean = false;
   @State isSearching: boolean = false;
+  @State rssDialogVisible: boolean = false;
+  @State rssUrlInput: string = '';
+  @State rssLoading: boolean = false;
 
   private doSearch(): void {
     const q: string = this.query.trim();
@@ -83,18 +86,41 @@ struct AddFeedPage {
   }
 
   private openRssDialog(): void {
-    try {
-      promptAction.showDialog({
-        title: 'Add podcast by RSS URL',
-        message: 'Enter the RSS feed URL (real RSS HTTP fetch is deferred in this build).',
-        buttons: [
-          { text: 'Cancel', color: '#666666' },
-          { text: 'Add', color: '#F3682A' }
-        ]
-      });
-    } catch (e) {
-      // ignore
+    this.rssUrlInput = '';
+    this.rssDialogVisible = true;
+  }
+
+  private confirmRssUrl(): void {
+    const url: string = this.rssUrlInput.trim();
+    if (url.length === 0) {
+      try {
+        promptAction.showToast({ message: 'Please enter an RSS feed URL' });
+      } catch (e) {
+        // ignore toast errors
+      }
+      return;
     }
+    this.rssLoading = true;
+    serviceLocator.feedFetcher().fetchByUrl(url).then((result: FetchResult | undefined): void => {
+      this.rssLoading = false;
+      if (result) {
+        this.rssDialogVisible = false;
+        this.subscribeTo(result);
+      } else {
+        try {
+          promptAction.showToast({ message: 'Could not parse feed. Please check the URL and try again.' });
+        } catch (e) {
+          // ignore toast errors
+        }
+      }
+    }).catch((): void => {
+      this.rssLoading = false;
+      try {
+        promptAction.showToast({ message: 'Could not parse feed. Please check the URL and try again.' });
+      } catch (e) {
+        // ignore toast errors
+      }
+    });
   }
 
   @Builder
@@ -225,6 +251,69 @@ struct AddFeedPage {
       }
       .width('100%')
       .height('100%')
+
+      if (this.rssDialogVisible) {
+        Stack({ alignContent: Alignment.Center }) {
+          Column()
+            .width('100%')
+            .height('100%')
+            .backgroundColor($r('app.color.image_readability_tint'))
+            .onClick(() => {
+              if (!this.rssLoading) {
+                this.rssDialogVisible = false;
+              }
+            })
+
+          Column() {
+            Text('Add podcast by RSS URL')
+              .fontSize(20)
+              .fontWeight(FontWeight.Medium)
+              .fontColor($r('app.color.black'))
+              .margin({ top: 24, bottom: 16 })
+
+            Divider().color($r('app.color.light_gray'))
+
+            TextInput({ text: this.rssUrlInput, placeholder: 'RSS address' })
+              .width('90%')
+              .fontSize(15)
+              .backgroundColor($r('app.color.background_elevated_light'))
+              .borderRadius(8)
+              .height(44)
+              .margin({ top: 16, bottom: 16 })
+              .onChange((v: string): void => {
+                this.rssUrlInput = v;
+              })
+
+            Divider().color($r('app.color.light_gray'))
+
+            Row() {
+              Button('Cancel')
+                .layoutWeight(1)
+                .type(ButtonType.Normal)
+                .backgroundColor(Color.Transparent)
+                .fontColor($r('app.color.accent_light'))
+                .enabled(!this.rssLoading)
+                .onClick(() => {
+                  this.rssDialogVisible = false;
+                })
+              Button(this.rssLoading ? 'Adding...' : 'Add')
+                .layoutWeight(1)
+                .type(ButtonType.Normal)
+                .backgroundColor(Color.Transparent)
+                .fontColor($r('app.color.accent_light'))
+                .enabled(!this.rssLoading)
+                .onClick(() => this.confirmRssUrl())
+            }
+            .width('100%')
+            .height(48)
+          }
+          .width('80%')
+          .backgroundColor($r('app.color.background_light'))
+          .borderRadius(12)
+        }
+        .width('100%')
+        .height('100%')
+      }
     }
     .width('100%')
     .height('100%')
