@@ -48,6 +48,10 @@ oh-package-lock.json5
 *.pptx
 ppt_assets/
 **/harmony_screenshots/
+!/calculate/harmony_screenshots/
+!/calculate/harmony_screenshots/**
+!/whaticantook/harmony_screenshots/
+!/whaticantook/harmony_screenshots/**
 
 **/.trace/
 **/output/
